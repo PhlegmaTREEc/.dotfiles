@@ -1,0 +1,46 @@
+{
+  "custom/myvolumeout": {
+      "tooltip": false,
+      "max-length": 10,
+      "exec": "$HOME/.config/hypr/scripts/volume/waybar_wpctl_out.sh",
+      "on-click": "pavucontrol"
+  },
+  "custom/myvolumein": {
+      "tooltip": false,
+      "max-length": 6,
+      "exec": "$HOME/.config/hypr/scripts/volume/waybar_wpctl_in.sh"
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": " {:%H:%M}"
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "separate-outputs": true
+  },
+  "tray": {
+      //"icon-size": 21,
+    	"show-passive-items": true,
+      "spacing": 5
+  },
+  "wlr/workspaces": {
+      "active-only": false,
+	    "all-outputs": false,
+      "disable-scroll": true,
+      "format": "{icon}",
+      "format-icons": {
+          "1": "1",
+          "2": "2",
+          "3": "3",
+          "4": "4",
+          "5": "5",
+          "6": "6",
+          "7": "7",
+          "8": "8",
+          "9": "9",
+          "10": "10"
+      },
+	    "on-click": "activate",
+      "sort-by-number": true,
+  }
+}

@@ -1,0 +1,49 @@
+# Global format
+format = """
+[\uF303](fg:bold #bd93f9)\
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$character
+"""
+
+# General config
+add_newline = true
+
+[line_break]
+disabled = false
+
+[username]
+style_user = "fg:bold #8be9fd"
+style_root = "fg:bold #8be9fd"
+show_always = false
+format = "[ $user]($style)"
+
+[hostname]
+ssh_only = true
+style = "fg:bold #f1fa8c"
+format = "[ $ssh_symbol $hostname ]($style)"
+
+[directory]
+truncation_symbol = "../"
+truncation_length = 4
+style = "fg:bold #ff79c6"
+read_only = "\uF83D"
+read_only_style = "fg:#ff5555"
+format = "[ $path]($style)[ $read_only ]($read_only_style)"
+
+[character]
+success_symbol = "[\uE285](fg:#50fa7b)"
+error_symbol = "[\uE009](fg:#ff5555)"
+vicmd_symbol = "[\uE285](fg:#ffb86c)"
+format = "$symbol "
+
+[git_branch]
+style = "bg:#44475a fg:bold #f1fa8c"
+format = "[\uE0B0](fg:#282a36 bg:#44475a)[ $symbol$branch(:$remote_branch)]($style)"
+
+[git_status]
+style = "bg:#44475a fg:#ffb86c"
+format = "[ \u003C](bg:#44475a fg:#ffb86c)[$all_status$ahead_behind]($style)[\u003E ](bg:#44475a fg:#ffb86c)[\uE0B0 ](fg:#44475a)"

@@ -52,7 +52,6 @@
     mpv
     mullvad-vpn
     multiviewer-for-f1
-    polkit_gnome
     openrgb
     opentabletdriver
     solaar

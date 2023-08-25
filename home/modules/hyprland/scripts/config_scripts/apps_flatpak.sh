@@ -5,7 +5,6 @@ flatpak install \
 	com.basemark.BasemarkGPU \
 	com.calibre_ebook.calibre \
 	com.usebottles.bottles \
-	com.hunterwittenborn.Celesteio.gitlab.adhami3310.Converter \
 	com.hunterwittenborn.Celeste \
 	com.discordapp.Discord \
 	com.github.wwmm.easyeffects \
@@ -13,7 +12,8 @@ flatpak install \
 	com.github.tchx84.Flatseal \
 	com.heroicgameslauncher.hgl \
 	org.kde.krita \
-	org.gimp.GIMPorg.libreoffice.LibreOffice \
+	org.gimp.GIMP \
+	org.libreoffice.LibreOffice \
 	com.github.GradienceTeam.Gradience \
 	com.vysp3r.ProtonPlus \
 	com.github.ahrm.sioyek \

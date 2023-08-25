@@ -18,6 +18,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
+    zsh
     # TTY
     bat
     broot
@@ -45,6 +46,7 @@
     corectrl
     filezilla
     firefox
+    gparted
     kitty
     pavucontrol
     ## nwg-look
@@ -170,6 +172,30 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
+
+  programs.zsh ={
+      plugins = [
+        {
+          name = "zsh-autosuggestions";
+          src = pkgs.fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-autosuggestions";
+            rev = "0.7.0";
+            sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
+            };
+          }
+        {
+          name = "zsh-syntax-highlighting";
+          src = pkgs.fetchFromGitHub {
+            owner = "zsh-users";
+            repo = "zsh-syntax-highlighting";
+            rev = "0.7.1";
+            sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0";
+            };
+          }
+      ];
+    };
+
 
   # You can also manage environment variables but you will have to manually
   # source

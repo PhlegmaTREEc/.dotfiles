@@ -62,7 +62,7 @@
   #  #interactiveShellInit = "export ZDOTDIR = $HOME/.config/zsh";
   #};
   #users.defaultUserShell = pkgs.zsh;
-  #environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [ zsh ];
 
   xdg.portal = {
       enable = true;

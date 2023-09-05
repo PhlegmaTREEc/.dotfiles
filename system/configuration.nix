@@ -55,11 +55,14 @@
   programs.corectrl.gpuOverclock.enable = true;
 
 # ZSH
-  programs.zsh.enable = true;
-  programs.zsh.syntaxHighlighting.enable = true;
-  programs.zsh.autosuggestions.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
+  #programs.zsh = {
+  #  enable = true;
+  #  syntaxHighlighting.enable = true;
+  #  autosuggestions.enable = true;
+  #  #interactiveShellInit = "export ZDOTDIR = $HOME/.config/zsh";
+  #};
+  #users.defaultUserShell = pkgs.zsh;
+  #environment.shells = with pkgs; [ zsh ];
 
   xdg.portal = {
       enable = true;
@@ -69,11 +72,11 @@
       ];
     };
 
-  programs.steam = {
-    enable = true;
-    #remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    #dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
+  #programs.steam = {
+  #  enable = true;
+  #  #remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  #  #dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  #};
 
   services.flatpak.enable = true;
 

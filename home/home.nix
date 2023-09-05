@@ -84,77 +84,12 @@
     # '')
   ];
 
-  # .config
-  #xdg.configFile.hypr = {
-  #  source = ./modules/hyprland;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.broot = {
-  #  source = ./modules/broot;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.dunst = {
-  #  source = ./modules/dunst;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.easyeffects = {
-  #  source = ./modules/easyeffects;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.fuzzel = {
-  #  source = ./modules/fuzzel;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.gammastep = {
-  #  source = ./modules/gammastep;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.kitty = {
-  #  source = ./modules/kitty;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.lazygit = {
-  #  source = ./modules/lazygit;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.lf = {
-  #  source = ./modules/lf;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.navi = {
-  #  source = ./modules/navi;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.nvim = {
-  #  source = ./modules/nvim;
-  #  recursive = true;
-  #  };
-
-  #xdg.configFile.sioyek = {
-  #  source = ./modules/sioyek;
-  #  recursive = true;
-  #  };
-  #
-  #xdg.configFile.swaync = {
-  #  source = ./modules/swaync;
-  #  recursive = true;
-  #  };
-  #
-  #xdg.configFile.starship = {
-  #  source = ./modules/starship.toml;
-  #  recursive = true;
-  #  };
-  #
+  programs.steam = {
+    enable = true;
+    #remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    #dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
+  # old an incorrect solution example
   #xdg.configFile.waybar = {
   #  source = ./modules/waybar;
   #  recursive = true;
@@ -166,33 +101,37 @@
   };
 
   # ZSH
-  programs.zsh ={
-      plugins = [
-        {
-          name = "zsh-autosuggestions";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-autosuggestions";
-            rev = "0.7.0";
-            sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
-            };
-          }
-        {
-          name = "zsh-syntax-highlighting";
-          src = pkgs.fetchFromGitHub {
-            owner = "zsh-users";
-            repo = "zsh-syntax-highlighting";
-            rev = "0.7.1";
-            sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0";
-            };
-          }
-      ];
-    };
+  programs.zsh = {
+    enable = true;
+    syntaxHighlighting.enable = true;
+    autosuggestions.enable = true;
+    plugins = [
+      {
+        name = "zsh-autosuggestions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "0.7.0";
+          sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
+          };
+        }
+      {
+        name = "zsh-syntax-highlighting";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-syntax-highlighting";
+          rev = "0.7.1";
+          sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0";
+          };
+        }
+    ];
+  };
+  users.defaultUserShell = pkgs.zsh;
 
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    ZDOTDIR = "$HOME/.config/zsh";
+    #ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # Let Home Manager install and manage itself.

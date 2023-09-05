@@ -55,13 +55,14 @@
   programs.corectrl.gpuOverclock.enable = true;
 
 # ZSH
-  #programs.zsh = {
-  #  enable = true;
+  programs.zsh = {
+    enable = true;
+  };
   #  syntaxHighlighting.enable = true;
   #  autosuggestions.enable = true;
   #  #interactiveShellInit = "export ZDOTDIR = $HOME/.config/zsh";
   #};
-  #users.defaultUserShell = pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
   #environment.shells = with pkgs; [ zsh ];
 
   xdg.portal = {

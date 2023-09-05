@@ -84,11 +84,6 @@
     # '')
   ];
 
-  programs.steam = {
-    enable = true;
-    #remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-    #dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  };
   # old an incorrect solution example
   #xdg.configFile.waybar = {
   #  source = ./modules/waybar;
@@ -103,8 +98,11 @@
   # ZSH
   programs.zsh = {
     enable = true;
+    dotDir = ".config/zsh";
+    enableCompletion = true;
+    enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
-    autosuggestions.enable = true;
+    #autosuggestions.enable = true;
     plugins = [
       {
         name = "zsh-autosuggestions";
@@ -126,12 +124,12 @@
         }
     ];
   };
-  users.defaultUserShell = pkgs.zsh;
+  #users.defaultUserShell = pkgs.zsh;
 
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    #ZDOTDIR = "$HOME/.config/zsh";
+    ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # Let Home Manager install and manage itself.

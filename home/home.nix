@@ -23,11 +23,14 @@
     navi
     neofetch
     neovim
+    nodejs_18
     poppler
     ripgrep
     starship
+    steam
     trash-cli
     tree
+    unzip
     wget
     wl-clipboard
     zoxide
@@ -57,12 +60,15 @@
 
     # hyprland
     waybar
-    #xdg-desktop-portal-gtk
-    #xdg-desktop-portal-hyprland
     gammastep
     fuzzel
     swaynotificationcenter
-    hyprpaper
+    swaybg
+    #hyprpaper
+    #swww
+    #waypaper
+    #xdg-desktop-portal-gtk
+    #xdg-desktop-portal-hyprland
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -79,80 +85,85 @@
   ];
 
   # .config
-  xdg.configFile.hypr = {
-    source = ./modules/hyprland;
-    recursive = true;
-    };
+  #xdg.configFile.hypr = {
+  #  source = ./modules/hyprland;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.broot = {
-    source = ./modules/broot;
-    recursive = true;
-    };
+  #xdg.configFile.broot = {
+  #  source = ./modules/broot;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.dunst = {
-    source = ./modules/dunst;
-    recursive = true;
-    };
+  #xdg.configFile.dunst = {
+  #  source = ./modules/dunst;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.easyeffects = {
-    source = ./modules/easyeffects;
-    recursive = true;
-    };
+  #xdg.configFile.easyeffects = {
+  #  source = ./modules/easyeffects;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.fuzzel = {
-    source = ./modules/fuzzel;
-    recursive = true;
-    };
+  #xdg.configFile.fuzzel = {
+  #  source = ./modules/fuzzel;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.gammastep = {
-    source = ./modules/gammastep;
-    recursive = true;
-    };
+  #xdg.configFile.gammastep = {
+  #  source = ./modules/gammastep;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.kitty = {
-    source = ./modules/kitty;
-    recursive = true;
-    };
+  #xdg.configFile.kitty = {
+  #  source = ./modules/kitty;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.lazygit = {
-    source = ./modules/lazygit;
-    recursive = true;
-    };
+  #xdg.configFile.lazygit = {
+  #  source = ./modules/lazygit;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.lf = {
-    source = ./modules/lf;
-    recursive = true;
-    };
+  #xdg.configFile.lf = {
+  #  source = ./modules/lf;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.navi = {
-    source = ./modules/navi;
-    recursive = true;
-    };
+  #xdg.configFile.navi = {
+  #  source = ./modules/navi;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.nvim = {
-    source = ./modules/nvim;
-    recursive = true;
-    };
+  #xdg.configFile.nvim = {
+  #  source = ./modules/nvim;
+  #  recursive = true;
+  #  };
 
-  xdg.configFile.sioyek = {
-    source = ./modules/sioyek;
+  #xdg.configFile.sioyek = {
+  #  source = ./modules/sioyek;
+  #  recursive = true;
+  #  };
+  #
+  #xdg.configFile.swaync = {
+  #  source = ./modules/swaync;
+  #  recursive = true;
+  #  };
+  #
+  #xdg.configFile.starship = {
+  #  source = ./modules/starship.toml;
+  #  recursive = true;
+  #  };
+  #
+  #xdg.configFile.waybar = {
+  #  source = ./modules/waybar;
+  #  recursive = true;
+  #  };
+
+  home.file."${config.xdg.configHome}" = {
+    source = ./modules;
     recursive = true;
-    };
-  
-  xdg.configFile.swaync = {
-    source = ./modules/swaync;
-    recursive = true;
-    };
-  
-  xdg.configFile.starship = {
-    source = ./modules/starship.toml;
-    recursive = true;
-    };
-  
-  xdg.configFile.waybar = {
-    source = ./modules/waybar;
-    recursive = true;
-    };
+  };
 
   # ZSH
   programs.zsh ={
@@ -180,7 +191,8 @@
 
   # Session variables
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # Let Home Manager install and manage itself.

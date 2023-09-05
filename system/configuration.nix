@@ -27,21 +27,21 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  #systemd = {
-  #  user.services.polkit-gnome-authentication-agent-1 = {
-  #    description = "polkit-gnome-authentication-agent-1";
-  #    wantedBy = [ "graphical-session.target" ];
-  #    wants = [ "graphical-session.target" ];
-  #    after = [ "graphical-session.target" ];
-  #    serviceConfig = {
-  #        Type = "simple";
-  #        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  #        Restart = "on-failure";
-  #        RestartSec = 1;
-  #        TimeoutStopSec = 10;
-  #      };
-  #  };
-  #};
+  systemd = {
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+    };
+  };
   
   # Solaar + logitech
   hardware.logitech.wireless.enable = true;
@@ -50,6 +50,10 @@
   security.polkit.enable = true;
   hardware.opengl.enable = true;
   
+  programs.corectrl.enable = true;
+  programs.corectrl.gpuOverclock.ppfeaturemask = "0xffffffff";
+  programs.corectrl.gpuOverclock.enable = true;
+
 # ZSH
   programs.zsh.enable = true;
   programs.zsh.syntaxHighlighting.enable = true;
@@ -64,6 +68,12 @@
       xdg-desktop-portal-hyprland
       ];
     };
+
+  programs.steam = {
+    enable = true;
+    #remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    #dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 
   services.flatpak.enable = true;
 
@@ -90,7 +100,12 @@
      substituters = ["https://hyprland.cachix.org"];
      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
      };
-
+  nixpkgs.config.allowNonFree = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-run"
+  ];
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
@@ -127,7 +142,7 @@
   users.users.ptc = {
     isNormalUser = true;
     initialPassword = "pass";
-    extraGroups = [ "wheel" "audio" "video" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };
@@ -145,15 +160,15 @@
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

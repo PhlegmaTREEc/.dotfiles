@@ -129,7 +129,7 @@
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    ZDOTDIR = "$HOME/.config/zsh";
+    #ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # Let Home Manager install and manage itself.

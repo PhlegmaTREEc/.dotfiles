@@ -61,6 +61,7 @@
     # hyprland
     waybar
     gammastep
+    grim
     fuzzel
     swaynotificationcenter
     swappy

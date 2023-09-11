@@ -63,7 +63,9 @@
     gammastep
     fuzzel
     swaynotificationcenter
+    swappy
     swaybg
+    watershot
     #hyprpaper
     #swww
     #waypaper

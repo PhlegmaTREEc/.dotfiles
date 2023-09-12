@@ -118,6 +118,7 @@
       }; 
     ".config/hypr" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+      target = "veryspecial";
       recursive = true;
       }; 
     ".config/kitty" = {

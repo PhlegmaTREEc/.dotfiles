@@ -89,10 +89,11 @@
   ];
 
   # old an incorrect solution example
-  #xdg.configFile.waybar = {
-  #  source = ./modules/waybar;
-  #  recursive = true;
-  #  };
+  xdg.configFile.hypr = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+    #source = ./modules/hypr;
+    recursive = true;
+    };
 
   #home.file."/home/ptc/.config/hypr" = {
   #  source = config.lib.file.mkOutOfStoreSymlink "/home/ptc/.dotfiles/home/modules/hypr";
@@ -116,9 +117,9 @@
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/gammastep";
       }; 
-    ".config/test" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-      }; 
+    #".config/hypr" = {
+    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+    #  }; 
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/kitty";
       }; 
@@ -178,9 +179,12 @@
     ];
   };
   #users.defaultUserShell = pkgs.zsh;
-  wayland.windowManager.hyprland.extraConfig = ''
-    source=~/.dotfiles/home/modules/hypr/hyprland.conf
-  '';
+  
+  # test with config for hyprland
+  #wayland.windowManager.hyprland.extraConfig = ''
+  #  source=~/.dotfiles/home/modules/hypr/hyprland.conf
+  #'';
+
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";

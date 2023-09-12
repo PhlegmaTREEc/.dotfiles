@@ -98,6 +98,8 @@
     recursive = true;
   };
 
+  home.file."test".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/test"
+
   # ZSH
   programs.zsh = {
     enable = true;

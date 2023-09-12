@@ -67,6 +67,10 @@
     swappy
     swaybg
     watershot
+      #for watershot
+    fontconfig
+    pkgconfig
+    libxkbcommon
     #xdg-desktop-portal-gtk
     #xdg-desktop-portal-hyprland
 
@@ -112,10 +116,10 @@
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/gammastep";
       }; 
-    #".config/hypr" = {
-    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-    #  recursive = true;
-    #  }; 
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+      recursive = true;
+      }; 
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/kitty";
       }; 

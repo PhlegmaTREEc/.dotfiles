@@ -8,9 +8,8 @@
         inputs.nixpkgs.follows = "nixpkgs";
         };
     hyprland.url = "github:hyprwm/Hyprland";
-    watershot.url = "github:Kirottu/watershot";
     };
-  outputs = { self, nixpkgs, home-manager, hyprland, watershot, ... }:
+  outputs = { self, nixpkgs, home-manager, hyprland, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
@@ -27,17 +26,16 @@
         ./home/home.nix
 	      hyprland.homeManagerModules.default
         {wayland.windowManager.hyprland.enable = true;}
-        watershot.homeManagerModules.default
         ];
       };
 
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
-	modules = [
-	  ./system/configuration.nix
-	  ./system/greetd.nix
-	];
+	    modules = [
+	      ./system/configuration.nix
+	      ./system/greetd.nix
+	      ];
       };
     };
   };

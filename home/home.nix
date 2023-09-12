@@ -57,16 +57,15 @@
     xfce.thunar-volman
     xfce.thunar-archive-plugin
     xfce.thunar-media-tags-plugin
-
     # hyprland
     waybar
     gammastep
-    #grim
+    grim
     fuzzel
     swaynotificationcenter
     swappy
     swaybg
-    #watershot
+    watershot
     #xdg-desktop-portal-gtk
     #xdg-desktop-portal-hyprland
 
@@ -90,10 +89,16 @@
   #  recursive = true;
   #  };
 
-  home.file."${config.xdg.configHome}" = {
-    source = ./modules;
-    recursive = true;
+  home.file = {
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink /home/ptc/.dotfiles/home/modules/hypr;
+      recursive = true;
+    };
   };
+  #home.file."${config.xdg.configHome}" = {
+  #  source = ./modules;
+  #  recursive = true;
+  #};
 
   # ZSH
   programs.zsh = {

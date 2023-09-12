@@ -93,13 +93,18 @@
   #  source = config.lib.file.mkOutOfStoreSymlink "/home/ptc/.dotfiles/home/modules/hypr";
   #  recursive = true;
   #};
-  home.file."${config.xdg.configHome}" = {
-    source = ./modules;
-    recursive = true;
-  };
+  #home.file."${config.xdg.configHome}" = {
+  #  source = ./modules;
+  #  recursive = true;
+  #};
 
-  home.file.".config/test".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/test";
-
+  home.file = {
+    ".config/test" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/test"
+      };
+    ".config/lf" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/lf"
+      }
   # ZSH
   programs.zsh = {
     enable = true;

@@ -62,6 +62,7 @@
     gammastep
     grim
     fuzzel
+    slurp
     swaynotificationcenter
     swappy
     swaybg
@@ -111,10 +112,10 @@
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/gammastep";
       }; 
-    ".config/hypr" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-      recursive = true;
-      }; 
+    #".config/hypr" = {
+    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+    #  recursive = true;
+    #  }; 
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/kitty";
       }; 

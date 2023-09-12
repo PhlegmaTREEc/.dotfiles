@@ -89,11 +89,9 @@
   #  recursive = true;
   #  };
 
-  home.file = {
-    ".config/hypr" = {
-      source = config.lib.file.mkOutOfStoreSymlink /home/ptc/.dotfiles/home/modules/hypr;
-      recursive = true;
-    };
+  home.file.".config/hypr" = {
+    source = config.lib.file.mkOutOfStoreSymlink /home/ptc/.dotfiles/home/modules/hypr;
+    recursive = true;
   };
   #home.file."${config.xdg.configHome}" = {
   #  source = ./modules;

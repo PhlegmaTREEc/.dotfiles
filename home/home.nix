@@ -98,7 +98,7 @@
     recursive = true;
   };
 
-  home.file."test".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/test";
+  home.file.".config/test".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/test";
 
   # ZSH
   programs.zsh = {

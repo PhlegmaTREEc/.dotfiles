@@ -61,15 +61,12 @@
     # hyprland
     waybar
     gammastep
-    grim
+    #grim
     fuzzel
     swaynotificationcenter
     swappy
     swaybg
-    watershot
-    #hyprpaper
-    #swww
-    #waypaper
+    #watershot
     #xdg-desktop-portal-gtk
     #xdg-desktop-portal-hyprland
 

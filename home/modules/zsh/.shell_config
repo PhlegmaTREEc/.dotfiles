@@ -1,15 +1,15 @@
 # Path
 #example on how to add something to a path
-export PATH=$HOME/.local/bin:$PATH
+#export PATH=$HOME/.local/bin:$PATH
 
 # Starship
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 eval "$(starship init zsh)"
 
 # FZF
 #source /usr/share/fzf/key-bindings.zsh
 #source /usr/share/fzf/completion.zsh
-
-export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
+#export FZF_DEFAULT_OPTS='--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9 --color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9 --color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6 --color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4'
 
 # Bat
 export BAT_THEME="Dracula"
@@ -21,22 +21,22 @@ eval "$(zoxide init zsh)"
 eval "$(navi widget zsh)"
 
 # Default apps
-export EDITOR='nvim'
-export TERMINAL='kitty'
-export BROWSER='firefox'
+#export EDITOR='nvim'
+#export TERMINAL='kitty'
+#export BROWSER='firefox'
 
 # Function for lf tui file manager
-d () {
-    tmp="$(mktemp)"
-    # `command` is needed in case `lfcd` is aliased to `lf`
-    command lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
+#d () {
+#    tmp="$(mktemp)"
+#    # `command` is needed in case `lfcd` is aliased to `lf`
+#    command lf -last-dir-path="$tmp" "$@"
+#    if [ -f "$tmp" ]; then
+#        dir="$(cat "$tmp")"
+#        rm -f "$tmp"
+#        if [ -d "$dir" ]; then
+#            if [ "$dir" != "$(pwd)" ]; then
+#                cd "$dir"
+#            fi
+#        fi
+#    fi
+#}

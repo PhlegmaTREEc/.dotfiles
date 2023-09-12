@@ -89,20 +89,11 @@
   ];
 
   # old an incorrect solution example
-  xdg.configFile.hypr = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-    #source = ./modules/hypr;
-    recursive = true;
-    };
-
-  #home.file."/home/ptc/.config/hypr" = {
-  #  source = config.lib.file.mkOutOfStoreSymlink "/home/ptc/.dotfiles/home/modules/hypr";
+  #xdg.configFile.hypr = {
+  #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+  #  source = ./modules/hypr;
   #  recursive = true;
-  #};
-  #home.file."${config.xdg.configHome}" = {
-  #  source = ./modules;
-  #  recursive = true;
-  #};
+  #  };
 
   home.file = {
     ".config/broot" = {
@@ -117,9 +108,6 @@
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/gammastep";
       }; 
-    #".config/hypr" = {
-    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-    #  }; 
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/kitty";
       }; 
@@ -138,52 +126,59 @@
     ".config/sioyek" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/sioyek";
       }; 
+    ".config/starship" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/starship";
+      }; 
     ".config/swaync" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/swaync";
       }; 
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/waybar";
       }; 
-    ".config/zsh" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/zsh";
-      }; 
+    #".config/zsh" = {
+    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/zsh";
+    #  }; 
     };
+
+  #programs.fzf = {
+  #  history
+  #  historyWidgetOptions = [
+  #    "--preview 'echo {}' --preview-window up:3:hidden:wrap"
+  #    "--bind 'ctrl-/:toggle-preview'"
+  #    "--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'"
+  #    "--color header:italic"
+  #    "--header 'Press CTRL-Y to copy command into clipboard'"
+  #    ];
+  #  };
 
   # ZSH
   programs.zsh = {
     enable = true;
-    #dotDir = ".config/zsh";
-    enableCompletion = true;
+    dotDir = ".config/zsh";
     enableAutosuggestions = true;
+    enableCompletion = true;
+    completionInit = ''
+    autoload -Uz compinit && compinit
+    zstyle ':completion:*' completer _complete _ignored
+    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+    '';
+    history.path = "$HOME/.config/zsh/.zsh_history";
+    initExtra = ''
+    if [ -f ~/.dotfiles/home/modules/zsh/.shell_config ]; then
+        source ~/.dotfiles/home/modules/zsh/.shell_config
+    fi
+
+    if [ -f ~/.dotfiles/home/modules/zsh/.shell_aliases ]; then
+	    source ~/.dotfiles/home/modules/zsh/.shell_aliases
+    fi
+    '';
     syntaxHighlighting.enable = true;
-    #autosuggestions.enable = true;
-    plugins = [
-      {
-        name = "zsh-autosuggestions";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-autosuggestions";
-          rev = "0.7.0";
-          sha256 = "1g3pij5qn2j7v7jjac2a63lxd97mcsgw6xq6k5p7835q9fjiid98";
-          };
-        }
-      {
-        name = "zsh-syntax-highlighting";
-        src = pkgs.fetchFromGitHub {
-          owner = "zsh-users";
-          repo = "zsh-syntax-highlighting";
-          rev = "0.7.1";
-          sha256 = "03r6hpb5fy4yaakqm3lbf4xcvd408r44jgpv4lnzl9asp4sb9qc0";
-          };
-        }
-    ];
   };
-  #users.defaultUserShell = pkgs.zsh;
   
   # test with config for hyprland
-  #wayland.windowManager.hyprland.extraConfig = ''
-  #  source=~/.dotfiles/home/modules/hypr/hyprland.conf
-  #'';
+  wayland.windowManager.hyprland.extraConfig = ''
+    source=~/.dotfiles/home/modules/hypr/hyprland.conf
+  '';
 
   # Session variables
   home.sessionVariables = {

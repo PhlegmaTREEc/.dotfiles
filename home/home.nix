@@ -89,14 +89,14 @@
   #  recursive = true;
   #  };
 
-  home.file.".config/hypr" = {
-    source = config.lib.file.mkOutOfStoreSymlink "/home/ptc/.dotfiles/home/modules/hypr";
-    recursive = true;
-  };
-  #home.file."${config.xdg.configHome}" = {
-  #  source = ./modules;
+  #home.file."/home/ptc/.config/hypr" = {
+  #  source = config.lib.file.mkOutOfStoreSymlink "/home/ptc/.dotfiles/home/modules/hypr";
   #  recursive = true;
   #};
+  home.file."${config.xdg.configHome}" = {
+    source = ./modules;
+    recursive = true;
+  };
 
   # ZSH
   programs.zsh = {

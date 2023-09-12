@@ -100,11 +100,11 @@
 
   home.file = {
     ".config/test" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/test"
-      };
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/test";
+      } 
     ".config/lf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/lf"
-      }
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/lf";
+      };
   # ZSH
   programs.zsh = {
     enable = true;

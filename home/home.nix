@@ -116,10 +116,8 @@
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/gammastep";
       }; 
-    ".config/hypr" = {
+    ".config/test" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-      target = ".config/hypr";
-      recursive = true;
       }; 
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/kitty";
@@ -180,7 +178,9 @@
     ];
   };
   #users.defaultUserShell = pkgs.zsh;
-
+  wayland.windowManager.hyprland.extraConfig = ''
+    source=~/.dotfiles/home/modules/hypr/hyprland.conf
+  '';
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";

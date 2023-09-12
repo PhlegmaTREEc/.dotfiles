@@ -26,6 +26,7 @@
         ./home/home.nix
 	      hyprland.homeManagerModules.default
         {wayland.windowManager.hyprland.enable = true;}
+        {wayland.windowManager.hyprland.systemdIntegration = false;}
         ];
       };
 

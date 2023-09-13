@@ -14,17 +14,21 @@
     duf
     du-dust
     fd
+    ffmpeg_6
     fzf
     gcc
     git
+    imagemagick
     lazygit
     lf
     lsd
+    mupdf
     navi
     neofetch
     neovim
     nodejs_18
-    poppler
+    poppler_utils
+    #poppler_utils
     ripgrep
     starship
     steam
@@ -48,6 +52,7 @@
     firefox
     gparted
     kitty
+    imv
     pavucontrol
     nwg-look
     mpv
@@ -55,7 +60,6 @@
     multiviewer-for-f1
     openrgb
     opentabletdriver
-    sioyek
     solaar
     xfce.thunar
     xfce.thunar-volman

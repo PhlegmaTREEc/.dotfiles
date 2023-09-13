@@ -35,23 +35,27 @@
     wl-clipboard
     zoxide
     # Gui
+    adw-gtk3
     alsa-tools
     blueman
     bluez
     bluez-alsa
     corectrl
+    dracula-theme
+    dracula-icon-theme
+    emacs29-pgtk
     filezilla
     firefox
     gparted
     kitty
     pavucontrol
-    ## nwg-look
-    ## lxappearance
+    nwg-look
     mpv
     mullvad-vpn
     multiviewer-for-f1
     openrgb
     opentabletdriver
+    sioyek
     solaar
     xfce.thunar
     xfce.thunar-volman
@@ -67,10 +71,6 @@
     swappy
     swaybg
     watershot
-      #for watershot
-    fontconfig
-    pkgconfig
-    libxkbcommon
     #xdg-desktop-portal-gtk
     #xdg-desktop-portal-hyprland
 
@@ -179,6 +179,13 @@
   wayland.windowManager.hyprland.extraConfig = ''
     source=~/.dotfiles/home/modules/hypr/hyprland.conf
   '';
+
+  # Theming
+  #gtk.enable = true;
+  #gtk.theme.package = pkgs.adw-gtk3;
+  #gtk.theme.name = "adw-gtk3";
+  #gtk.iconTheme.package = pkgs.dracula-icon-theme;
+  #gtk.iconTheme.name = "dracula-icon-theme";
 
   # Session variables
   home.sessionVariables = {

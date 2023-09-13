@@ -82,7 +82,7 @@
   services.flatpak.enable = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "Ubuntu" ]; })
   ];
 
   # Set your time zone.

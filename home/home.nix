@@ -28,7 +28,6 @@
     neovim
     nodejs_18
     poppler_utils
-    #poppler_utils
     ripgrep
     starship
     steam
@@ -75,29 +74,13 @@
     swappy
     swaybg
     watershot
-    #xdg-desktop-portal-gtk
-    #xdg-desktop-portal-hyprland
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
-
-  # old an incorrect solution example
-  #xdg.configFile.hypr = {
-  #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
-  #  source = ./modules/hypr;
-  #  recursive = true;
-  #  };
 
   home.file = {
     ".config/broot" = {
@@ -139,9 +122,6 @@
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/waybar";
       }; 
-    #".config/zsh" = {
-    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/zsh";
-    #  }; 
     };
 
   #programs.fzf = {
@@ -184,17 +164,9 @@
     source=~/.dotfiles/home/modules/hypr/hyprland.conf
   '';
 
-  # Theming
-  #gtk.enable = true;
-  #gtk.theme.package = pkgs.adw-gtk3;
-  #gtk.theme.name = "adw-gtk3";
-  #gtk.iconTheme.package = pkgs.dracula-icon-theme;
-  #gtk.iconTheme.name = "dracula-icon-theme";
-
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";
-    #ZDOTDIR = "$HOME/.config/zsh";
   };
 
   # Let Home Manager install and manage itself.

@@ -1,38 +1,21 @@
 ## Configuration
-alias bconf='v ~/.bashrc'
-alias zconf='v ~/.zshrc'
-alias sconf='v ~/.shell_config'
-alias aconf='v ~/.shell_aliases'
-alias qconf='v ~/.config/qtile/config.py'
-alias hconf='v ~/.config/hypr/hyprland.conf'
-alias wconf='v ~/.config/waybar/config'
-alias wstyle='v ~/.config/waybar/style.css'
-alias qasconf='v ~/.config/qtile/scripts/autostart.sh'
-alias qtest='python3 -m py_compile ~/.config/qtile/config.py'
-alias kconf='v ~/.config/kitty/kitty.conf'
-alias pconf='v ~/.config/starship.toml'
-alias bsrc='source ~/.bashrc'
-alias zsrc='source ~/.zshrc'
+alias zconf='v ~/.dotfiles/home/modules/zsh/.zshrc'
+alias sconf='v ~/.dotfiles/home/modules/zsh/.shell_config'
+alias aconf='v ~/.dotfiles/home/modules/zsh/.shell_aliases'
+alias hconf='v ~/.dotfiles/home/modules/hypr/hyprland.conf'
+alias wconf='v ~/.dotfiles/home/modules/waybar/config'
+alias wstyle='v ~/.dotfiles/home/modules/waybar/style.css'
+alias zsrc='source ~/.config/zsh/.zshrc'
 
 ## Basic actions
 alias cl='clear'
 alias ex='exit'
 
-## Package management
-alias sup='sudo pacman -Syu && paru -Syua && flatpak update'
-# Pacman
-alias pmup='sudo pacman -Syu'
-alias pmse='pacman -Ss'
-alias pmsi='pacman -Si'
-alias pmin='sudo pacman -S'
-alias pmun='sudo pacman -Rsn'
-# Paru
-alias prup='paru -Syua'
-alias prse='paru -Ss'
-alias prsi='paru -Si'
-alias prin='paru -S'
-alias prun='paru -Rsn'
-# Flatpak
+# NixOS
+alias uhome='~/.dotfiles/uhome.sh'
+alias usys='~/.dotfiles/usys.sh'
+
+## Flatpak
 alias fpup='flatpak update'
 alias fpse='flatpak search'
 alias fpin='flatpak install'
@@ -40,10 +23,7 @@ alias fpun='flatpak uninstall --delete-data'
 alias fpunun='flatpak uninstall --unused'
 alias fpli='flatpak list'
 
-## Webdav
-# mount my molten hosten config
-alias mntmolten='sudo mount /mnt/moltenhosting'
-alias umntmolten='sudo umount /mnt/moltenhosting'
+alias qpwgraph='hyprctl dispatch exec "org.rncbc.qpwgraph -m"'
 
 ## Apps
 alias v='nvim'
@@ -52,14 +32,8 @@ alias lg='lazygit'
 alias man='batman'
 alias btm='btm -bT --process_command'
 
-## Emacs
-alias er='~/.local/share/scripts/doom-restart.sh'
-
 ## Mullvad
 alias mullcheck='firefox --new-window https://mullvad.net/en/check/'
-
-## Background
-alias bgs='feh --bg-fill ~/Pictures/Wallpapers/arch3.jpg'
 
 ## LS & CD
 alias ls='lsd -ha --header --group-dirs=first --date '+%F %R''
@@ -67,8 +41,7 @@ alias lsl='lsd -lha --header --group-dirs=first --date '+%F %R''
 alias zz='cd ..'
 alias zzz='cd ../..'
 alias zzzz='cd ../../..'
-alias repos='z ~/git_repos/'
-alias df='z ~/git_repos/dotfiles/'
+alias df='z ~/.dotfiles/'
 
 ## GIT alias
 alias gs='git status'
@@ -81,5 +54,19 @@ alias gpsh='git push'
 alias gpll='git pull'
 alias gcln='git clone'
 
-# GNU Stow for dotfiles
-alias dfs='stow -d ~/git_repos/dotfiles -t ~/ .'
+## Flatpak
+
+## Package management Arch
+#alias sup='sudo pacman -Syu && paru -Syua && flatpak update'
+## Pacman
+#alias pmup='sudo pacman -Syu'
+#alias pmse='pacman -Ss'
+#alias pmsi='pacman -Si'
+#alias pmin='sudo pacman -S'
+#alias pmun='sudo pacman -Rsn'
+## Paru
+#alias prup='paru -Syua'
+#alias prse='paru -Ss'
+#alias prsi='paru -Si'
+#alias prin='paru -S'
+#alias prun='paru -Rsn'

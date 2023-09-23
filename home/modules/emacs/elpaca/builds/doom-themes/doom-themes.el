@@ -1,0 +1,1 @@
+/home/ptc/.config/emacs/elpaca/repos/themes/doom-themes.el

@@ -11,6 +11,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.cpu.amd.updateMicrocode = true;
+
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+    };
+
   # Networking
   networking.hostName = "nixos"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -49,6 +56,8 @@
   programs.corectrl.enable = true;
   programs.corectrl.gpuOverclock.ppfeaturemask = "0xffffffff";
   programs.corectrl.gpuOverclock.enable = true;
+
+  services.upower.enable = true;
 
 # ZSH
   programs.zsh = {
@@ -119,6 +128,7 @@
     polkit
     polkit_gnome
     vulkan-tools
+    upower
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

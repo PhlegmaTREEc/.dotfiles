@@ -1,0 +1,1 @@
+/home/ptc/.config/emacs/elpaca/repos/rainbow-mode/rainbow-mode.el

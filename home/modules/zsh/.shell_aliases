@@ -5,6 +5,8 @@ alias aconf='v ~/.dotfiles/home/modules/zsh/.shell_aliases'
 alias hconf='v ~/.dotfiles/home/modules/hypr/hyprland.conf'
 alias wconf='v ~/.dotfiles/home/modules/waybar/config'
 alias wstyle='v ~/.dotfiles/home/modules/waybar/style.css'
+alias homeconf='v ~/.dotfiles/home/home.nix'
+alias sysconf='v ~/.dotfiles/system/configuration.nix'
 alias zsrc='source ~/.config/zsh/.zshrc'
 
 ## Basic actions
@@ -42,6 +44,7 @@ alias zz='cd ..'
 alias zzz='cd ../..'
 alias zzzz='cd ../../..'
 alias df='z ~/.dotfiles/'
+alias cf='z ~/.config/'
 
 ## GIT alias
 alias gs='git status'

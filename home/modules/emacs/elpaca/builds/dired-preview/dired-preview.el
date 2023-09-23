@@ -1,0 +1,1 @@
+/home/ptc/.config/emacs/elpaca/repos/dired-preview/dired-preview.el

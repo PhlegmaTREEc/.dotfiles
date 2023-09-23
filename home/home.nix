@@ -9,70 +9,47 @@
   home.packages = with pkgs; [
     zsh
     # TTY
-    bat
-    broot
-    duf
-    du-dust
-    fd
-    ffmpeg_6
-    fzf
-    gcc
-    git
+    bat bottom broot
+    duf du-dust
+    fd ffmpeg_6 fzf
+    gcc git
     imagemagick
-    lazygit
-    lf
-    lsd
+    lazygit lf lsd
     mupdf
-    navi
-    neofetch
-    neovim
-    nodejs_18
+    navi neofetch neovim nodejs_18
     poppler_utils
     ripgrep
-    starship
-    steam
-    trash-cli
-    tree
+    starship steam
+    trash-cli tree
     unzip
-    wget
-    wl-clipboard
+    wget wl-clipboard
     zoxide
     # Gui
-    adw-gtk3
-    alsa-tools
-    blueman
-    bluez
-    bluez-alsa
+    adw-gtk3 alsa-tools
+    blueman bluez bluez-alsa
     corectrl
-    dracula-theme
-    dracula-icon-theme
+    dracula-theme dracula-icon-theme
     emacs29-pgtk
-    filezilla
-    firefox
+    filezilla firefox
     gparted
     kitty
     imv
     pavucontrol
     nwg-look
-    mpv
-    mullvad-vpn
-    multiviewer-for-f1
-    openrgb
-    opentabletdriver
+    mpv mullvad-vpn multiviewer-for-f1
+    openrgb opentabletdriver
     solaar
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-archive-plugin
-    xfce.thunar-media-tags-plugin
+    xfce.thunar xfce.thunar-volman xfce.thunar-archive-plugin xfce.thunar-media-tags-plugin
     # hyprland
-    waybar
+    hyprland
+    fuzzel
     gammastep
     grim
-    fuzzel
     slurp
-    swaynotificationcenter
     swappy
     swaybg
+    swaynotificationcenter
+    waybar
     watershot
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
@@ -81,6 +58,12 @@
     # # fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
+
+  wayland.windowManager.hyprland = {
+    enable = true;
+    systemdIntegration = false;
+    xwayland.enable = true;
+    };
 
   home.file = {
     ".config/broot" = {

@@ -9,9 +9,10 @@
   home.packages = with pkgs; [
     zsh
     # TTY
-    bat bottom broot
+    bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
+    bottom broot
     duf du-dust
-    fd ffmpeg_6 fzf
+    fd ffmpeg_6
     gcc git
     imagemagick
     lazygit lf lsd
@@ -29,7 +30,6 @@
     blueman bluez bluez-alsa
     corectrl
     dracula-theme dracula-icon-theme
-    emacs29-pgtk
     filezilla firefox
     gparted
     kitty
@@ -107,16 +107,16 @@
       }; 
     };
 
-  #programs.fzf = {
-  #  history
-  #  historyWidgetOptions = [
-  #    "--preview 'echo {}' --preview-window up:3:hidden:wrap"
-  #    "--bind 'ctrl-/:toggle-preview'"
-  #    "--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'"
-  #    "--color header:italic"
-  #    "--header 'Press CTRL-Y to copy command into clipboard'"
-  #    ];
-  #  };
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+    defaultOptions = [
+      "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9"
+      "--color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9"
+      "--color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6"
+      "--color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
+    ];
+  };
 
   # ZSH
   programs.zsh = {

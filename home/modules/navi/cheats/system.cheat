@@ -174,3 +174,19 @@ sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi
 
 # ARCO:add new fonts
 sudo fc-cache -fv
+
+% nodejs, foundryvtt
+
+# NODEJS FoundryVTT
+node /home/ptc/Games/FoundryVTT/foundryvtt/resources/app/main.js --dataPath=/home/ptc/Games/FoundryVTT/foundrydata
+
+% system, systemctl
+
+# list services
+systemctl list-units --type=services
+
+# list all services
+systemctl list-units --type=services --all
+
+# list running services
+systemctl list-units --type=service --state=running

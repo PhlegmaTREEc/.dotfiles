@@ -8,7 +8,6 @@
 
   home.packages = with pkgs; [
     zsh
-    # TTY
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
     bottom broot
     duf du-dust
@@ -17,13 +16,15 @@
     imagemagick
     lazygit lf lsd
     mupdf
+    polkit polkit_gnome
     navi neofetch neovim nodejs_18
     p7zip
     poppler_utils
     ripgrep
     starship steam
     trash-cli tree
-    unzip
+    unzip upower
+    vulkan-tools
     wget wl-clipboard
     zoxide
     # Gui
@@ -67,8 +68,11 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemdIntegration = false;
+    systemd.enable = false;
     xwayland.enable = true;
+    extraConfig = ''
+      source=~/.dotfiles/home/modules/hypr/hyprland.conf
+    '';
     };
 
   home.file = {
@@ -148,11 +152,6 @@
     syntaxHighlighting.enable = true;
   };
   
-  # test with config for hyprland
-  wayland.windowManager.hyprland.extraConfig = ''
-    source=~/.dotfiles/home/modules/hypr/hyprland.conf
-  '';
-
   services.kdeconnect = {
     enable = true;
     indicator = true;

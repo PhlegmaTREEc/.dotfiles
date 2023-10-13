@@ -183,10 +183,10 @@ node /home/ptc/Games/FoundryVTT/foundryvtt/resources/app/main.js --dataPath=/hom
 % system, systemctl
 
 # list services
-systemctl list-units --type=services
+systemctl list-units --type=service
 
 # list all services
-systemctl list-units --type=services --all
+systemctl list-units --type=service --all
 
 # list running services
 systemctl list-units --type=service --state=running

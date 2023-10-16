@@ -1,1 +1,0 @@
-/home/ptc/.config/emacs/elpaca/repos/vertico/extensions/vertico-multiform.el

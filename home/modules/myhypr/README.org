@@ -1,5 +1,0 @@
-* Wrapper
-cp /usr/share/wayland-sessions/hyprland.desktop /usr/share/wayland-sessions/wrapp_hyprland.dekstop
-Edit:
-Name=Wrapp_Hyprland
-Exec=~/.local/bin/hyprwrapp.sh

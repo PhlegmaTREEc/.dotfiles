@@ -1,10 +1,12 @@
-#! /bin/bash
+#!/bin/sh
 flatpak install \
 	org.gtk.Gtk3theme.adw-gtk3 \
 	org.gtk.Gtk3theme.adw-gtk3-dark \
 	com.basemark.BasemarkGPU \
-	com.calibre_ebook.calibre \
 	com.usebottles.bottles \
+	org.gnome.Calculator \
+	com.hunterwittenborn.Celeste \
+	io.gitlab.adhami3310.Converter \
 	com.hunterwittenborn.Celeste \
 	com.discordapp.Discord \
 	com.github.wwmm.easyeffects \
@@ -23,4 +25,7 @@ flatpak install \
 	org.upscayl.Upscayl
 # other
 # net.davidotek.pupgui2 \
-# com.valvesoftware.Steam
+# io.missioncenter.MissionCenter \
+# pipewire
+# xyz.dimtpap.coppwr \
+# io.github.dyegoaurelio.simple-wireplumber-gui \

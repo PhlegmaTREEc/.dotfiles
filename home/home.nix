@@ -27,6 +27,9 @@
     vulkan-tools
     wget wl-clipboard
     zoxide
+    # Benchmark
+    unigine-superposition
+    geekbench
     # Gui
     adw-gtk3 alsa-tools
     blueman bluez bluez-alsa

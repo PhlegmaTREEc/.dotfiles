@@ -28,8 +28,12 @@
     wget wl-clipboard
     zoxide
     # Benchmark
-    unigine-superposition
     geekbench
+    glmark2
+    stress-ng
+    sysbench
+    #unigine-superposition
+    unigine-valley
     # Gui
     adw-gtk3 alsa-tools
     blueman bluez bluez-alsa
@@ -40,6 +44,7 @@
     libsForQt5.kdeconnect-kde
     libsForQt5.qt5ct
     qt6Packages.qt6ct
+    lxqt.pavucontrol-qt
     lxqt.pcmanfm-qt
     kitty
     imv
@@ -49,6 +54,8 @@
     openrgb opentabletdriver
     qpwgraph
     solaar
+    udiskie
+    #devmon + service alternative?
     xfce.thunar xfce.thunar-volman xfce.thunar-archive-plugin xfce.thunar-media-tags-plugin
     # hyprland
     hyprland

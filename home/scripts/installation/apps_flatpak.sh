@@ -22,7 +22,8 @@ flatpak install \
 	de.haeckerfelix.Shortwave \
 	org.soundconverter.SoundConverter \
 	org.nickvision.tubeconverter \
-	org.upscayl.Upscayl
+	org.upscayl.Upscayl \
+	io.github.flattool.Warehouse
 # other
 # net.davidotek.pupgui2 \
 # io.missioncenter.MissionCenter \

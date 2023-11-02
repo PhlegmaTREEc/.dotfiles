@@ -7,14 +7,15 @@
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    zsh
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
     bottom broot
+    cliphist
     duf du-dust
     fd ffmpeg_6
     gcc git
     imagemagick
-    lazygit lf lsd
+    jq
+    lazygit lf libnotify lsd
     mupdf
     polkit polkit_gnome
     navi neofetch neovim nodejs_18
@@ -50,12 +51,12 @@
     imv
     pavucontrol
     nwg-look
-    mpv mullvad-vpn multiviewer-for-f1
+    mpv multiviewer-for-f1
     openrgb opentabletdriver
     qpwgraph
     solaar
-    udiskie
-    #devmon + service alternative?
+    #udiskie
+    #devmon + service alternative to udisk?
     xfce.thunar xfce.thunar-volman xfce.thunar-archive-plugin xfce.thunar-media-tags-plugin
     # hyprland
     hyprland
@@ -68,12 +69,6 @@
     swaynotificationcenter
     waybar
     watershot
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
   ];
 
   wayland.windowManager.hyprland = {
@@ -119,6 +114,9 @@
     ".config/starship" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/starship";
       }; 
+    ".config/swappy" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/swappy";
+      }; 
     ".config/swaync" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/swaync";
       }; 
@@ -141,6 +139,7 @@
   # ZSH
   programs.zsh = {
     enable = true;
+    package = pkgs.zsh;
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
     enableCompletion = true;

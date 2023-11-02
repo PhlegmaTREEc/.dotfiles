@@ -21,10 +21,11 @@
   # Networking
   networking.firewall.enable = true;
   networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
-  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn = {
+    enable = true;
+    package = pkgs.mullvad;
+  };
 
   # Bluetooth
   hardware.bluetooth.enable = true;
@@ -48,25 +49,26 @@
   };
   
   # Solaar + logitech
-  hardware.logitech.wireless.enable = true;
-  hardware.logitech.wireless.enableGraphical = true;
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
+  };
 
   security.polkit.enable = true;
   hardware.opengl.enable = true;
   
-  programs.corectrl.enable = true;
-  programs.corectrl.gpuOverclock.ppfeaturemask = "0xffffffff";
-  programs.corectrl.gpuOverclock.enable = true;
+  programs.corectrl = {
+    enable = true;
+    gpuOverclock.ppfeaturemask = "0xffffffff";
+    gpuOverclock.enable = true;
+  };
 
   services.upower.enable = true;
 
-# ZSH
   programs.zsh = {
     enable = true;
   };
-
   users.defaultUserShell = pkgs.zsh;
-  #environment.shells = with pkgs; [ zsh ];
 
   xdg.portal = {
       enable = true;
@@ -78,6 +80,7 @@
 
   programs.steam = {
     enable = true;
+    #package = steam;
   };
 
   services.flatpak.enable = true;
@@ -126,14 +129,15 @@
   users.users.ptc = {
     isNormalUser = true;
     initialPassword = "pass";
-    extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" ]; # Enable ‘sudo’ for the user.
     packages = with pkgs; [
     ];
   };
 
-  #environment.systemPackages = with pkgs; [
-  #  vim
-  #];
+  environment.systemPackages = with pkgs; [
+    vim
+    virt-manager
+  ];
 
   programs.gnupg.agent = {
     enable = true;
@@ -142,6 +146,10 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  # Virtual machine
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   system.stateVersion = "23.05";
 }

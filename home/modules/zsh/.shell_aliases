@@ -35,6 +35,9 @@ alias hyprshot='~/Applications/Hyprshot/hyprshot'
 
 ## Mullvad
 alias mullcheck='firefox --new-window https://mullvad.net/en/check/'
+alias mullc='mullvad connect'
+alias mulld='mullvad disconnect'
+alias mulls='mullvad status'
 
 ## LS & CD
 alias ls='lsd -ha --header --group-dirs=first --date '+%F %R''
@@ -42,8 +45,8 @@ alias lsl='lsd -lha --header --group-dirs=first --date '+%F %R''
 alias zz='cd ..'
 alias zzz='cd ../..'
 alias zzzz='cd ../../..'
-alias df='z ~/.dotfiles/'
-alias cf='z ~/.config/'
+alias zdot='z ~/.dotfiles/'
+alias zconf='z ~/.config/'
 
 ## GIT alias
 alias gs='git status'

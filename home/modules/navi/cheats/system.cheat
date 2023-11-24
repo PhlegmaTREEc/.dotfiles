@@ -28,10 +28,16 @@ ls -al /dev/disk/by-uuid
 # Restart sound (pipewire, wireplumber)
 systemctl --user restart wireplumber pipewire pipewire-pulse
 
+# Fix flathub mime part1
+systemctl --user import-environment PATH
+
+# Fix flathub mime part2
+systemctl --user restart xdg-desktop-portal.service
+
 % tools, ventoy
 
-# Launch Ventoy WebGUI from ventoy folder
-sudo sh VentoyWeb.sh
+# Launch Ventoy WebGUI
+sudo ventoy-web
 
 % tools, magick
 
@@ -68,7 +74,7 @@ ffmpeg -i <source> <target>
 # batch convert AV files (adjust input and output format)
 for i in *.mp3; do ffmpeg -i "$i" "${i%.*}.ogg"; done
 
-# cut out a part of AV file into new file; -ss 1 - where to start; -t 2 where to end (in seconds)
+# cut part AV file; -ss 1 =start; -t 2 =end (in seconds) end is how many seconds after start not total value
 ffmpeg -ss 1 -i source.format -t 2 target.foramt
 
 % tools, pdf

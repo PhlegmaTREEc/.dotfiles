@@ -12,7 +12,8 @@
     cliphist
     duf du-dust
     fd ffmpeg_6
-    gcc git
+    gcc git glib
+    hugo
     imagemagick
     jq
     lazygit lf libnotify lsd
@@ -27,6 +28,7 @@
     unzip upower
     vulkan-tools
     wget wl-clipboard
+    xdg-utils
     zoxide
     # Benchmark
     geekbench
@@ -45,7 +47,6 @@
     libsForQt5.kdeconnect-kde
     libsForQt5.qt5ct
     qt6Packages.qt6ct
-    lxqt.pavucontrol-qt
     lxqt.pcmanfm-qt
     kitty
     imv
@@ -161,6 +162,25 @@
     syntaxHighlighting.enable = true;
   };
   
+  xdg.mime.enable = true;
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/png" = ["imv.desktop"];
+      "image/jpg" = ["imv.desktop"];
+      "image/webp" = ["imv.desktop"];
+      "x-scheme-handler/http" = ["firefox.desktop"];
+      "x-scheme-handler/https" = ["firefox.desktop"];
+      "application/x-extension-htm" = ["firefox.desktop"];
+      "application/x-extension-html" = ["firefox.desktop"];
+      "application/x-extension-shtml" = ["firefox.desktop"];
+      "application/xhtml + xml" = ["firefox.desktop"];
+      "application/x-extension-xhtml" = ["firefox.desktop"];
+      "application/x-extension-xht" = ["firefox.desktop"];
+      "text/html" = ["firefox.desktop"];
+    };
+  };
+
   services.kdeconnect = {
     enable = true;
     indicator = true;

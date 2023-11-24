@@ -73,9 +73,10 @@
   xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gtk
       ];
+      config.common.default = "*";
     };
 
   programs.steam = {
@@ -135,6 +136,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    ventoy-full
     vim
     virt-manager
   ];

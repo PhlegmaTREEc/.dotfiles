@@ -18,11 +18,10 @@
     jq
     lazygit lf libnotify lsd
     mupdf
-    polkit polkit_gnome
     navi neofetch neovim nodejs_18
     p7zip
     poppler_utils
-    ripgrep
+    ripgrep rclone
     starship steam
     trash-cli tree
     unzip upower
@@ -43,14 +42,12 @@
     corectrl
     dracula-theme dracula-icon-theme
     filezilla firefox
-    gparted
-    libsForQt5.kdeconnect-kde
+    gnome.nautilus nautilus-open-any-terminal
     libsForQt5.qt5ct
     qt6Packages.qt6ct
-    lxqt.pcmanfm-qt
     kitty
     imv
-    pavucontrol
+    pasystray pavucontrol
     nwg-look
     mpv multiviewer-for-f1
     openrgb opentabletdriver
@@ -58,7 +55,6 @@
     solaar
     #udiskie
     #devmon + service alternative to udisk?
-    xfce.thunar xfce.thunar-volman xfce.thunar-archive-plugin xfce.thunar-media-tags-plugin
     # hyprland
     hyprland
     fuzzel
@@ -179,11 +175,6 @@
       "application/x-extension-xht" = ["firefox.desktop"];
       "text/html" = ["firefox.desktop"];
     };
-  };
-
-  services.kdeconnect = {
-    enable = true;
-    indicator = true;
   };
 
   # Session variables

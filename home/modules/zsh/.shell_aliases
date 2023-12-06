@@ -1,21 +1,17 @@
 ## Configuration
-alias zconf='v ~/.dotfiles/home/modules/zsh/.zshrc'
-alias sconf='v ~/.dotfiles/home/modules/zsh/.shell_config'
-alias aconf='v ~/.dotfiles/home/modules/zsh/.shell_aliases'
-alias hconf='v ~/.dotfiles/home/modules/hypr/hyprland.conf'
-alias wconf='v ~/.dotfiles/home/modules/waybar/config'
-alias wstyle='v ~/.dotfiles/home/modules/waybar/style.css'
-alias homeconf='v ~/.dotfiles/home/home.nix'
-alias sysconf='v ~/.dotfiles/system/configuration.nix'
-alias zsrc='source ~/.config/zsh/.zshrc'
-
-## Basic actions
-alias cl='clear'
-alias ex='exit'
+alias cshell='v ~/.dotfiles/home/modules/zsh/.shell_config'
+alias calias='v ~/.dotfiles/home/modules/zsh/.shell_aliases'
+alias czsh='v ~/.dotfiles/home/modules/zsh/.zshrc'
+alias szsh='source ~/.config/zsh/.zshrc'
+alias chypr='v ~/.dotfiles/home/modules/hypr/hyprland.conf'
+alias cway='v ~/.dotfiles/home/modules/waybar/config'
+alias cways='v ~/.dotfiles/home/modules/waybar/style.css'
+alias chm='v ~/.dotfiles/home/home.nix'
+alias cnos='v ~/.dotfiles/system/configuration.nix'
 
 # NixOS
-alias uhome='~/.dotfiles/uhome.sh'
-alias usys='~/.dotfiles/usys.sh'
+alias uhm='~/.dotfiles/uhome.sh'
+alias unos='~/.dotfiles/usys.sh'
 
 ## Flatpak
 alias fpup='flatpak update'
@@ -24,6 +20,10 @@ alias fpin='flatpak install'
 alias fpun='flatpak uninstall --delete-data'
 alias fpunun='flatpak uninstall --unused'
 alias fpli='flatpak list'
+
+## Basic actions
+alias cl='clear'
+alias ex='exit'
 
 ## Apps
 alias v='nvim'
@@ -58,8 +58,6 @@ alias gc='git commit -m $1'
 alias gpsh='git push'
 alias gpll='git pull'
 alias gcln='git clone'
-
-## Flatpak
 
 ## Package management Arch
 #alias sup='sudo pacman -Syu && paru -Syua && flatpak update'

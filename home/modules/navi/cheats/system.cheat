@@ -196,3 +196,26 @@ systemctl list-units --type=service --all
 
 # list running services
 systemctl list-units --type=service --state=running
+
+% nixos, home-manager
+
+# list channels
+nix-channel --list
+
+# nix list generations
+nix profile history --profile /nix/var/nix/profiles/system
+
+# collect garbage
+nix-collect-garbage
+
+# collect garbage older than 14 days
+nix-collect-garbage --delete-older-than 14d
+
+# nix store optimise
+nix-store --optimise
+
+# nix store garbace collection
+nix-store --gc
+
+# list home manager generations
+home-manager generations

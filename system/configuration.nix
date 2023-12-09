@@ -54,6 +54,11 @@
     enableGraphical = true;
   };
 
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
+
   security.polkit.enable = true;
   hardware.opengl.enable = true;
   
@@ -114,6 +119,18 @@
     pulse.enable = true;
     # If you want to use JACK applications, uncomment this
     # jack.enable = true;
+  };
+
+  # NIX and nixos
+    nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
+  nix.optimise = {
+    automatic = true;
+    #dates = "daily";
   };
 
   # storage

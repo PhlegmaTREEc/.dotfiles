@@ -199,6 +199,9 @@ systemctl list-units --type=service --state=running
 
 % nixos, home-manager
 
+# fix nix flake "cached failure of attribute" - !!run in flake folder!!
+sudo nixos-rebuild switch --flake .# --option eval-cache false
+
 # list channels
 nix-channel --list
 

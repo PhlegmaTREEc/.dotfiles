@@ -11,6 +11,7 @@
     bottom broot
     cliphist
     duf du-dust
+    exiftool
     fd ffmpeg_6
     gcc git glib
     hugo
@@ -37,22 +38,23 @@
     #unigine-superposition
     unigine-valley
     # Gui
-    adw-gtk3 alsa-tools
+    #adw-gtk3
+    alsa-tools
     blueman bluez bluez-alsa
-    corectrl
-    dracula-theme dracula-icon-theme
     filezilla firefox
-    gnome.nautilus nautilus-open-any-terminal
+    gnome.nautilus nautilus-open-any-terminal gnome.file-roller
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     kitty
     imv
+    papirus-icon-theme papirus-folders
     pasystray pavucontrol
-    nwg-look
     mpv multiviewer-for-f1
     openrgb opentabletdriver
     qpwgraph
     solaar
+    xfce.thunar xfce.thunar-volman xfce.thunar-archive-plugin xfce.thunar-archive-plugin xfce.thunar-media-tags-plugin
+    webp-pixbuf-loader
     #udiskie
     #devmon + service alternative to udisk?
     # hyprland
@@ -60,6 +62,7 @@
     fuzzel
     gammastep
     grim
+    hyprshot
     slurp
     swappy
     swaybg
@@ -158,6 +161,14 @@
     syntaxHighlighting.enable = true;
   };
   
+  ### MAKE BACKUP OF BASIC FOLDERS BEFORE TRYING THIS OPTION
+  #xdg = {
+  #  userDirs = {
+  #      enable = true;
+  #      createDirectories = true;
+  #  };
+  #};
+
   xdg.mime.enable = true;
   xdg.mimeApps = {
     enable = true;
@@ -174,6 +185,30 @@
       "application/x-extension-xhtml" = ["firefox.desktop"];
       "application/x-extension-xht" = ["firefox.desktop"];
       "text/html" = ["firefox.desktop"];
+    };
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Dracula";
+      package = pkgs.dracula-theme;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-folders;
+      #package = pkgs.papirus-folders.override {
+      #  folderColor = "violet";
+      };
+    gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+        '';
+    };
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+        '';
     };
   };
 

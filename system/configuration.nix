@@ -11,6 +11,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.loader.systemd-boot.configurationLimit = 15;
+
+  boot.kernelPackages = pkgs.linuxPackages_6_6;
+
   hardware.cpu.amd.updateMicrocode = true;
 
   hardware.opentabletdriver = {
@@ -31,7 +35,22 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
+  
+  # Solaar + logitech
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
+  };
 
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
+
+  hardware.opengl.enable = true;
+  
+  # Polkit
+  security.polkit.enable = true;
   #systemd = {
   #  user.services.polkit-gnome-authentication-agent-1 = {
   #    description = "polkit-gnome-authentication-agent-1";
@@ -48,25 +67,11 @@
   #  };
   #};
   
-  # Solaar + logitech
-  hardware.logitech.wireless = {
-    enable = true;
-    enableGraphical = true;
-  };
-
-  services.fstrim = {
-    enable = true;
-    interval = "weekly";
-  };
-
-  security.polkit.enable = true;
-  hardware.opengl.enable = true;
-  
-  programs.corectrl = {
-    enable = true;
-    gpuOverclock.ppfeaturemask = "0xffffffff";
-    gpuOverclock.enable = true;
-  };
+  #programs.corectrl = {
+  #  enable = true;
+  #  gpuOverclock.ppfeaturemask = "0xffffffff";
+  #  gpuOverclock.enable = true;
+  #};
 
   services.upower.enable = true;
 
@@ -86,7 +91,6 @@
 
   programs.steam = {
     enable = true;
-    #package = steam;
   };
 
   services.flatpak.enable = true;
@@ -122,16 +126,13 @@
   };
 
   # NIX and nixos
-    nix.gc = {
+  nix.gc = {
     automatic = true;
     dates = "weekly";
     options = "--delete-older-than 14d";
   };
 
-  nix.optimise = {
-    automatic = true;
-    #dates = "daily";
-  };
+  nix.settings.auto-optimise-store = true;
 
   # storage
   # device moutings
@@ -148,8 +149,24 @@
     isNormalUser = true;
     initialPassword = "pass";
     extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-    ];
+  };
+
+  environment.variables = {
+    NIXOS_OZONE_WL = "1";
+    XDG_CURRENT_DESKTOP = "Hyprland";
+    XDG_SESSION_TYPE = "wayland";
+    XDG_SESSION_DESKTOP = "Hyprland";
+    GDK_BACKEND = "wayland,x11";
+    CLUTTER_BACKEND = "wayland";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "1";
+    MOZ_ENABLE_WAYLAND = "1";
+    #SDL_VIDEODRIVER = "wayland"; #Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
+    _JAVA_AWT_WM_NONREPARENTING = "1";
+    XCURSOR_SIZE = "24";
+    #XCURSOR_THEME
   };
 
   environment.systemPackages = with pkgs; [
@@ -157,8 +174,13 @@
     ventoy-full
     vim
     virt-manager
-    polkit polkit_gnome
+    lxqt.lxqt-policykit
   ];
+
+  # save setting fot Thunar
+  programs.xfconf.enable = true;
+
+  services.tumbler.enable = true;
 
   programs.gnupg.agent = {
     enable = true;

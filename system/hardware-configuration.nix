@@ -48,6 +48,10 @@
       fsType = "vfat";
     };
 
+  # Adding second ssd as data storage
+  # Folder /mnt/ssdone has to be created
+  # Ownership of the folder has to be changed
+  # sudo chown -R ptc:users ssdone
   fileSystems."/mnt/ssdone" =
     { device = "/dev/disk/by-uuid/58a54f27-dee8-4ae9-b5fa-0802708737c0";
       fsType = "ext4";

@@ -58,6 +58,13 @@
       options = ["defaults"];
     };
 
+  # Entry to connect to mum's old drive for rescue
+  #fileSystems."/mnt/testdrive" =
+  #  { device = "/dev/disk/by-uuid/1C06-195B";
+  #    fsType = "vfat";
+  #    options = ["defaults"];
+  #  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

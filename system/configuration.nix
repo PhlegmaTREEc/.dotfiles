@@ -10,8 +10,8 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
   boot.loader.systemd-boot.configurationLimit = 15;
+  boot.loader.timeout = 2;
 
   boot.kernelPackages = pkgs.linuxPackages_6_6;
 
@@ -47,7 +47,13 @@
     interval = "weekly";
   };
 
-  hardware.opengl.enable = true;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = [ pkgs.amdvlk ];
+    extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+  };
   
   # Polkit
   security.polkit.enable = true;
@@ -66,6 +72,10 @@
   #      };
   #  };
   #};
+
+  systemd.extraConfig = ''
+    DefaultTimeoutStopSec=20s
+  '';
   
   #programs.corectrl = {
   #  enable = true;
@@ -91,6 +101,25 @@
 
   programs.steam = {
     enable = true;
+  };
+
+  programs.gamemode.enable = true;
+
+  nixpkgs.config.packageOverrides = pkgs: {
+    steam = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        xorg.libXcursor
+        xorg.libXi
+        xorg.libXinerama
+        xorg.libXScrnSaver
+        libpng
+        libpulseaudio
+        libvorbis
+        stdenv.cc.cc.lib
+        libkrb5
+        keyutils
+      ];
+    };
   };
 
   services.flatpak.enable = true;
@@ -171,6 +200,7 @@
 
   environment.systemPackages = with pkgs; [
     gnome.gnome-disk-utility
+    mangohud
     ventoy-full
     vim
     virt-manager

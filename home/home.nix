@@ -46,6 +46,7 @@
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     kitty
+    lact
     imv
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
@@ -169,24 +170,24 @@
   #  };
   #};
 
-  xdg.mime.enable = true;
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "image/png" = ["imv.desktop"];
-      "image/jpg" = ["imv.desktop"];
-      "image/webp" = ["imv.desktop"];
-      "x-scheme-handler/http" = ["firefox.desktop"];
-      "x-scheme-handler/https" = ["firefox.desktop"];
-      "application/x-extension-htm" = ["firefox.desktop"];
-      "application/x-extension-html" = ["firefox.desktop"];
-      "application/x-extension-shtml" = ["firefox.desktop"];
-      "application/xhtml + xml" = ["firefox.desktop"];
-      "application/x-extension-xhtml" = ["firefox.desktop"];
-      "application/x-extension-xht" = ["firefox.desktop"];
-      "text/html" = ["firefox.desktop"];
-    };
-  };
+  #xdg.mime.enable = true;
+  #xdg.mimeApps = {
+  #  enable = true;
+  #  defaultApplications = {
+  #    "image/png" = ["imv.desktop"];
+  #    "image/jpg" = ["imv.desktop"];
+  #    "image/webp" = ["imv.desktop"];
+  #    "x-scheme-handler/http" = ["firefox.desktop"];
+  #    "x-scheme-handler/https" = ["firefox.desktop"];
+  #    "application/x-extension-htm" = ["firefox.desktop"];
+  #    "application/x-extension-html" = ["firefox.desktop"];
+  #    "application/x-extension-shtml" = ["firefox.desktop"];
+  #    "application/xhtml + xml" = ["firefox.desktop"];
+  #    "application/x-extension-xhtml" = ["firefox.desktop"];
+  #    "application/x-extension-xht" = ["firefox.desktop"];
+  #    "text/html" = ["firefox.desktop"];
+  #  };
+  #};
 
   gtk = {
     enable = true;

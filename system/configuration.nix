@@ -36,12 +36,15 @@
       #XCURSOR_THEME
     };
     systemPackages = with pkgs; [
+      etcher
       gnome.gnome-disk-utility
       mangohud
+      polkit_gnome
+      protonvpn-gui
       ventoy-full
       vim
       virt-manager
-      lxqt.lxqt-policykit
+      wireguard-tools
     ];
   };
 
@@ -73,8 +76,11 @@
     };
   };
 
+
   networking = {
-    firewall.enable = true;
+    firewall = {
+      enable = true;
+      };
     hostName = "nixos";
     networkmanager.enable = true;
   };
@@ -100,6 +106,9 @@
       "steam-original"
       "steam-run"
     ];
+    permittedInsecurePackages = [ # added to allow install of etcher - version 1.18.13 should fix this
+      "electron-19.1.9"
+    ];
     packageOverrides = pkgs: {
       steam = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
@@ -120,11 +129,11 @@
   };
 
   programs = {
-    #corectrl = {
-    #  enable = true;
-    #  gpuOverclock.ppfeaturemask = "0xffffffff";
-    #  gpuOverclock.enable = true;
-    #};
+    corectrl = {
+      enable = true;
+      gpuOverclock.ppfeaturemask = "0xffffffff";
+      gpuOverclock.enable = true;
+    };
     dconf.enable = true;
     gamemode.enable = true;
     gnupg.agent = {
@@ -180,19 +189,19 @@
     extraConfig = ''
       DefaultTimeoutStopSec=20s
       '';
-  #  user.services.polkit-gnome-authentication-agent-1 = {
-  #    description = "polkit-gnome-authentication-agent-1";
-  #    wantedBy = [ "graphical-session.target" ];
-  #    wants = [ "graphical-session.target" ];
-  #    after = [ "graphical-session.target" ];
-  #    serviceConfig = {
-  #        Type = "simple";
-  #        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  #        Restart = "on-failure";
-  #        RestartSec = 1;
-  #        TimeoutStopSec = 10;
-  #      };
-  #  };
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      serviceConfig = {
+          Type = "simple";
+          ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+          Restart = "on-failure";
+          RestartSec = 1;
+          TimeoutStopSec = 10;
+        };
+    };
   };
 
   # Set timezone

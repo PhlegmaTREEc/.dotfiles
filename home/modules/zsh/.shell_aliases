@@ -33,11 +33,16 @@ alias man='batman'
 alias btm='btm -bT --process_command'
 alias hyprshot='~/Applications/Hyprshot/hyprshot'
 
-## Mullvad
+## VPN
 alias mullcheck='firefox --new-window https://mullvad.net/en/check/'
 alias mullc='mullvad connect'
 alias mulld='mullvad disconnect'
 alias mulls='mullvad status'
+
+alias wgu='wg-quick up wg0'
+alias wgs='sudo wg'
+alias wgc='firefox --new-window https://ip.me'
+alias wgd='wg-quick down wg0'
 
 ## LS & CD
 alias ls='lsd -ha --header --group-dirs=first --date '+%F %R''

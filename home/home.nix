@@ -46,7 +46,7 @@
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     kitty
-    lact
+    #lact
     imv
     papirus-icon-theme papirus-folders
     pasystray pavucontrol

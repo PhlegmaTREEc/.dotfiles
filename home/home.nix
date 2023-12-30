@@ -19,7 +19,7 @@
     jq
     lazygit lf libnotify lsd
     mupdf
-    navi neofetch neovim nodejs_18
+    navi neovim nodejs_18
     p7zip
     poppler_utils
     ripgrep rclone
@@ -38,11 +38,10 @@
     #unigine-superposition
     unigine-valley
     # Gui
-    #adw-gtk3
     alsa-tools
     blueman bluez bluez-alsa
     filezilla firefox
-    gnome.nautilus nautilus-open-any-terminal gnome.file-roller
+    gnome.file-roller
     libsForQt5.qt5ct
     qt6Packages.qt6ct
     kitty

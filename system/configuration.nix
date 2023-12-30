@@ -13,8 +13,10 @@
       systemd-boot.configurationLimit = 15;
       timeout = 2;
     };
-    # Kernel version
-    kernelPackages = pkgs.linuxPackages_6_6;
+    # Use zen kernel
+    #kernelPackages = pkgs.linuxPackages_zen;
+    # Use specific kernel branch
+    #kernelPackages = pkgs.linuxKernel.kernels.linux_6_6;
   };
 
   environment = {
@@ -36,11 +38,12 @@
       #XCURSOR_THEME
     };
     systemPackages = with pkgs; [
+      bazecor
       etcher
+      fastfetch
       gnome.gnome-disk-utility
       mangohud
       polkit_gnome
-      protonvpn-gui
       ventoy-full
       vim
       virt-manager

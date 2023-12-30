@@ -222,3 +222,8 @@ nix-store --gc
 
 # list home manager generations
 home-manager generations
+
+% Git
+
+# update git submodule (like for Hugo Theme)
+git submodule update --remote --merge

@@ -18,6 +18,15 @@
     # Use specific kernel branch
     #kernelPackages = pkgs.linuxKernel.kernels.linux_6_6;
   };
+  
+  boot.binfmt.registrations.appimage = {
+    wrapInterpreterInShell = false;
+    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
+    recognitionType = "magic";
+    offset = 0;
+    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
+    magicOrExtension = ''\x7fELF....AI\x02'';
+  };
 
   environment = {
     variables = {
@@ -38,10 +47,11 @@
       #XCURSOR_THEME
     };
     systemPackages = with pkgs; [
-      bazecor
+      appimage-run
       etcher
       fastfetch
       gnome.gnome-disk-utility
+      logitech-udev-rules
       mangohud
       polkit_gnome
       ventoy-full
@@ -78,7 +88,6 @@
       daemon.enable = true;
     };
   };
-
 
   networking = {
     firewall = {
@@ -180,6 +189,9 @@
     udisks2 = {
       enable = true;
     };
+    udev = {
+      enable = true;
+      };
     upower.enable = true;
   };
 

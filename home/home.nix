@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   home.username = "ptc";
@@ -6,7 +6,19 @@
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
+  nixpkgs.overlays = [ (final: prev:
+    {
+      bazecor = prev.bazecor.overrideAttrs (old: {
+        src = prev.fetchurl {
+          url = "https://github.com/Dygmalab/Bazecor/releases/download/v1.3.9/Bazecor-1.3.9-x64.AppImage";
+          hash = "sha256-qve5xxhhyVej8dPDkZ7QQdeDUmqGO4pHJTykbS4RhAk=";
+        };
+      });
+    }
+  ) ];
+
   home.packages = with pkgs; [
+    bazecor
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
     bottom broot
     cliphist
@@ -24,7 +36,7 @@
     poppler_utils
     ripgrep rclone
     starship steam
-    trash-cli tree
+    trash-cli tree tree-sitter
     unzip upower
     vulkan-tools
     wget wl-clipboard
@@ -40,7 +52,8 @@
     # Gui
     alsa-tools
     blueman bluez bluez-alsa
-    filezilla firefox
+    easyeffects
+    filezilla firefox floorp
     gnome.file-roller
     libsForQt5.qt5ct
     qt6Packages.qt6ct
@@ -57,6 +70,7 @@
     webp-pixbuf-loader
     #udiskie
     #devmon + service alternative to udisk?
+    zathura
     # hyprland
     hyprland
     fuzzel
@@ -70,6 +84,7 @@
     waybar
     watershot
   ];
+
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -189,6 +204,7 @@
   #};
 
   gtk = {
+    #Flatpak note: in flatseal add Variables: GTK_THEME=Adwaita:dark to use dark theme
     enable = true;
     theme = {
       name = "Dracula";

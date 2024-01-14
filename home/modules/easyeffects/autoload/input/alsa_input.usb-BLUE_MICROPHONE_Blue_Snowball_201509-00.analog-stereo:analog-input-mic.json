@@ -1,0 +1,6 @@
+{
+    "device": "alsa_input.usb-BLUE_MICROPHONE_Blue_Snowball_201509-00.analog-stereo",
+    "device-description": "Blue Snowball Analog Stereo",
+    "device-profile": "analog-input-mic",
+    "preset-name": "basic"
+}

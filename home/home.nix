@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nixvim,... }:
 
 {
   home.username = "ptc";
@@ -6,16 +6,22 @@
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  nixpkgs.overlays = [ (final: prev:
-    {
-      bazecor = prev.bazecor.overrideAttrs (old: {
-        src = prev.fetchurl {
-          url = "https://github.com/Dygmalab/Bazecor/releases/download/v1.3.9/Bazecor-1.3.9-x64.AppImage";
-          hash = "sha256-qve5xxhhyVej8dPDkZ7QQdeDUmqGO4pHJTykbS4RhAk=";
-        };
-      });
-    }
-  ) ];
+  #programs.nixvim = {
+  #  enable = true;
+  #  colorschemes.dracula.enable = true;
+  #  plugins.lualine.enable = true;
+  #};
+
+  #nixpkgs.overlays = [ (final: prev:
+  #  {
+  #    bazecor = prev.bazecor.overrideAttrs (old: {
+  #      src = prev.fetchurl {
+  #        url = "https://github.com/Dygmalab/Bazecor/releases/download/v1.3.9/Bazecor-1.3.9-x64.AppImage";
+  #        hash = "sha256-qve5xxhhyVej8dPDkZ7QQdeDUmqGO4pHJTykbS4RhAk=";
+  #      };
+  #    });
+  #  }
+  #) ];
 
   home.packages = with pkgs; [
     bazecor
@@ -31,7 +37,8 @@
     jq
     lazygit lf libnotify lsd
     mupdf
-    navi neovim nodejs_18
+    neovim
+    navi nodejs_18
     p7zip
     poppler_utils
     ripgrep rclone
@@ -42,6 +49,9 @@
     wget wl-clipboard
     xdg-utils
     zoxide
+    # Speedtest net
+    speedtest-cli
+    fast-cli
     # Benchmark
     geekbench
     glmark2
@@ -54,19 +64,26 @@
     blueman bluez bluez-alsa
     easyeffects
     filezilla firefox floorp
-    gnome.file-roller
+    libsForQt5.ark
+    libsForQt5.dolphin
+    libsForQt5.dolphin-plugins
+    libsForQt5.kio
+    libsForQt5.kio-extras
     libsForQt5.qt5ct
+    libsForQt5.qtstyleplugin-kvantum
     qt6Packages.qt6ct
+    qt6Packages.qtstyleplugin-kvantum
     kitty
     #lact
     imv
+    dracula-theme
+    dracula-icon-theme
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
     mpv multiviewer-for-f1
     openrgb opentabletdriver
     qpwgraph
     solaar
-    xfce.thunar xfce.thunar-volman xfce.thunar-archive-plugin xfce.thunar-archive-plugin xfce.thunar-media-tags-plugin
     webp-pixbuf-loader
     #udiskie
     #devmon + service alternative to udisk?
@@ -203,6 +220,11 @@
   #  };
   #};
 
+  qt = {
+    enable = true;
+    #style.name = kvantum;
+  };
+
   gtk = {
     #Flatpak note: in flatseal add Variables: GTK_THEME=Adwaita:dark to use dark theme
     enable = true;
@@ -211,11 +233,16 @@
       package = pkgs.dracula-theme;
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-folders;
+      name = "Dracula";
+      package = pkgs.dracula-icon-theme;
+      #name = "Papirus-Dark";
+      #package = pkgs.papirus-folders;
       #package = pkgs.papirus-folders.override {
       #  folderColor = "violet";
       };
+    cursorTheme = {
+      name = "Dracula";
+    };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1

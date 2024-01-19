@@ -44,5 +44,8 @@
 	      ];
       };
     };
+    packages.${system} = {
+      inherit (pkgs) bazecor;
+    };
   };
 }

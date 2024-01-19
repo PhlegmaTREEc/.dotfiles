@@ -12,17 +12,6 @@
   #  plugins.lualine.enable = true;
   #};
 
-  #nixpkgs.overlays = [ (final: prev:
-  #  {
-  #    bazecor = prev.bazecor.overrideAttrs (old: {
-  #      src = prev.fetchurl {
-  #        url = "https://github.com/Dygmalab/Bazecor/releases/download/v1.3.9/Bazecor-1.3.9-x64.AppImage";
-  #        hash = "sha256-qve5xxhhyVej8dPDkZ7QQdeDUmqGO4pHJTykbS4RhAk=";
-  #      };
-  #    });
-  #  }
-  #) ];
-
   home.packages = with pkgs; [
     bazecor
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
@@ -100,8 +89,8 @@
     swaynotificationcenter
     waybar
     watershot
+    wev
   ];
-
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -168,7 +157,6 @@
     ];
   };
 
-  # ZSH
   programs.zsh = {
     enable = true;
     package = pkgs.zsh;

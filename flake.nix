@@ -20,7 +20,6 @@
     pkgs = import nixpkgs {
       inherit system;
       config = {allowUnfree = true; };
-      overlays = [ import ./lib/overlays.nix {inherit nixpkgs system; } ];
     };
     #homeManagerModules = [
     #  nixvim.homeManagerModules.nixvim
@@ -43,9 +42,6 @@
           })
 	      ];
       };
-    };
-    packages.${system} = {
-      inherit (pkgs) bazecor;
     };
   };
 }

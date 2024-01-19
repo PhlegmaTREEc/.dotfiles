@@ -28,6 +28,11 @@
     magicOrExtension = ''\x7fELF....AI\x02'';
   };
 
+  #i18n.defaultLocale = "cs_CZ.UTF-8";
+  #i18n.extraLocaleSettings = {
+  #  LC_CTYPE = "cs_CZ.UTF-8";
+  #};
+
   environment = {
     variables = {
       NIXOS_OZONE_WL = "1";
@@ -230,7 +235,7 @@
     users.ptc = {
       isNormalUser = true;
       initialPassword = "pass"; # change password after install!!!
-        extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
     };
     defaultUserShell = pkgs.zsh;
   };

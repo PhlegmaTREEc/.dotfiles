@@ -35,6 +35,7 @@
     trash-cli tree tree-sitter
     unzip upower
     vulkan-tools
+    wev #wayland event viewer - prints input events
     wget wl-clipboard
     xdg-utils
     zoxide
@@ -89,7 +90,6 @@
     swaynotificationcenter
     waybar
     watershot
-    wev
   ];
 
   wayland.windowManager.hyprland = {

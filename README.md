@@ -37,6 +37,12 @@
 
 ## NON Nixos Notes
 
+## Dygma Notes
+
+### Manual flash
+
+- [link](https://github.com/Dygmalab/Bazecor/issues/643#issuecomment-1884763670)
+
 ### Changing device name for wireplubmer
 
 - Arch [wiki](https://wiki.archlinux.org/title/WirePlumber) link - 2.4

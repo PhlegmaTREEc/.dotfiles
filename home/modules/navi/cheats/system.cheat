@@ -208,6 +208,9 @@ nix-channel --list
 # nix list generations
 nix profile history --profile /nix/var/nix/profiles/system
 
+# delete generation
+sudo rm /nix/var/nix/profiles/system-
+
 # collect garbage
 nix-collect-garbage
 
@@ -227,3 +230,14 @@ home-manager generations
 
 # update git submodule (like for Hugo Theme)
 git submodule update --remote --merge
+
+% boot
+
+# list entries
+sudo bootctl list
+
+# remove boot entry link
+sudo rm /boot/loader/entries/
+
+# remove boot entry
+sudo bootctl cleanup

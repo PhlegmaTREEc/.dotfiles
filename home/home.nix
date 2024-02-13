@@ -19,7 +19,7 @@
     cliphist
     duf du-dust
     exiftool
-    fd ffmpeg_6
+    fd ffmpeg_6 ffmpegthumbnailer
     gcc git glib
     hugo
     imagemagick
@@ -33,11 +33,12 @@
     ripgrep rclone
     starship steam
     trash-cli tree tree-sitter
-    unzip upower
+    unzip upower unar
     vulkan-tools
     wev #wayland event viewer - prints input events
     wget wl-clipboard
     xdg-utils
+    yazi
     zoxide
     # Speedtest net
     speedtest-cli
@@ -75,11 +76,15 @@
     qpwgraph
     solaar
     webp-pixbuf-loader
+    r2modman
+    maptool
     #udiskie
     #devmon + service alternative to udisk?
     zathura
     # hyprland
     hyprland
+    hyprlang
+    hyprpaper
     fuzzel
     gammastep
     grim
@@ -96,12 +101,15 @@
     enable = true;
     systemd.enable = false;
     xwayland.enable = true;
-    extraConfig = ''
-      source=~/.dotfiles/home/modules/hypr/hyprland.conf
-    '';
+    #extraConfig = ''
+    #  source=~/.dotfiles/home/modules/hypr/hyprland.conf
+    #'';
     };
 
   home.file = {
+    ".config/hypr" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+      }; 
     ".config/broot" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/broot";
       }; 

@@ -81,6 +81,8 @@
     #udiskie
     #devmon + service alternative to udisk?
     zathura
+    teams-for-linux
+    zoom-us
     # hyprland
     hyprland
     hyprlang

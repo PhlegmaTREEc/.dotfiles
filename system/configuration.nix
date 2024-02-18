@@ -177,10 +177,6 @@
       enable = true;
       package = pkgs.gvfs;
     };
-    mullvad-vpn = {
-      enable = true;
-      package = pkgs.mullvad;
-    };
     openssh.enable = true;
     pipewire = {
       enable = true;

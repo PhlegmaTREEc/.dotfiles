@@ -18,14 +18,13 @@
     bottom broot
     cliphist
     duf du-dust
-    exiftool
-    fd ffmpeg_6 ffmpegthumbnailer
+    etcher exiftool
+    fastfetch fd ffmpeg_6 ffmpegthumbnailer
     gcc git glib
     hugo
     imagemagick
     jq
     lazygit lf libnotify lsd
-    mupdf
     neovim
     navi nodejs_18
     p7zip
@@ -77,10 +76,8 @@
     solaar
     webp-pixbuf-loader
     r2modman
-    maptool
     #udiskie
     #devmon + service alternative to udisk?
-    zathura
     teams-for-linux
     zoom-us
     # hyprland

@@ -52,9 +52,6 @@
       #XCURSOR_THEME
     };
     systemPackages = with pkgs; [
-      appimage-run
-      etcher
-      fastfetch
       gnome.gnome-disk-utility
       logitech-udev-rules
       mangohud
@@ -122,9 +119,6 @@
       "steam"
       "steam-original"
       "steam-run"
-    ];
-    permittedInsecurePackages = [ # added to allow install of etcher - version 1.18.13 should fix this
-      "electron-19.1.9"
     ];
     packageOverrides = pkgs: {
       steam = pkgs.steam.override {

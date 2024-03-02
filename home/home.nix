@@ -101,55 +101,55 @@
     systemd.enable = false;
     xwayland.enable = true;
     #extraConfig = ''
-    #  source=~/.dotfiles/home/modules/hypr/hyprland.conf
+    #  source=~/.dotfiles/home/dotconfig/hypr/hyprland.conf
     #'';
     };
 
   home.file = {
     ".config/hypr" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/hypr";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/hypr";
       }; 
     ".config/broot" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/broot";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/broot";
       }; 
     ".config/easyeffects" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/easyeffects";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/easyeffects";
       }; 
     ".config/fuzzel" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/fuzzel";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/fuzzel";
       }; 
     ".config/gammastep" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/gammastep";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/gammastep";
       }; 
     ".config/kitty" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/kitty";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/kitty";
       }; 
     ".config/lazygit" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/lazygit";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/lazygit";
       }; 
     ".config/lf" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/lf";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/lf";
       };
     ".config/navi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/navi";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/navi";
       }; 
     ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/nvim";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/nvim";
       }; 
     ".config/sioyek" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/sioyek";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/sioyek";
       }; 
     ".config/starship" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/starship";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/starship";
       }; 
     ".config/swappy" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/swappy";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swappy";
       }; 
     ".config/swaync" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/swaync";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swaync";
       }; 
     ".config/waybar" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/modules/waybar";
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
       }; 
     };
 
@@ -177,12 +177,12 @@
     '';
     history.path = "$HOME/.config/zsh/.zsh_history";
     initExtra = ''
-    if [ -f ~/.dotfiles/home/modules/zsh/.shell_config ]; then
-        source ~/.dotfiles/home/modules/zsh/.shell_config
+    if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_config ]; then
+        source ~/.dotfiles/home/dotconfig/zsh/.shell_config
     fi
 
-    if [ -f ~/.dotfiles/home/modules/zsh/.shell_aliases ]; then
-	    source ~/.dotfiles/home/modules/zsh/.shell_aliases
+    if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_aliases ]; then
+	    source ~/.dotfiles/home/dotconfig/zsh/.shell_aliases
     fi
     '';
     syntaxHighlighting.enable = true;

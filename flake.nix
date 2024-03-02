@@ -20,7 +20,7 @@
     pkgs = import nixpkgs {
       inherit system;
       overlays = [
-        (import ./overlay/multi.nix)
+        (import ./overlays/multi.nix)
         ];
       config = {
         allowUnfree = true;

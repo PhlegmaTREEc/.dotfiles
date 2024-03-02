@@ -70,7 +70,7 @@
     dracula-icon-theme
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
-    mpv multiviewer-for-f1
+    mpv myMulti
     openrgb opentabletdriver
     qpwgraph
     solaar

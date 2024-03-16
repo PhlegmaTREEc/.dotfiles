@@ -48,8 +48,10 @@
       MOZ_ENABLE_WAYLAND = "1";
       #SDL_VIDEODRIVER = "wayland"; #Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
       _JAVA_AWT_WM_NONREPARENTING = "1";
-      XCURSOR_SIZE = "24";
-      #XCURSOR_THEME
+      XCURSOR_SIZE = "16";
+      HYPRCURSOR_THEME = "HyprBibataModernClassicSVG";
+      HYPRCURSOR_SIZE = "16";
+
     };
     systemPackages = with pkgs; [
       gnome.gnome-disk-utility

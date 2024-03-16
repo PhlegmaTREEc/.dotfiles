@@ -25,7 +25,7 @@
       config = {
         allowUnfree = true;
         permittedInsecurePackages = [
-          "electron-19.1.9" # added to allow install of etcher - version 1.18.13 should fix this 
+          #"electron-19.1.9" # added to allow install of etcher - version 1.18.13 should fix this 
           "freeimage-unstable-2021-11-01" #unknown reason
         ];
       };

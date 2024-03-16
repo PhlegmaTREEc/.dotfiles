@@ -1,6 +1,6 @@
 # Global format
 format = """
-[\uF303](fg:bold #bd93f9)\
+[\uF313](fg:bold #bd93f9)\
 $username\
 $hostname\
 $directory\

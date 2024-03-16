@@ -18,7 +18,7 @@
     bottom broot
     cliphist
     duf du-dust
-    etcher exiftool
+    exiftool
     fastfetch fd ffmpeg_6 ffmpegthumbnailer
     gcc git glib
     hugo
@@ -79,9 +79,13 @@
     #udiskie
     #devmon + service alternative to udisk?
     teams-for-linux
+    ventoy-full
     zoom-us
     # hyprland
     hyprland
+    hyprcursor
+    hypridle
+    hyprlock
     hyprlang
     hyprpaper
     fuzzel
@@ -168,7 +172,7 @@
     enable = true;
     package = pkgs.zsh;
     dotDir = ".config/zsh";
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = ''
     autoload -Uz compinit && compinit
@@ -220,6 +224,13 @@
     #style.name = kvantum;
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
+    size = 16;
+  };
+
   gtk = {
     #Flatpak note: in flatseal add Variables: GTK_THEME=Adwaita:dark to use dark theme
     enable = true;
@@ -234,10 +245,11 @@
       #package = pkgs.papirus-folders;
       #package = pkgs.papirus-folders.override {
       #  folderColor = "violet";
-      };
-    cursorTheme = {
-      name = "Dracula";
     };
+    #cursorTheme = {
+    #  package = "bibata-cursors";
+    #  name = "Bibata-Modern-Classic";
+    #};
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1

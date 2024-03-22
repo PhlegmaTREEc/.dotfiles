@@ -50,6 +50,10 @@
     blueman bluez bluez-alsa
     easyeffects
     filezilla firefox floorp
+    gnome.gnome-sound-recorder
+    gimp
+    krita
+    kdePackages.kcalc
     libsForQt5.ark
     libsForQt5.dolphin
     libsForQt5.dolphin-plugins
@@ -64,14 +68,19 @@
     imv
     dracula-theme
     dracula-icon-theme
+    paper-clip
+    parabolic
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
+    protonup-qt
     mpv myMulti
     openrgb opentabletdriver
     qpwgraph
     solaar
+    switcheroo
     webp-pixbuf-loader
     r2modman
+    upscayl
     #udiskie
     #devmon + service alternative to udisk?
     teams-for-linux

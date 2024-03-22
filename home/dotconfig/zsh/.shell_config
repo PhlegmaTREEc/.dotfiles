@@ -20,7 +20,7 @@ eval "$(zoxide init zsh)"
 # navi
 eval "$(navi widget zsh)"
 
-function ya() {
+function ff() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXX")"
 	yazi "$@" --cwd-file="$tmp"
 	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then

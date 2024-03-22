@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nixvim,... }:
+{ config, pkgs, lib, nixvim, inputs, ... }:
 
 {
   home.username = "ptc";
@@ -11,6 +11,7 @@
   #  colorschemes.dracula.enable = true;
   #  plugins.lualine.enable = true;
   #};
+  imports = [ inputs.ags.homeManagerModules.default ];
 
   home.packages = with pkgs; [
     bazecor
@@ -156,6 +157,15 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
       }; 
     };
+
+  programs.ags = {
+    enable = true;
+    extraPackages = with pkgs; [
+      gtksourceview
+      webkitgtk
+      accountsservice
+    ];
+  };
 
   programs.fzf = {
     enable = true;

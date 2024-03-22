@@ -1,0 +1,54 @@
+monitors:
+  DP-1:
+    position: "top"
+    height: 16
+    margin.left: 0
+    margin.right: 0
+    anchor_to_edges: true
+    start:
+      - type: workspaces
+        all_monitors: false
+      - type: "focused"
+        show_icon: true
+        show_title: true
+        icon_size: 14
+        truncate.mode: "end"
+    center:
+      - type: "clock"
+    end:
+      - type: 'clipboard'
+        max_items: 10
+        truncate:
+          mode: 'end'
+          length: 50
+      - type: "script"
+        name: "volumein"
+        cmd: "/home/ptc/.dotfiles/home/scripts/volume/waybar_wpctl_in.sh"
+        mode: 'watch'
+        interval : 50
+      - type: "script"
+        name: "volumeout"
+        cmd: "/home/ptc/.dotfiles/home/scripts/volume/waybar_wpctl_out.sh"
+        mode: 'watch'
+        interval : 50
+      - type: "tray"
+        direction: "left_to_right"
+        icon_size: "14"
+
+  DP-2:
+    position: "top"
+    height: 16
+    margin.left: 0
+    margin.right: 0
+    anchor_to_edges: true
+    start:
+      - type: workspaces
+        all_monitors: false
+      - type: "focused"
+        show_icon: true
+        show_title: true
+        icon_size: 14
+        truncate.mode: "end"
+    center:
+      - type: "clock"
+    end:

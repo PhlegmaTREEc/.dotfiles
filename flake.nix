@@ -11,9 +11,10 @@
     #  url = "github:nix-community/nixvim";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
+    ags.url = "github:Aylur/ags";
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}:
+  outputs = {self, nixpkgs, home-manager, ...}@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -36,6 +37,7 @@
   in {
     homeConfigurations."ptc" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      extraSpecialArgs = { inherit inputs; };
       modules = [
         ./home/home.nix
       ];

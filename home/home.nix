@@ -93,6 +93,8 @@
     hyprlock
     hyprlang
     hyprpaper
+    #ironbar
+    waybar
     fuzzel
     gammastep
     grim
@@ -101,7 +103,6 @@
     swappy
     swaybg
     swaynotificationcenter
-    waybar
     watershot
   ];
 
@@ -129,6 +130,9 @@
       }; 
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/gammastep";
+      }; 
+    ".config/ironbar" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/ironbar";
       }; 
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/kitty";

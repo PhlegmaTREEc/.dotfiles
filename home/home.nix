@@ -6,11 +6,6 @@
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  #programs.nixvim = {
-  #  enable = true;
-  #  colorschemes.dracula.enable = true;
-  #  plugins.lualine.enable = true;
-  #};
   imports = [ inputs.ags.homeManagerModules.default ];
 
   home.packages = with pkgs; [
@@ -201,7 +196,13 @@
     '';
     syntaxHighlighting.enable = true;
   };
-  
+
+  #programs.nixvim = {
+  #  enable = true;
+  #  colorschemes.dracula.enable = true;
+  #  plugins.lualine.enable = true;
+  #};
+
   ### MAKE BACKUP OF BASIC FOLDERS BEFORE TRYING THIS OPTION
   #xdg = {
   #  userDirs = {

@@ -79,7 +79,6 @@
     solaar
     switcheroo
     webp-pixbuf-loader
-    r2modman
     upscayl
     #udiskie
     #devmon + service alternative to udisk?
@@ -249,10 +248,10 @@
       #package = pkgs.papirus-folders.override {
       #  folderColor = "violet";
     };
-    #cursorTheme = {
-    #  package = "bibata-cursors";
-    #  name = "Bibata-Modern-Classic";
-    #};
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Classic";
+    };
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1

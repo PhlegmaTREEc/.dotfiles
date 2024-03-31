@@ -1,8 +1,8 @@
 lastupdatecheck: 0
 recentrepos:
 - /home/ptc/.dotfiles
-- /home/ptc/Repos/homelab
 - /home/ptc/Repos/website
+- /home/ptc/Repos/homelab
 startuppopupversion: 5
 lastversion: 0.41.0
 customcommandshistory: []

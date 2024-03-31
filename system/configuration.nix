@@ -94,6 +94,10 @@
   };
 
   networking = {
+    #interfaces.enp4s0.ipv4.addresses = [ {
+    #  address = "192.168.1.51";
+    #  prefixLength = 24;
+    #} ];
     firewall = {
       enable = true;
       };
@@ -117,6 +121,7 @@
 
   nixpkgs.config = {
     allowNonFree = true;
+    allowUnFree = true;
     allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
       "steam"
       "steam-original"

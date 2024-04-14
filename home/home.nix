@@ -9,6 +9,7 @@
   imports = [ inputs.ags.homeManagerModules.default ];
 
   home.packages = with pkgs; [
+    kitty
     bazecor
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
     bottom broot
@@ -51,19 +52,18 @@
     easyeffects
     filezilla firefox floorp
     gnome.gnome-sound-recorder
+    gnome.nautilus
+    gnome.file-roller
+    gnome.gnome-calculator
+    gnome.gnome-disk-utility
+    loupe
     gimp
     krita
-    kdePackages.kcalc
-    libsForQt5.ark
-    libsForQt5.dolphin
-    libsForQt5.dolphin-plugins
-    libsForQt5.kio
-    libsForQt5.kio-extras
     libsForQt5.qt5ct
-    libsForQt5.qtstyleplugin-kvantum
-    qt6Packages.qt6ct
-    qt6Packages.qtstyleplugin-kvantum
-    kitty
+    #libsForQt5.qtstyleplugin-kvantum
+    kdePackages.qt6ct
+    #kdePackages.qtstyleplugin-kvantum
+    qpwgraph
     #lact
     imv
     dracula-theme
@@ -72,20 +72,19 @@
     parabolic
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
-    protonup-qt
     mpv myMulti
     openrgb opentabletdriver
-    qpwgraph
+    #protonmail-desktop
     solaar
     switcheroo
     webp-pixbuf-loader
     upscayl
     #udiskie
     #devmon + service alternative to udisk?
-    teams-for-linux
+    #teams-for-linux
     ventoy-full
     zoom-us
-    # hyprland
+    # hyprland "environment"
     hyprland
     hyprcursor
     hypridle
@@ -223,7 +222,7 @@
 
   qt = {
     enable = true;
-    #style.name = kvantum;
+    platformTheme = "qtct";
   };
 
   home.pointerCursor = {

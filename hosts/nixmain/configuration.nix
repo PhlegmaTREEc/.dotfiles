@@ -7,7 +7,7 @@
       ../common/greetd.nix
     ];
 
-  home-manager.users.ptc = import ../home/home.nix;
+  home-manager.users.ptc = import ../../home/home.nix;
 
   boot = {
     loader = {
@@ -103,7 +103,7 @@
     firewall = {
       enable = true;
       };
-    hostName = "nixos";
+    hostName = "nixmain";
     networkmanager.enable = true;
   };
 

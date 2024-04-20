@@ -9,7 +9,7 @@ else
 fi
 
 nix flake update
-sudo nixos-rebuild --flake .#$HOST switch
+sudo nixos-rebuild switch --flake .#$HOST
 
 #nix flake update
 #sudo nixos-rebuild switch --flake .#

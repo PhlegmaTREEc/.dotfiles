@@ -6,7 +6,7 @@
       ./hardware-configuration.nix
     ];
 
-  home-manager.users.ptc = import /home/ptc/.dotfiles/home/home.nix;
+  home-manager.users.ptc = import ../home/home.nix;
 
   boot = {
     loader = {

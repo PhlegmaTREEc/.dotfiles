@@ -36,20 +36,21 @@
     #  nixvim.homeManagerModules.nixvim
     #];
   in {
-    homeConfigurations."ptc" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = { inherit inputs; };
-      modules = [
-        ./home/home.nix
-      ];
-      #++ homeManagerModules;
-    };
+    #homeConfigurations."ptc" = home-manager.lib.homeManagerConfiguration {
+    #  inherit pkgs;
+    #  extraSpecialArgs = { inherit inputs; };
+    #  modules = [
+    #    ./home/home.nix
+    #  ];
+    #  #++ homeManagerModules;
+    #};
     nixosConfigurations = {
       nixos = lib.nixosSystem {
         inherit system;
 	      modules = [
-	        ./system/configuration.nix
-	        ./system/greetd.nix
+          ./hosts/nixmain/configuration.nix
+	        #./system/configuration.nix
+	        #./system/greetd.nix
           ({ config, pkgs, ...}: {
           })
           home-manager.nixosModules.home-manager {

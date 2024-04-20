@@ -6,7 +6,7 @@
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  imports = [ inputs.ags.homeManagerModules.default ];
+  #imports = [ inputs.ags.homeManagerModules.default ];
 
   home.packages = with pkgs; [
     kitty
@@ -162,14 +162,14 @@
       }; 
     };
 
-  programs.ags = {
-    enable = true;
-    extraPackages = with pkgs; [
-      gtksourceview
-      webkitgtk
-      accountsservice
-    ];
-  };
+  #programs.ags = {
+  #  enable = true;
+  #  extraPackages = with pkgs; [
+  #    gtksourceview
+  #    webkitgtk
+  #    accountsservice
+  #  ];
+  #};
 
   programs.fzf = {
     enable = true;

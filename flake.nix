@@ -45,7 +45,7 @@
     #  #++ homeManagerModules;
     #};
     nixosConfigurations = {
-      nixos = lib.nixosSystem {
+      nixmain = lib.nixosSystem {
         inherit system;
 	      modules = [
           ./hosts/nixmain/configuration.nix

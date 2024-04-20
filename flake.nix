@@ -52,6 +52,9 @@
 	        ./system/greetd.nix
           ({ config, pkgs, ...}: {
           })
+          home-manager.nixosModules.home-manager {
+            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+          }
 	      ];
       };
     };

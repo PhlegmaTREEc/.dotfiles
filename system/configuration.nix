@@ -1,10 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
     ];
+
+  home-manager.users.ptc = import /home/ptc/.dotfiles/home/home.nix;
 
   boot = {
     loader = {

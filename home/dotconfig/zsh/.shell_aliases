@@ -7,7 +7,8 @@ alias chypr='v ~/.dotfiles/home/dotconfig/hypr/hyprland.conf'
 alias cway='v ~/.dotfiles/home/dotconfig/waybar/config'
 alias cways='v ~/.dotfiles/home/dotconfig/waybar/style.css'
 alias chm='v ~/.dotfiles/home/home.nix'
-alias cnos='v ~/.dotfiles/system/configuration.nix'
+#alias cnos='v ~/.dotfiles/system/configuration.nix'
+alias cnos='v ~/.dotfiles/hosts/nixmain/configuration.nix'
 
 # NixOS
 alias uhm='~/.dotfiles/uhome.sh'

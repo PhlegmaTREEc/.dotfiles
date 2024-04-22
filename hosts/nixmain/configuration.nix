@@ -22,15 +22,6 @@
     #kernelPackages = pkgs.linuxKernel.kernels.linux_6_6;
   };
   
-  boot.binfmt.registrations.appimage = {
-    wrapInterpreterInShell = false;
-    interpreter = "${pkgs.appimage-run}/bin/appimage-run";
-    recognitionType = "magic";
-    offset = 0;
-    mask = ''\xff\xff\xff\xff\x00\x00\x00\x00\xff\xff\xff'';
-    magicOrExtension = ''\x7fELF....AI\x02'';
-  };
-
   #i18n.defaultLocale = "cs_CZ.UTF-8";
   #i18n.extraLocaleSettings = {
   #  LC_CTYPE = "cs_CZ.UTF-8";
@@ -241,7 +232,8 @@
     users.ptc = {
       isNormalUser = true;
       initialPassword = "pass"; # change password after install!!!
-        extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
+      useDefaultShell = true;
     };
     defaultUserShell = pkgs.zsh;
   };

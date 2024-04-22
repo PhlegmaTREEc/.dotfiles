@@ -35,7 +35,6 @@
     wget wl-clipboard
     xdg-utils
     yazi
-    zoxide
     # Speedtest net
     speedtest-cli
     fast-cli
@@ -64,7 +63,6 @@
     kdePackages.qt6ct
     #kdePackages.qtstyleplugin-kvantum
     qpwgraph
-    #lact
     imv
     dracula-theme
     dracula-icon-theme
@@ -91,7 +89,6 @@
     hyprlock
     hyprlang
     hyprpaper
-    #ironbar
     waybar
     fuzzel
     gammastep
@@ -161,15 +158,6 @@
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
       }; 
     };
-
-  #programs.ags = {
-  #  enable = true;
-  #  extraPackages = with pkgs; [
-  #    gtksourceview
-  #    webkitgtk
-  #    accountsservice
-  #  ];
-  #};
 
   programs.fzf = {
     enable = true;

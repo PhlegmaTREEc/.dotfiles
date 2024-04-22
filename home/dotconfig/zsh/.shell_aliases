@@ -1,4 +1,4 @@
-## Configuration
+# Configuration
 alias cshell='v ~/.dotfiles/home/dotconfig/zsh/.shell_config'
 alias calias='v ~/.dotfiles/home/dotconfig/zsh/.shell_aliases'
 alias czsh='v ~/.dotfiles/home/dotconfig/zsh/.zshrc'
@@ -7,14 +7,13 @@ alias chypr='v ~/.dotfiles/home/dotconfig/hypr/hyprland.conf'
 alias cway='v ~/.dotfiles/home/dotconfig/waybar/config'
 alias cways='v ~/.dotfiles/home/dotconfig/waybar/style.css'
 alias chm='v ~/.dotfiles/home/home.nix'
-#alias cnos='v ~/.dotfiles/system/configuration.nix'
 alias cnos='v ~/.dotfiles/hosts/nixmain/configuration.nix'
 
 # NixOS
 alias uhm='~/.dotfiles/uhome.sh'
 alias unos='~/.dotfiles/usys.sh'
 
-## Flatpak
+# Flatpak
 alias fpup='flatpak update'
 alias fpse='flatpak search'
 alias fpin='flatpak install'
@@ -22,11 +21,11 @@ alias fpun='flatpak uninstall --delete-data'
 alias fpunun='flatpak uninstall --unused'
 alias fpli='flatpak list'
 
-## Basic actions
+# Basic actions
 alias cl='clear'
 alias ex='exit'
 
-## Apps
+# Apps
 alias v='nvim'
 alias pdf='sioyek'
 alias lg='lazygit'
@@ -34,22 +33,19 @@ alias man='batman'
 alias btm='btm -bT --process_command'
 alias hyprshot='~/Applications/Hyprshot/hyprshot'
 
-## VPN
+# VPN
 alias wgu='wg-quick up wg0'
 alias wgs='sudo wg'
 alias wgc='firefox --new-window https://ip.me'
 alias wgd='wg-quick down wg0'
 
-## LS & CD
-alias ls='lsd -ha --header --group-dirs=first --date '+%F %R''
-alias lsl='lsd -lha --header --group-dirs=first --date '+%F %R''
-alias zz='cd ..'
-alias zzz='cd ../..'
-alias zzzz='cd ../../..'
-alias zdot='z ~/.dotfiles/'
-alias zconf='z ~/.config/'
+# LS & CD
+alias ls='lsd -ha --header --group-dirs=first --date "+%F %R"'
+alias lsl='lsd -lha --header --group-dirs=first --date "+%F %R"'
+alias gdot='cd ~/.dotfiles/'
+alias gconf='cd ~/.config/'
 
-## GIT alias
+# GIT
 alias gs='git status'
 alias ga='git add'
 alias gaa='git add --all'
@@ -59,18 +55,3 @@ alias gc='git commit -m $1'
 alias gpsh='git push'
 alias gpll='git pull'
 alias gcln='git clone'
-
-## Package management Arch
-#alias sup='sudo pacman -Syu && paru -Syua && flatpak update'
-## Pacman
-#alias pmup='sudo pacman -Syu'
-#alias pmse='pacman -Ss'
-#alias pmsi='pacman -Si'
-#alias pmin='sudo pacman -S'
-#alias pmun='sudo pacman -Rsn'
-## Paru
-#alias prup='paru -Syua'
-#alias prse='paru -Ss'
-#alias prsi='paru -Si'
-#alias prin='paru -S'
-#alias prun='paru -Rsn'

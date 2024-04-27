@@ -36,14 +36,14 @@
     #  nixvim.homeManagerModules.nixvim
     #];
   in {
-    #homeConfigurations."ptc" = home-manager.lib.homeManagerConfiguration {
-    #  inherit pkgs;
-    #  extraSpecialArgs = { inherit inputs; };
-    #  modules = [
-    #    ./home/home.nix
-    #  ];
-    #  #++ homeManagerModules;
-    #};
+    homeConfigurations."ptclab" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = { inherit inputs; };
+      modules = [
+        ./home/lab/home.nix
+      ];
+      #++ homeManagerModules;
+    };
     nixosConfigurations = {
       nixmain = lib.nixosSystem {
         inherit system;

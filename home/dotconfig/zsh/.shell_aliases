@@ -10,8 +10,8 @@ alias chm='v ~/.dotfiles/home/home.nix'
 alias cnos='v ~/.dotfiles/hosts/nixmain/configuration.nix'
 
 # NixOS
-alias uhm='~/.dotfiles/uhome.sh'
-alias unos='~/.dotfiles/usys.sh'
+#alias uhm='~/.dotfiles/uhome.sh'
+alias unos='~/.dotfiles/update.sh'
 
 # Flatpak
 alias fpup='flatpak update'

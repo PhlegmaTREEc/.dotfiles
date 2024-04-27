@@ -1,0 +1,18 @@
+version: "3.8"
+services:
+  portainer-ce:
+    networks:
+      - inside
+    ports:
+      - 9443:9443
+    container_name: portainer
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /home/ptc/docker/portainer_data:/data
+    image: portainer/portainer-ce:latest
+volumes:
+  portainer_data: null
+networks:
+  inside:
+    external: true

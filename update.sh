@@ -23,3 +23,5 @@ elif [ $USERNAME = "ptclab" ]; then
 else
 	echo "unknow configuration"
 fi
+
+popd

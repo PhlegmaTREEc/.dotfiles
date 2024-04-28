@@ -7,7 +7,7 @@
       ../common/greetd.nix
     ];
 
-  home-manager.users.ptc = import ../../home/home.nix;
+  home-manager.users.ptc = import ../../home/nixmain/home.nix;
 
   boot = {
     loader = {

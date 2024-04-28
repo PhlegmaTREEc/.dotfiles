@@ -14,7 +14,7 @@ unsetopt beep extendedglob notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
-TERM=xterm-256color
+export TERM=xterm-256color
 
 # man zshoptions - chect it for some options
 

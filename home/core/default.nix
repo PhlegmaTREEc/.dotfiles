@@ -50,6 +50,10 @@
       "--color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
     ];
   };
+  
+  programs.tmux = {
+    enable = true;
+  };
 
   programs.zsh = {
     enable = true;

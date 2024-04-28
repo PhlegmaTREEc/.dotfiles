@@ -7,7 +7,7 @@
     cliphist
     duf du-dust
     fastfetch fd
-    git
+    gcc git
     jq
     lazygit lsd
     neovim

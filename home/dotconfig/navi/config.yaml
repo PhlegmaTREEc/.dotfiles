@@ -19,8 +19,7 @@ finder:
 
 cheats:
   paths: 
-    - /home/ptc/.config/navi/cheats/
-    # - /path/to/another/dir
+    - ~/.config/navi/cheats/
 
 # search:
   # tags: git,!checkout # equivalent to the --tag-rules option

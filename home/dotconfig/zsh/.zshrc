@@ -2,7 +2,7 @@
 autoload -Uz compinit && compinit
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-zstyle :compinstall filename '/home/ptc/.config/zsh/.zshrc'
+zstyle :compinstall filename '~/.config/zsh/.zshrc'
 
 # End of lines added by compinstall
 # Lines configured by zsh-newuser-install
@@ -13,6 +13,8 @@ setopt autocd nomatch
 unsetopt beep extendedglob notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
+
+TERM=xterm-256color
 
 # man zshoptions - chect it for some options
 

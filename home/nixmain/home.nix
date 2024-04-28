@@ -6,7 +6,10 @@
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  #imports = [ inputs.ags.homeManagerModules.default ];
+  imports =
+    [
+      ../optional/tmux.nix
+    ];
 
   home.packages = with pkgs; [
     kitty

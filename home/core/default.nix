@@ -5,19 +5,29 @@
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
     bottom
     cliphist
-    duf du-dust
-    fastfetch fd
-    gcc git
+    duf
+    du-dust
+    fastfetch
+    fd
+    gcc
+    git
     jq
-    lazygit lsd
+    lazygit
+    lsd
     neovim
     navi
     p7zip
-    ripgrep rclone
+    ripgrep
+    rclone
     starship
-    trash-cli tree tree-sitter
-    unzip upower unar
-    wget wl-clipboard
+    trash-cli
+    tree
+    tree-sitter
+    unzip
+    upower
+    unar
+    wget
+    wl-clipboard
     xdg-utils
     yazi
   ];

@@ -42,13 +42,17 @@
     speedtest-cli
     fast-cli
     # Benchmark
+    memtester
+    mprime
     geekbench
+    stress
+    s-tui
     glmark2
     stress-ng
     sysbench
-    #unigine-superposition
     unigine-valley
     # Gui
+    ardour
     alsa-tools
     blueman bluez bluez-alsa
     easyeffects

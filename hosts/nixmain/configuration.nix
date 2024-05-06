@@ -12,14 +12,13 @@
   boot = {
     loader = {
       systemd-boot.enable = true;
+      systemd-boot.memtest86.enable = true;
       efi.canTouchEfiVariables = true;
       systemd-boot.configurationLimit = 15;
       timeout = 2;
     };
-    # Use zen kernel
-    #kernelPackages = pkgs.linuxPackages_zen;
     # Use specific kernel branch
-    #kernelPackages = pkgs.linuxKernel.kernels.linux_6_6;
+    kernelPackages = pkgs.linuxPackages_latest;
   };
   
   #i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -142,7 +141,8 @@
   programs = {
     corectrl = {
       enable = true;
-      gpuOverclock.ppfeaturemask = "0xffffffff";
+      #gpuOverclock.ppfeaturemask = "0xffffffff";
+      gpuOverclock.ppfeaturemask = "0xfffd7fff";
       gpuOverclock.enable = true;
     };
     dconf.enable = true;

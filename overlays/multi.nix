@@ -4,8 +4,8 @@ self: super:
     pname = "multiviewer-for-f1";
     #version = "1.31.7";
     src = super.fetchurl {
-      url = "https://releases.multiviewer.dev/download/155752210/multiviewer-for-f1_1.37.7_amd64.deb";
-      sha256 = "sha256-Tnr5Lvzoswhbvhs9SOprP2TcPbr6SP1uR3OqtnqiPrA=";
+      url = "https://releases.multiviewer.app/download/165303528/multiviewer-for-f1_1.31.9_amd64.deb";
+      sha256 = "sha256-yn4yGP2m5AH2WiSQuPlUQpSAWoOKRWCLZxcBF22c8Xo=";
     };
   });
 }

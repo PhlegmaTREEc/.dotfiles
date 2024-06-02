@@ -4,7 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
-      ../common/greetd.nix
+      ../desktop-modules/greetd.nix
     ];
 
   home-manager.users.ptc = import ../../home/nixmain/home.nix;

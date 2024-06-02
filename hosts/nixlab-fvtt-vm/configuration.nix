@@ -18,7 +18,7 @@
 
   networking = {
     hostname = "fvtt-vm"
-    }
+    };
 
   nix = {
     settings = {

@@ -32,18 +32,26 @@
         ];
       };
     };
+    pkgs-stable = import nixpkgs-stable {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        #permittedInsecurePackages = [
+        #];
+      };
+    };
     #homeManagerModules = [
     #  nixvim.homeManagerModules.nixvim
     #];
   in {
-    homeConfigurations."ptclab" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = { inherit inputs; };
-      modules = [
-        ./home/lab/home.nix
-      ];
-      #++ homeManagerModules;
-    };
+    #homeConfigurations."ptclab" = home-manager.lib.homeManagerConfiguration {
+    #  inherit pkgs;
+    #  extraSpecialArgs = { inherit inputs; };
+    #  modules = [
+    #    ./home/lab/home.nix
+    #  ];
+    #  #++ homeManagerModules;
+    #};
     nixosConfigurations = {
       nixmain = lib.nixosSystem {
         inherit system;
@@ -52,6 +60,17 @@
 	        #./system/configuration.nix
 	        #./system/greetd.nix
           ({ config, pkgs, ...}: {
+          })
+          home-manager.nixosModules.home-manager {
+            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+          }
+	      ];
+      };
+      fvtt-vm = lib.nixosSystem {
+        inherit system;
+	      modules = [
+          ./hosts/nixlab-fvtt-vm/configuration.nix
+          ({ config, pkgs-stable, ...}: {
           })
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };

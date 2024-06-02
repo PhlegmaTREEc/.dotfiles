@@ -1,10 +1,14 @@
 # My dotfiles made for NixOS using flakes
 
+- Modular config in progress
+
+## Desktop
+
 - Hyprland is the centrepiece
 
-## NixOS installation
+### Installation
 
-### Partitions 
+#### Partitions 
 
 - sudo fdisk /dev/xxx
 - "g" for GPT 
@@ -15,14 +19,14 @@
 - "w" to write changes
 - result lsblk (-fp) should show two partitions 1Gb + the rest
 
-### Formate
+#### Format
 
 - sudo mkfs.vfat -n BOOT /dev/xxx
   - boot partition with BOOT labet
 - sudo mkfs.btrfs -L BASE /dev/xxx
   - btrfs partion with BASE label
 
-### Subvolumes
+#### Subvolumes
 
 - sudo mount /dev/xxx2 /mnt
 - btrfs Subvolumes create /mnt/nix
@@ -30,16 +34,16 @@
 - sudo umount /mnt
 - ...more TBD
 
-## Sources
+### Sources
 
 - [link1](https://cnx.gdn/blog/butter/)
 - [link2](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html)
 
 ## NON Nixos Notes
 
-## Dygma Notes
+### Dygma Notes
 
-### Manual flash
+#### Manual flash
 
 - [link](https://github.com/Dygmalab/Bazecor/issues/643#issuecomment-1884763670)
 

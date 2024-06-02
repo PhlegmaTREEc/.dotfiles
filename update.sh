@@ -10,10 +10,10 @@ if [ $USERNAME = "ptc" ]; then
 	else
 		export HOST=$(hostname)
 	fi
-	echo "pre-ok nixmain"
+	echo "Update of nixmain Desktop started"
 	nix flake update
 	sudo nixos-rebuild switch --flake .#$HOST
-	echo "ok nixmain"
+	echo "Update of nixmain Desktop finished"
 elif [ $USERNAME = "ptclab" ]; then
 	echo "pre-ok lab"
 	nix flake update

@@ -77,6 +77,17 @@
           }
 	      ];
       };
+      fvtt-lxc = lib.nixosSystem {
+        inherit system;
+	      modules = [
+          ./hosts/nixlab-fvtt-lxc/configuration.nix
+          ({ config, pkgs-stable, ...}: {
+          })
+          home-manager.nixosModules.home-manager {
+            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+          }
+	      ];
+      };
     };
   };
 }

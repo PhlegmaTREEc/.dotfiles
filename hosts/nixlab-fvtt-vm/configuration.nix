@@ -17,7 +17,7 @@
   };
 
   networking = {
-    hostname = "fvtt-vm"
+    hostname = "fvtt-vm";
     };
 
   nix = {
@@ -31,6 +31,8 @@
       options = "--delete-older-than 7d";
     };
   };
+
+  services.openssh.enable = true;
 
   programs = {
     zsh = {

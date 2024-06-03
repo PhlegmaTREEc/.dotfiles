@@ -84,6 +84,12 @@ pdftoppm -jpeg <source> -f X -l Y <target>
 # extract images from PDF (source is .pdf file, target is folder and name - ~/pic/im will put everything in ~/pic named im-XX)(-j jpeg output; -l OR -f <int> first/last page to convert)
 pdfimages -j <source> <target>
 
+# separate pdf pages
+pdfseparate <source> -f X -l Y <target example target%d.pdf>
+
+# unite pdf files to one
+pdfunite <source list of files to unite> <target>
+
 % package, packman, aur, flatpak
 
 # Fix keys

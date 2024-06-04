@@ -27,7 +27,6 @@
       config = {
         allowUnfree = true;
         permittedInsecurePackages = [
-          #"electron-19.1.9" # added to allow install of etcher - version 1.18.13 should fix this 
           "freeimage-unstable-2021-11-01" #unknown reason
         ];
       };
@@ -36,29 +35,21 @@
       inherit system;
       config = {
         allowUnfree = true;
-        #permittedInsecurePackages = [
-        #];
       };
     };
+    user = "ptc";
+    lab-user = "ptclab";
+    fvtt-lxc-host = "fvtt-lxc";
+    fvtt-vm-host = "fvtt-vm";
     #homeManagerModules = [
     #  nixvim.homeManagerModules.nixvim
     #];
   in {
-    #homeConfigurations."ptclab" = home-manager.lib.homeManagerConfiguration {
-    #  inherit pkgs;
-    #  extraSpecialArgs = { inherit inputs; };
-    #  modules = [
-    #    ./home/lab/home.nix
-    #  ];
-    #  #++ homeManagerModules;
-    #};
     nixosConfigurations = {
       nixmain = lib.nixosSystem {
         inherit system;
 	      modules = [
           ./hosts/nixmain/configuration.nix
-	        #./system/configuration.nix
-	        #./system/greetd.nix
           ({ config, pkgs, ...}: {
           })
           home-manager.nixosModules.home-manager {
@@ -79,10 +70,12 @@
       };
       fvtt-lxc = lib.nixosSystem {
         inherit system;
+        inherit lab-user;
+        inherit fvtt-lxc-host;
 	      modules = [
           ./hosts/nixlab-fvtt-lxc/configuration.nix
-          ({ config, pkgs-stable, ...}: {
-          })
+          #({ config, pkgs-stable, ...}: {
+          #})
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
           }

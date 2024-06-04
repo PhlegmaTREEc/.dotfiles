@@ -3,14 +3,6 @@
 {
   imports = [ <nixpkgs/nixos/modules/virtualisation/lxc-container.nix> ];
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      timeout = 2;
-    };
-  };
-
   networking = {
     hostName = "fvtt-vm";
     };

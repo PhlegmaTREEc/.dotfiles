@@ -30,12 +30,12 @@
         ];
       };
     };
-    pkgs-stable = import nixpkgs-stable {
-      inherit system;
-      config = {
-        allowUnfree = true;
-      };
-    };
+    #pkgs-stable = import nixpkgs-stable {
+    #  inherit system;
+    #  config = {
+    #    allowUnfree = true;
+    #  };
+    #};
     #homeManagerModules = [
     #  nixvim.homeManagerModules.nixvim
     #];
@@ -49,6 +49,8 @@
           })
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
           }
 	      ];
       };
@@ -71,6 +73,8 @@
           #})
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
           }
 	      ];
       };

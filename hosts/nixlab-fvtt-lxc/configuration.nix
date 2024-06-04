@@ -18,7 +18,7 @@
   services.openssh.enable = true;
 
   # Define users
-  users.users.$(lab-user) = {
+  users.users.ptclab = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker"]; # Enable ‘sudo’ for the user.
     initialPassword = "pass";

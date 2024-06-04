@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,10 +12,9 @@
     #  url = "github:nix-community/nixvim";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
-    #ags.url = "github:Aylur/ags";
   };
 
-  outputs = {self, nixpkgs, nixpkgs-stable, home-manager, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, ...}@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -37,10 +36,6 @@
         allowUnfree = true;
       };
     };
-    user = "ptc";
-    lab-user = "ptclab";
-    fvtt-lxc-host = "fvtt-lxc";
-    fvtt-vm-host = "fvtt-vm";
     #homeManagerModules = [
     #  nixvim.homeManagerModules.nixvim
     #];
@@ -57,21 +52,19 @@
           }
 	      ];
       };
-      fvtt-vm = lib.nixosSystem {
-        inherit system;
-	      modules = [
-          ./hosts/nixlab-fvtt-vm/configuration.nix
-          ({ config, pkgs-stable, ...}: {
-          })
-          home-manager.nixosModules.home-manager {
-            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
-          }
-	      ];
-      };
+      #fvtt-vm = lib.nixosSystem {
+      #  inherit system;
+	    #  modules = [
+      #    ./hosts/nixlab-fvtt-vm/configuration.nix
+      #    ({ config, pkgs-stable, ...}: {
+      #    })
+      #    home-manager.nixosModules.home-manager {
+      #      home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+      #    }
+	    #  ];
+      #};
       fvtt-lxc = lib.nixosSystem {
         inherit system;
-        inherit lab-user;
-        inherit fvtt-lxc-host;
 	      modules = [
           ./hosts/nixlab-fvtt-lxc/configuration.nix
           #({ config, pkgs-stable, ...}: {

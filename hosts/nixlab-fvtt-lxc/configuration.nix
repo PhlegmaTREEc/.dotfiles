@@ -1,10 +1,12 @@
-{ config, pkgs, lab-user, fvtt-lxc-host, ... }:
+{ config, pkgs, ... }:
 
 {
-  imports = [ <nixpkgs/nixos/modules/virtualisation/lxc-container.nix> ];
+  imports = [ <nixpkgs/nixos/modules/virtualisation/proxmox-lxc.nix> ];
+
+  home-manager.users.ptclab = import ../../home/lab/home.nix;
 
   networking = {
-    hostName = "$(fvtt-lxc-host)";
+    hostName = "fvtt-lxc";
     };
 
   environment.systemPackages = with pkgs; [

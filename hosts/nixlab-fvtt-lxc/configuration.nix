@@ -1,10 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lab-user, fvtt-lxc-host, ... }:
 
 {
   imports = [ <nixpkgs/nixos/modules/virtualisation/lxc-container.nix> ];
 
   networking = {
-    hostName = "fvtt-vm";
+    hostName = "$(fvtt-lxc-host)";
     };
 
   environment.systemPackages = with pkgs; [
@@ -16,10 +16,10 @@
   services.openssh.enable = true;
 
   # Define users
-  users.users.ptclab = {
+  users.users.$(lab-user) = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker"]; # Enable ‘sudo’ for the user.
-    initialPassword = "password";
+    initialPassword = "pass";
   };
 
   # Supress systemd units that don't work because of LXC.
@@ -32,7 +32,14 @@
 
   time.timeZone = "Europe/Prague";
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings.experimental-features = [ "nix-command" "flakes" ];
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
   
   # docker
   virtualisation.docker.enable = true;

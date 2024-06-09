@@ -55,21 +55,10 @@
           }
 	      ];
       };
-      #fvtt-vm = lib.nixosSystem {
-      #  inherit system;
-	    #  modules = [
-      #    ./hosts/nixlab-fvtt-vm/configuration.nix
-      #    ({ config, pkgs-stable, ...}: {
-      #    })
-      #    home-manager.nixosModules.home-manager {
-      #      home-manager.extraSpecialArgs = { inherit inputs pkgs; };
-      #    }
-	    #  ];
-      #};
-      fvtt-lxc = lib.nixosSystem {
+      nixlxc = lib.nixosSystem {
         inherit system;
 	      modules = [
-          ./hosts/nixlab-fvtt-lxc/configuration.nix
+          ./hosts/nixlxc/configuration.nix
           #({ config, pkgs-stable, ...}: {
           #})
           home-manager.nixosModules.home-manager {

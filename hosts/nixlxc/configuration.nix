@@ -1,15 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs-st, ... }:
 
 {
   imports = [ <nixpkgs/nixos/modules/virtualisation/proxmox-lxc.nix> ];
 
   home-manager.users.ptclab = import ../../home/lab/home.nix;
 
-  networking = {
-    hostName = "fvtt-lxc";
-    };
-
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-st; [
     curl
     git
     vim
@@ -27,7 +23,7 @@
       initialPassword = "password";
       useDefaultShell = true;
     };
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs-st.zsh;
   };
 
   # Supress systemd units that don't work because of LXC.

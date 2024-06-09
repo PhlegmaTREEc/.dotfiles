@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs-st, ... }:
 
 {
   home.username = "ptclab";

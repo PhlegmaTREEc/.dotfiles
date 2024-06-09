@@ -3,10 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    #nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-st.url = "github:nixos/nixpkgs/nixos-24.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    home-manager-st = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs-st";
     };
     #nixvim = {
     #  url = "github:nix-community/nixvim";
@@ -14,9 +18,10 @@
     #};
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}@inputs:
+  outputs = {self, nixpkgs, nixpkgs-st, home-manager, home-manager-st, ...}@inputs:
   let
     lib = nixpkgs.lib;
+    lib-st = nixpkgs-st.lib;
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -31,12 +36,12 @@
         ];
       };
     };
-    #pkgs-stable = import nixpkgs-stable {
-    #  inherit system;
-    #  config = {
-    #    allowUnfree = true;
-    #  };
-    #};
+    pkgs-st = import nixpkgs-st {
+      inherit system;
+      config = {
+        allowUnfree = true;
+      };
+    };
     #homeManagerModules = [
     #  nixvim.homeManagerModules.nixvim
     #];
@@ -55,14 +60,14 @@
           }
 	      ];
       };
-      nixlxc = lib.nixosSystem {
+      nixlxc = lib-st.nixosSystem {
         inherit system;
 	      modules = [
           ./hosts/nixlxc/configuration.nix
           #({ config, pkgs-stable, ...}: {
           #})
           home-manager.nixosModules.home-manager {
-            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+            home-manager.extraSpecialArgs = { inherit inputs pkgs-st; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }

@@ -231,7 +231,7 @@
   users = {
     users.ptc = {
       isNormalUser = true;
-      initialPassword = "pass"; # change password after install!!!
+      initialPassword = "password"; # change password after install!!!
       extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
     };

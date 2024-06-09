@@ -118,6 +118,7 @@
       "steam"
       "steam-original"
       "steam-run"
+      "libXNVCtrl" #????
     ];
     packageOverrides = pkgs: {
       steam = pkgs.steam.override {

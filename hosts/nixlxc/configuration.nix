@@ -18,10 +18,14 @@
   services.openssh.enable = true;
 
   # Define users
-  users.users.ptclab = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "docker"]; # Enable ‘sudo’ for the user.
-    initialPassword = "pass";
+  users.users = {
+    ptclab = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "docker"]; # Enable ‘sudo’ for the user.
+      initialPassword = "password";
+      useDefaultShell = true;
+    };
+    defaultUserShell = pkgs.zsh;
   };
 
   # Supress systemd units that don't work because of LXC.

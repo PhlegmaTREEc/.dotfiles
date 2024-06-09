@@ -9,7 +9,7 @@ if [ $HOST = "nixmain" ]; then
 	nix flake update
 	sudo nixos-rebuild switch --flake .#$HOST
 	echo "Update of nixmain Desktop finished"
-elif [ $HOST = nixlxc* ]; then
+elif [[ $HOST = nixlxc* ]]; then
 	echo "Update of $HOST started"
 	nix flake update
 	sudo nixos-rebuild switch --flake .#nixlxc --impure

@@ -22,7 +22,7 @@
       inherit system;
       overlays = [
         (import ./overlays/multi.nix)
-        (import ./overlays/bcor.nix)
+        #(import ./overlays/bcor.nix)
         ];
       config = {
         allowUnfree = true;

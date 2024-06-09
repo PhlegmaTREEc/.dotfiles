@@ -8,17 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    home-manager-st = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-st";
-    };
     #nixvim = {
     #  url = "github:nix-community/nixvim";
     #  inputs.nixpkgs.follows = "nixpkgs";
     #};
   };
 
-  outputs = {self, nixpkgs, nixpkgs-st, home-manager, home-manager-st, ...}@inputs:
+  outputs = {self, nixpkgs, nixpkgs-st, home-manager, ...}@inputs:
   let
     lib = nixpkgs.lib;
     lib-st = nixpkgs-st.lib;
@@ -62,10 +58,11 @@
       };
       nixlxc = lib-st.nixosSystem {
         inherit system;
+        specialArgs = {
+          inherit pkgs-st;
+        };
 	      modules = [
           ./hosts/nixlxc/configuration.nix
-          #({ config, pkgs-stable, ...}: {
-          #})
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs-st; };
             home-manager.useGlobalPkgs = true;

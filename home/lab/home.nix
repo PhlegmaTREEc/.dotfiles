@@ -1,8 +1,11 @@
 { config, pkgs-st, ... }:
 
 {
-  home.username = "ptclab";
-  home.homeDirectory = "/home/ptclab";
+  home = {
+    username = "ptclab";
+    homeDirectory = "/home/ptclab";
+    enableNixpkgsReleaseCheck = false;
+  };
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 

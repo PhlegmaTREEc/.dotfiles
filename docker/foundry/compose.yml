@@ -1,21 +1,14 @@
-
-version: "3.8"
 services:
   foundryvtt:
-    hostname: https://foundrytable.phlegmatreec.com/
+    hostname: https://foundrytable.local/
     container_name: foundryvtt
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: foundryvtt:1.1
+    image: foundryvtt:12
     restart: unless-stopped
     volumes:
-      - /home/ptc/docker/foundry/foundryvtt:/home/foundry/fvttapp
-      - /home/ptc/docker/foundry/foundrydata:/home/foundry/fvttdata
+      - /home/ptclab/docker/compose/foundry/foundryvtt:/home/foundry/fvttapp
+      - /home/ptclab/docker/compose/foundry/foundrydata:/home/foundry/fvttdata
     ports:
       - 30000:30000
-    networks:
-      - outside
-networks:
-  outside:
-    external: true

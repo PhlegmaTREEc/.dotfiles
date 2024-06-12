@@ -25,7 +25,7 @@
     hostName = "${nixvm-one}";
   };
 
-  program.zsh.enable = true;
+  programs.zsh.enable = true;
 
   users = {
     users.ptclab = {
@@ -34,10 +34,10 @@
       extraGroups = [ "wheel"];
       useDefaultShell = true;
     };
-    defaultUserShell = pkgs.zsh;
+    defaultUserShell = pkgs-st.zsh;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs-st; [
     vim
     git
     curl

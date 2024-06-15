@@ -39,6 +39,14 @@
 - [link1](https://cnx.gdn/blog/butter/)
 - [link2](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html)
 
+## Homelab
+
+### OPNSense
+
+- how to AdGuard
+- [link1](https://0x2142.com/how-to-set-up-adguard-on-opnsense/?utm_source=YouTube&utm_campaign=opnadguard)
+- [link2](https://windgate.net/setup-adguard-home-opnsense-adblocker/)
+
 ## NON Nixos Notes
 
 ### Dygma Notes

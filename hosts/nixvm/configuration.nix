@@ -1,4 +1,4 @@
-{ config, pkgs-st, nixvm-one, ... }:
+{ config, pkgs-st, ... }:
 
 {
   imports = [ ./hardware-configuration.nix ];
@@ -14,15 +14,17 @@
     };
   };
 
-  services.openssh = {
-    enable = true;
+  services = {
+    openssh.enable = true;
+    qemuGuest.enable = true;
   };
+
+  virtualisation.docker.enable;
 
   networking = {
     firewall = {
       enable = false;
-      };
-    hostName = "${nixvm-one}";
+    };
   };
 
   programs.zsh.enable = true;

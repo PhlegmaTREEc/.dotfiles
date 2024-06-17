@@ -19,7 +19,6 @@
     lib = nixpkgs.lib;
     lib-st = nixpkgs-st.lib;
     system = "x86_64-linux";
-    nixvm-one = "nixvm-one";
     pkgs = import nixpkgs {
       inherit system;
       overlays = [
@@ -71,16 +70,18 @@
           }
 	      ];
       };
-      nixvm-one = lib-st.nixosSystem {
+      nixvm-fvtt-one = lib-st.nixosSystem {
         inherit system;
         specialArgs = {
           inherit pkgs-st;
-          inherit nixvm-one;
         };
 	      modules = [
           ./hosts/nixvm/configuration.nix
+          ({ config, pkgs, ...}: {
+            networking.hostName = "nixvm-fvtt-one"
+          })
           home-manager.nixosModules.home-manager {
-            home-manager.extraSpecialArgs = { inherit inputs pkgs-st nixvm-one; };
+            home-manager.extraSpecialArgs = { inherit inputs pkgs-st; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }

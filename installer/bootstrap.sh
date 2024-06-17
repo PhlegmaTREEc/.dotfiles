@@ -59,7 +59,7 @@ write_nixos_config() {
   };
 
   users = {
-    users.ptc = {
+    users.ptclab = {
       isNormalUser = true;
       initialPassword = "password";
       extraGroups = [ "wheel" ];

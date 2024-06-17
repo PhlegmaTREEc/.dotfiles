@@ -1,19 +1,16 @@
-{ config, pkgs-st, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [ <nixpkgs/nixos/modules/virtualisation/proxmox-lxc.nix> ];
 
-  home-manager.users.ptclab = import ../../home/lab/home.nix;
 
-  environment.systemPackages = with pkgs-st; [
+  environment.systemPackages = with pkgs; [
     curl
     git
     vim
   ];
 
   services.openssh.enable = true;
-
-  programs.zsh.enable = true;
 
   # Define users
   users = {
@@ -23,7 +20,6 @@
       initialPassword = "password";
       useDefaultShell = true;
     };
-    defaultUserShell = pkgs-st.zsh;
   };
 
   # Supress systemd units that don't work because of LXC.
@@ -45,8 +41,5 @@
     };
   };
   
-  # docker
-  virtualisation.docker.enable = true;
-
   system.stateVersion = "24.05";
 }

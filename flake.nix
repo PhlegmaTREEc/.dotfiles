@@ -70,7 +70,7 @@
           }
 	      ];
       };
-      nixvm-fvtt-one = lib-st.nixosSystem {
+      nixvm-fvtt = lib-st.nixosSystem {
         inherit system;
         specialArgs = {
           inherit pkgs-st;
@@ -78,7 +78,7 @@
 	      modules = [
           ./hosts/nixvm/configuration.nix
           ({ config, pkgs, ...}: {
-            networking.hostName = "nixvm-fvtt-one";
+            networking.hostName = "nixvm-fvtt";
           })
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs-st; };

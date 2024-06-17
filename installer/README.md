@@ -3,9 +3,15 @@ these are the steps to set up nixos VM in Proxmox
 heavily based on [cjlarose github](https://github.com/cjlarose/nixos-dev-env/blob/3285f8f05d5f259c47e1ddab3bf4e0e18686ac27/README.md)
 
 ## Steps
-- optional: ssh into the vm with tmux
+
+### Optional
+- ssh into the vm with tmux
+
+  - **BUT first:** change the password with `passwd` in proxmox console
 
   - `ssh nixos@ip`
+
+### Install
 
 - get my repo
 
@@ -19,8 +25,22 @@ heavily based on [cjlarose github](https://github.com/cjlarose/nixos-dev-env/blo
 
 - run the script, but make sure that /dev/sda is correct (lsblk)
   
-  - `sudo .installer/bootstrap.sh /dev/sda`
+  - `sudo ./installer/bootstrap.sh /dev/sda`
 
 - and then just install and profit
 
   - `sudo nixos-install`
+
+  - `sudo shutdown now`
+
+### After install
+
+- remove the CD drive in proxmox
+
+- shh back in `shh ptclab@ip`
+
+- clone the repo
+
+  - `git clone https://github.com/PhlegmaTREEc/.dotfiles.git`
+
+- run the update

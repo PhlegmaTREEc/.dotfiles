@@ -49,6 +49,8 @@ write_nixos_config() {
     enable = true;
   };
 
+  networking.hostName = "CHANGME";
+
   environment = {
     systemPackages = with pkgs; [
       vim

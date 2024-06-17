@@ -21,11 +21,11 @@ heavily based on [cjlarose github](https://github.com/cjlarose/nixos-dev-env/blo
 
 - change hostname in the script
 
-  - ```vim installer/nixvm/bootstrap.sh```
+  - ```vim installer/vm/bootstrap.sh```
 
 - run the script, but make sure that /dev/sda is correct (lsblk)
   
-  - `sudo ./installer/nixvm/bootstrap.sh /dev/sda`
+  - `sudo ./installer/vm/bootstrap.sh /dev/sda`
 
 - and then just install and profit
 

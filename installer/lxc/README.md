@@ -23,7 +23,7 @@ these are the steps to set up nixos LXC in Proxmox heavily based on [Michal Lync
 
   - `nix-channel --update && sudo nixos-rebuild switch -I nixos-config=/etc/nixos/configuration.nix`
 
-  - `reboot`
+  - proxmox reboot
 
 ### Full configuration
 

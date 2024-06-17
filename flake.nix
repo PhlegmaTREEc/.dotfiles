@@ -78,7 +78,7 @@
 	      modules = [
           ./hosts/nixvm/configuration.nix
           ({ config, pkgs, ...}: {
-            networking.hostName = "nixvm-fvtt-one"
+            networking.hostName = "nixvm-fvtt-one";
           })
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs-st; };

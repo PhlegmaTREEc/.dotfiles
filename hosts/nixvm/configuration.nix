@@ -19,7 +19,7 @@
     qemuGuest.enable = true;
   };
 
-  virtualisation.docker.enable;
+  virtualisation.docker.enable = true;
 
   networking = {
     firewall = {

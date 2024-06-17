@@ -9,7 +9,7 @@ these are the steps to set up nixos LXC in Proxmox heavily based on [Michal Lync
 
   - `pct enter`
 
-  - ` source /etc/set-environment`
+  - `source /etc/set-environment`
 
   - `passwd`
 
@@ -33,5 +33,4 @@ these are the steps to set up nixos LXC in Proxmox heavily based on [Michal Lync
 
 - run the update script
 
-  - `
-    ./update.sh`
+  - `./update.sh`

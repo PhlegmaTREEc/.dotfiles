@@ -1,7 +1,7 @@
 { config, pkgs-st, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [ /etc/nixos/hardware-configuration.nix ];
 
   home-manager.users.ptclab = import ../../home/lab/home.nix;
 

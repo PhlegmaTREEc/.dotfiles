@@ -4,14 +4,19 @@ heavily based on [cjlarose github](https://github.com/cjlarose/nixos-dev-env/blo
 
 ## Steps
 - get my repo
-`curl -L  https://github.com/PhlegmaTREEc/.dotfiles/tarball/main -o dotfiles.tar.gz`
-`tar -zxvf dotfiles.tar.gz && cd .dotfiles`
 
-- change hostname in the script 
-```vim /installer/bootstrap.sh```
+  - `curl -L  https://github.com/PhlegmaTREEc/.dotfiles/tarball/main -o dotfiles.tar.gz`
 
-run the script, but make sure that /dev/sda is correct (lsblk)
-`./bootstrap.sh /dev/sda`
+  - `tar -zxvf dotfiles.tar.gz && cd .dotfiles`
 
-and then just install and profit
-`sudo nixos-install`
+- change hostname in the script
+
+  - ```vim /installer/bootstrap.sh```
+
+- run the script, but make sure that /dev/sda is correct (lsblk)
+  
+  - `./bootstrap.sh /dev/sda`
+
+- and then just install and profit
+
+  - `sudo nixos-install`

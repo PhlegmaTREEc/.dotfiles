@@ -1,4 +1,4 @@
 result
 ./home/dotconfig/lazygit/state.yml
-home/dotconfig/nvim/lazyvim.json
-home/dotconfig/nvim/lazy-lock.json
+./home/dotconfig/nvim/lazyvim.json
+./home/dotconfig/nvim/lazy-lock.json

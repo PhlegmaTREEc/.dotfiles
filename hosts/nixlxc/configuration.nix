@@ -46,7 +46,10 @@
   };
   
   # docker
-  virtualisation.docker.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    liveRestore = true;
+  };
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }

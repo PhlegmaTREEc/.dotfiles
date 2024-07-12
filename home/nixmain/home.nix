@@ -106,13 +106,17 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    systemd.enable = false;
+    package = pkgs.hyprland;
+    systemd.enable = true;
     xwayland.enable = true;
+    extraConfig = ''
+      source = /home/ptc/.dotfiles/home/dotconfig/hypr/hyprland.conf
+    '';
     };
 
   home.file = {
-    ".config/hypr" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/hypr";
+    ".config/hypr/hyprpaper" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/hypr/hyprpaper.conf";
       }; 
     ".config/easyeffects" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/easyeffects";

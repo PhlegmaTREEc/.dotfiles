@@ -60,6 +60,7 @@
         inherit system;
         specialArgs = {
           inherit pkgs-st;
+          inherit pkgs;
         };
 	      modules = [
           ./hosts/nixlxc/configuration.nix
@@ -74,14 +75,15 @@
         inherit system;
         specialArgs = {
           inherit pkgs-st;
+          inherit pkgs;
         };
 	      modules = [
           ./hosts/nixvm/configuration.nix
-          ({ config, pkgs, ...}: {
+          ({ config, pkgs, pkgs-st, ...}: {
             networking.hostName = "nixvm-fvtt";
           })
           home-manager.nixosModules.home-manager {
-            home-manager.extraSpecialArgs = { inherit inputs pkgs-st; };
+            home-manager.extraSpecialArgs = { inherit inputs pkgs-st pkgs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
           }

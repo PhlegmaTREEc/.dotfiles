@@ -81,6 +81,11 @@
     opentabletdriver = {
       enable = true;
       daemon.enable = true;
+      package = pkgs.opentabletdriver;
+      blacklistedKernelModules = [
+        "hid-uclogic"
+        "wacom"
+      ];
     };
   };
 

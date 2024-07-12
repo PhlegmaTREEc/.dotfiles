@@ -57,19 +57,17 @@
     alsa-tools
     blueman bluez bluez-alsa
     easyeffects
-    filezilla #firefox #floorp
+    filezilla #floorp
     gnome.gnome-sound-recorder
-    gnome.nautilus
-    gnome.file-roller
-    gnome.gnome-calculator
-    gnome.gnome-disk-utility
+    nautilus
+    file-roller
+    gnome-calculator
+    gnome-disk-utility
     loupe
     gimp
     krita
     libsForQt5.qt5ct
-    #libsForQt5.qtstyleplugin-kvantum
     kdePackages.qt6ct
-    #kdePackages.qtstyleplugin-kvantum
     qpwgraph
     imv
     dracula-theme
@@ -91,7 +89,6 @@
     ventoy-full
     zoom-us
     # hyprland "environment"
-    hyprland
     hyprcursor
     hypridle
     hyprlock

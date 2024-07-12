@@ -1,4 +1,4 @@
-{ config, pkgs-st, ... }:
+{ config, pkgs-st, pkgs, ... }:
 
 {
   home.packages = with pkgs-st; [
@@ -14,7 +14,7 @@
     jq
     lazygit
     lsd
-    neovim
+    pkgs.neovim
     navi
     p7zip
     ripgrep

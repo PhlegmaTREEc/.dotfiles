@@ -77,7 +77,7 @@
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
     mpv myMulti
-    openrgb opentabletdriver
+    openrgb
     #protonmail-desktop
     solaar
     switcheroo

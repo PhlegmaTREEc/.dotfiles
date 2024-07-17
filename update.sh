@@ -16,8 +16,8 @@ elif [[ $HOST = nixlxc* ]]; then
 	echo "Update of $HOST finished"
 elif [[ $HOST = nixvm* ]]; then
 	echo "Update of $HOST started"
-	nix flake update
-	sudo nixos-rebuild switch --flake .#$HOST --impure
+	nix flake update -I ./flake-lab
+	sudo nixos-rebuild switch --flake './installer#$HOST' --impure
 	echo "Update of $HOST finished"
 else
 	echo "unknow configuration"

@@ -37,6 +37,10 @@ heavily based on [cjlarose github](https://github.com/cjlarose/nixos-dev-env/blo
 
 - remove the CD drive in proxmox
 
+- change BIOS to "OVMF"
+
+- add EFI Disk
+
 - shh back in `shh ptclab@ip`
 
 - change password `passwd`

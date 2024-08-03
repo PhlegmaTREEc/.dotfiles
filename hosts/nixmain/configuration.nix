@@ -54,6 +54,9 @@
       vim
       virt-manager
       wireguard-tools
+      rclone
+      protonmail-desktop
+      proton-pass
     ];
   };
 

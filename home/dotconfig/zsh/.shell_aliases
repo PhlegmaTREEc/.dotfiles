@@ -34,6 +34,9 @@ alias btm='btm -bT --process_command'
 alias hyprshot='~/Applications/Hyprshot/hyprshot'
 alias fetch="fastfetch"
 
+# RCLONE
+alias pdrive="rclone mount proton: /home/ptc/ProtonDrive --vfs-cache-mode full"
+
 # VPN
 alias wgu='wg-quick up wg0'
 alias wgs='sudo wg'

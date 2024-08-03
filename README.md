@@ -49,6 +49,12 @@
 
 ## NON Nixos Notes
 
+## Rclone
+
+- proton drive guide is [here](https://rclone.org/protondrive/)
+- command used is `rclone mount proton: /home/ptc/ProtonDrive --vfs-cache-mode full`
+- just create the folder `mkdir /home/ptc/ProtonDrive`
+
 ### Dygma Notes
 
 #### Manual flash

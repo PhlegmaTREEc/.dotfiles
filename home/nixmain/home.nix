@@ -9,6 +9,7 @@
   imports =
     [
       ../optional/tmux.nix
+      ../optional/sound.nix
     ];
 
   home.packages = with pkgs; [
@@ -53,10 +54,8 @@
     sysbench
     unigine-valley
     # Gui
-    ardour
     alsa-tools
     blueman bluez bluez-alsa
-    easyeffects
     filezilla #floorp
     gnome.gnome-sound-recorder
     nautilus
@@ -117,9 +116,6 @@
   home.file = {
     ".config/hypr/hyprpaper" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/hypr/hyprpaper.conf";
-      }; 
-    ".config/easyeffects" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/easyeffects";
       }; 
     ".config/fuzzel" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/fuzzel";

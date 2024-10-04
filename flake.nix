@@ -21,7 +21,6 @@
       inherit system;
       overlays = [
         (import ./overlays/multi.nix)
-        #(import ./overlays/bcor.nix)
         ];
       config = {
         allowUnfree = true;
@@ -40,6 +39,37 @@
 	      modules = [
           ./hosts/nixmain/configuration.nix
           ({ config, pkgs, ...}: {
+          })
+          home-manager.nixosModules.home-manager {
+            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+	      ];
+      };
+      nixlxc = lib-st.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit pkgs;
+        };
+	      modules = [
+          ./hosts/nixlxc/configuration.nix
+          home-manager.nixosModules.home-manager {
+            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+	      ];
+      };
+      nixvm-traffic = lib-st.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit pkgs;
+        };
+	      modules = [
+          ./hosts/nixvm/configuration.nix
+          ({ config, pkgs, pkgs, ...}: {
+            networking.hostName = "nixvm-traffic";
           })
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };

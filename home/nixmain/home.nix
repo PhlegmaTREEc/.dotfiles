@@ -14,9 +14,10 @@
 
   home.packages = with pkgs; [
     kitty
+    brave
     bazecor
     #bcor
-    bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
+    bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep #bat-extras.batdiff
     bottom broot
     cliphist
     duf du-dust
@@ -39,6 +40,7 @@
     wev #wayland event viewer - prints input events
     wget wl-clipboard
     xdg-utils
+    xournalpp
     yazi
     # Speedtest net
     speedtest-cli
@@ -57,7 +59,7 @@
     alsa-tools
     blueman bluez bluez-alsa
     filezilla #floorp
-    gnome.gnome-sound-recorder
+    gnome-sound-recorder
     nautilus
     file-roller
     gnome-calculator

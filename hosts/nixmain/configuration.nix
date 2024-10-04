@@ -17,8 +17,10 @@
       systemd-boot.configurationLimit = 15;
       timeout = 2;
     };
+    kernelModules = [ "v4l2loopback" ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_10.v4l2loopback ];
     # Use specific kernel branch
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_6_10;
   };
   
   #i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -57,6 +59,8 @@
       rclone
       protonmail-desktop
       proton-pass
+      cameractrls-gtk3
+      v4l-utils
     ];
   };
 
@@ -170,6 +174,9 @@
       enable = true;
       terminal = "kitty";
     };
+    thunderbird ={
+      enable = true;
+    };
   };
 
   services = {
@@ -206,6 +213,8 @@
       ];
     };
     upower.enable = true;
+    protonmail-bridge.enable = true;
+    gnome.gnome-keyring.enable = true;
   };
 
   security = {

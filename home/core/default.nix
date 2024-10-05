@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  home.packages = with pkgs-st; [
+  home.packages = with pkgs; [
     bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
     bottom
     cliphist
@@ -63,7 +63,7 @@
   
   programs.zsh = {
     enable = true;
-    package = pkgs-st.zsh;
+    package = pkgs.zsh;
     dotDir = ".config/zsh";
     autosuggestion.enable = true;
     enableCompletion = true;

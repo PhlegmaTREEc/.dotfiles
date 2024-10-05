@@ -94,7 +94,6 @@
     hypridle
     hyprlock
     hyprlang
-    hyprpaper
     waybar
     fuzzel
     gammastep
@@ -116,9 +115,6 @@
     };
 
   home.file = {
-    ".config/hypr/hyprpaper" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/hypr/hyprpaper.conf";
-      }; 
     ".config/fuzzel" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/fuzzel";
       }; 

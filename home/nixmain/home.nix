@@ -21,6 +21,7 @@
     bottom broot
     cliphist
     duf du-dust
+    dig
     exiftool
     fastfetch fd ffmpeg_6 ffmpegthumbnailer
     gcc git glib

@@ -47,7 +47,7 @@
           }
 	      ];
       };
-      nixlxc = lib-st.nixosSystem {
+      nixlxc = lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit pkgs;
@@ -61,14 +61,14 @@
           }
 	      ];
       };
-      nixvm-traffic = lib-st.nixosSystem {
+      nixvm-traffic = lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit pkgs;
         };
 	      modules = [
           ./hosts/nixvm/configuration.nix
-          ({ config, pkgs, pkgs, ...}: {
+          ({ config, pkgs, ...}: {
             networking.hostName = "nixvm-traffic";
           })
           home-manager.nixosModules.home-manager {

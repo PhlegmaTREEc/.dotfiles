@@ -1,4 +1,4 @@
-{ config, pkgs-st, pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs-st; [

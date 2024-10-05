@@ -1,10 +1,13 @@
 # My dotfiles made for NixOS using flakes
 
+- WIP
+- Currently contains config for my desktop and my homelab
 - Modular config in progress
 
 ## Desktop
 
-- Hyprland is the centrepiece
+- Build around Hyprland
+  - Cosmic DE could be the future for me
 
 ### Installation
 

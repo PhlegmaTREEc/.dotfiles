@@ -14,6 +14,7 @@
   imports = 
     [
       ../core/default.nix
+      ../optional/lab.nix
     ];
 
   programs.home-manager.enable = true;

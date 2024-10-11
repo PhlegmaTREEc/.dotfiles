@@ -1,0 +1,35 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/services
+
+- Proxmox:
+    - protectli-one:
+        icon: proxmox.png
+        href: https://192.168.1.5:8006/
+        description: Proxmox with OPNsense
+    - acemagic-one:
+        icon: proxmox.png
+        href: https://192.168.1.10:8006/
+        description: Proxmox with things
+    - asusmini-one:
+        icon: proxmox.png
+        href: https://192.168.1.11:8006/
+        description: Proxmox on ASUS - unused
+
+- nixvm-traffic:
+    - OPNsense:
+        icon: opnsense.png
+        href: https://192.168.1.1/
+        description: OPNsense
+    - Pi-hole:
+        icon: pi-hole.png
+        href: http://192.168.1.30:85/admin/
+        description: Pi-hole DNS (with UNBOUND)
+    - Traefik:
+        icon: traefik.png
+        href: https:///traefik-dashboard.local.phlegmatreec.com/
+        description: My local Traefik instance
+    - File Browser:
+        icon: filebrowser.png
+        href: http://192.168.1.30:8095/
+        description: File Browser for traffic VM

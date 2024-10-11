@@ -1,0 +1,27 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/bookmarks
+
+- My links:
+    - PhlegmaTREEc:
+        - abbr: ptc
+          href: https://phlegmatreec.com/
+    - My Github:
+        - abbr: GH
+          href: https://github.com/PhlegmaTREEc/
+
+- Links:
+    - Homepage:
+        - abbr: HP
+          href: https://gethomepage.dev/
+
+- Entertainment:
+    - YouTube:
+        - abbr: YT
+          href: https://youtube.com/
+    - Aktulane.cz:
+        - abbr: A
+          href: https://aktualne.cz/
+    - Moviezone:
+        - abbr: MZ
+          href: https://moviezone.cz/

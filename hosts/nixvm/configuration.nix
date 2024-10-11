@@ -36,7 +36,7 @@
     users.ptclab = {
       initialPassword = "pass";
       isNormalUser = true;
-      extraGroups = [ "wheel"];
+      extraGroups = [ "wheel" "docker"];
       useDefaultShell = true;
     };
     defaultUserShell = pkgs.zsh;

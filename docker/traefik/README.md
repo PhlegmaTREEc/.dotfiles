@@ -10,6 +10,7 @@
 
 - ./.env put the hashed credentials here
 
-- ADGUard DNS Rewrites
+- Pi-hole DNS Rewrites
 
-  - `*.local.phlegmatreec.com` pointing to IP of treafik host
+  - DNS Records ```traffic.local.phlegmatreec.com``` pointing to the IP of the VM
+  - CNAME Record ```traefik-dashboard.local.phlegmatreec.com``` (domain specified in compose.yml) pointing to DNS record of the VM (previous line)

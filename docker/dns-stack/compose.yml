@@ -16,18 +16,18 @@ services:
         ipv4_address: 172.23.0.7
       proxy: null
     ports:
-      - 53:53/tcp
-      - 53:53/udp
-      - 80:80/tcp
+      - 192.168.1.30:53:53/tcp
+      - 192.168.1.30:53:53/udp
+      - 192.168.1.30:85:80/tcp
     #- "443:443/tcp"
     environment:
       TZ: Europe/Prague
       WEBPASSWORD: ${WEBPASS}
       PIHOLE_DNS_: 172.23.0.8#5053
     volumes:
-      - /home/ptclab/docker/stacks/dns-stack/pihole/etc-pihole/:/etc/pihole/
-      - /home/ptclab/docker/stacks/dns-stack/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
-    restart: unless-stopped
+      - /home/ptclab/docker/dns-stack/pihole/etc-pihole/:/etc/pihole/
+      - /home/ptclab/docker/dns-stack/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/
+    restart: always
     #labels:
     #- "traefik.enable=true"
     #- "traefik.http.routers.pihole.entrypoints=http"
@@ -47,11 +47,11 @@ services:
       dns_net:
         ipv4_address: 172.23.0.8
     volumes:
-      - /home/ptclab/docker/stacks/dns-stack:/opt/unbound/etc/unbound
+      - /home/ptclab/docker/dns-stack:/opt/unbound/etc/unbound
     ports:
       - 5053:53/tcp
       - 5053:53/udp
     healthcheck:
       test:
         - NONE
-    restart: unless-stopped
+    restart: always

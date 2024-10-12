@@ -33,9 +33,14 @@ alias man='batman'
 alias btm='btm -bT --process_command'
 alias hyprshot='~/Applications/Hyprshot/hyprshot'
 alias fetch="fastfetch"
+alias ld="lazydocker"
 
 #Docker
 alias dc="docker compose"
+alias dcd="docker compose down"
+alias dcu="docker compose up -d"
+alias dcuf="docker compose up -d --force-recreate"
+alias dps="docker ps"
 
 # RCLONE
 alias pdrive="rclone mount proton: /home/ptc/ProtonDrive --vfs-cache-mode full"

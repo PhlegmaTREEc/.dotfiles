@@ -34,6 +34,8 @@ alias btm='btm -bT --process_command'
 alias hyprshot='~/Applications/Hyprshot/hyprshot'
 alias fetch="fastfetch"
 alias ld="lazydocker"
+alias cd="z"
+alias cdi="zi"
 
 #Docker
 alias dc="docker compose"

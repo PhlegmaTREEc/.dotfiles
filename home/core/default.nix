@@ -7,6 +7,7 @@
     cliphist
     duf
     du-dust
+    dig
     fastfetch
     fd
     gcc
@@ -14,7 +15,7 @@
     jq
     lazygit
     lsd
-    pkgs.neovim
+    neovim
     navi
     p7zip
     ripgrep
@@ -85,6 +86,11 @@
     syntaxHighlighting.enable = true;
   };
 
+  programs.zoxide = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+  
   #programs.nixvim = {
   #  enable = true;
   #  colorschemes.dracula.enable = true;

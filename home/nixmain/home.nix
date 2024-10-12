@@ -1,4 +1,4 @@
-{ config, pkgs, lib, nixvim, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   home.username = "ptc";
@@ -8,6 +8,7 @@
 
   imports =
     [
+      ../core/default.nix
       ../optional/tmux.nix
       ../optional/sound.nix
     ];
@@ -16,33 +17,19 @@
     kitty
     brave
     bazecor
-    #bcor
-    bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep #bat-extras.batdiff
-    bottom broot
-    cliphist
-    duf du-dust
-    dig
     exiftool
-    fastfetch fd ffmpeg_6 ffmpegthumbnailer
-    gcc git glib
+    ffmpeg_6 ffmpegthumbnailer
+    glib
     hugo
     imagemagick
-    jq
-    lazygit lf libnotify lsd
-    neovim
-    navi nodejs_18
-    p7zip
+    libnotify
+    nodejs_18
     poppler_utils
-    ripgrep rclone
-    starship steam
-    trash-cli tree tree-sitter
-    unzip upower unar
+    steam
     vulkan-tools
     wev #wayland event viewer - prints input events
-    wget wl-clipboard
     xdg-utils
     xournalpp
-    yazi
     # Speedtest net
     speedtest-cli
     fast-cli
@@ -125,29 +112,14 @@
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/kitty";
       }; 
-    ".config/lazygit" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/lazygit";
-      }; 
-    ".config/navi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/navi";
-      }; 
-    ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/nvim";
-      }; 
     ".config/sioyek" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/sioyek";
-      }; 
-    ".config/starship" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/starship";
       }; 
     ".config/swappy" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swappy";
       }; 
     ".config/swaync" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swaync";
-      }; 
-    ".config/yazi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/yazi";
       }; 
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
@@ -180,52 +152,6 @@
       '';
     };
   };
-
-  programs.fzf = {
-    enable = true;
-    enableZshIntegration = true;
-    defaultOptions = [
-      "--color=fg:#f8f8f2,bg:#282a36,hl:#bd93f9"
-      "--color=fg+:#f8f8f2,bg+:#44475a,hl+:#bd93f9"
-      "--color=info:#ffb86c,prompt:#50fa7b,pointer:#ff79c6"
-      "--color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
-    ];
-  };
-
-  programs.zsh = {
-    enable = true;
-    package = pkgs.zsh;
-    dotDir = ".config/zsh";
-    autosuggestion.enable = true;
-    enableCompletion = true;
-    completionInit = ''
-    autoload -Uz compinit && compinit
-    zstyle ':completion:*' completer _complete _ignored
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-    '';
-    history.path = "$HOME/.config/zsh/.zsh_history";
-    initExtra = ''
-    if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_config ]; then
-        source ~/.dotfiles/home/dotconfig/zsh/.shell_config
-    fi
-
-    if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_aliases ]; then
-	    source ~/.dotfiles/home/dotconfig/zsh/.shell_aliases
-    fi
-    '';
-    syntaxHighlighting.enable = true;
-  };
-  
-  programs.zoxide = {
-    enable = true;
-    enableZshIntegration = true;
-  };
-
-  #programs.nixvim = {
-  #  enable = true;
-  #  colorschemes.dracula.enable = true;
-  #  plugins.lualine.enable = true;
-  #};
 
   ### MAKE BACKUP OF BASIC FOLDERS BEFORE TRYING THIS OPTION
   #xdg = {
@@ -276,11 +202,6 @@
         gtk-application-prefer-dark-theme=1
         '';
     };
-  };
-
-  # Session variables
-  home.sessionVariables = {
-    EDITOR = "nvim";
   };
 
   # Let Home Manager install and manage itself.

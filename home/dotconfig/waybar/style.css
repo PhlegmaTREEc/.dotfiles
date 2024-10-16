@@ -91,6 +91,7 @@ button:hover {
 #mode,
 #scratchpad,
 #workspaces,
+#custom-notification
 #window {
     padding: 0px 5px;
     color: @FG;
@@ -189,4 +190,11 @@ label:focus {
 
 #scratchpad.empty {
 	background-color: transparent;
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
+  background-color: @YEL;
+  color: @BG;
+
 }

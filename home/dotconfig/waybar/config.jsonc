@@ -19,7 +19,7 @@
   // Choose the order of the modules
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
   "modules-center": ["clock", "clock#moredate"],
-  "modules-right": ["custom/myvolumeout", "custom/myvolumein", "tray"],
+  "modules-right": ["custom/myvolumeout", "custom/myvolumein", "custom/notification", "tray"],
 
   // Modules configuration
   "clock#moredate": {
@@ -55,7 +55,7 @@
   "modules-center": ["clock"],
   "modules-right": ["custom/myvolumeout", "custom/myvolumein"],
   // Modules configuration
-}]
+},
 // DP-3
 {
   "layer": "top", // Waybar at top layer
@@ -79,7 +79,7 @@
   "modules-center": ["clock"],
   "modules-right": ["custom/myvolumeout", "custom/myvolumein"],
   // Modules configuration
-}
+},
 // HDMI-A-1
 {
   "layer": "top", // Waybar at top layer
@@ -103,4 +103,4 @@
   "modules-center": ["clock"],
   "modules-right": ["custom/myvolumeout", "custom/myvolumein"],
   // Modules configuration
-}
+}]

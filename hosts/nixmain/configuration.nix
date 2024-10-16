@@ -18,9 +18,9 @@
       timeout = 2;
     };
     kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_10.v4l2loopback ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_11.v4l2loopback ];
     # Use specific kernel branch
-    kernelPackages = pkgs.linuxPackages_6_10;
+    kernelPackages = pkgs.linuxPackages_6_11;
   };
   
   #i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -60,6 +60,7 @@
       protonmail-desktop
       proton-pass
       cameractrls-gtk3
+      guvcview
       v4l-utils
     ];
   };

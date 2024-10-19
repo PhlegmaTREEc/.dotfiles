@@ -7,21 +7,24 @@
         - abbr: ptc
           href: https://phlegmatreec.com/
     - My Github:
-        - abbr: GH
+        - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/github.webp
           href: https://github.com/PhlegmaTREEc/
 
 - Links:
     - Homepage:
-        - abbr: HP
+        - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/homepage.webp
           href: https://gethomepage.dev/
 
-- Entertainment:
+- Favourites:
     - YouTube:
-        - abbr: YT
+        - icon: https://cdn.jsdelivr.net/gh/selfhst/icons/webp/youtube.webp
           href: https://youtube.com/
     - Aktulane.cz:
-        - abbr: A
+        - icon: /icons/640px-aktualne.webp
           href: https://aktualne.cz/
     - Moviezone:
         - abbr: MZ
           href: https://moviezone.cz/
+    - Alza.cz:
+        - icon: /icons/alza-1080x1200.webp
+          href: https://alza.cz/

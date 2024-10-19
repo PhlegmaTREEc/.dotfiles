@@ -5,12 +5,12 @@
 - Proxmox:
     - protectli-one:
         icon: proxmox.png
-        href: https://192.168.1.5:8006/
-        description: Proxmox with OPNsense
+        href: https://protectli-one.local.phlegmatreec.com/
+        description: Proxmox with OPNsense (https://192.168.1.5:8006/)
     - acemagic-one:
         icon: proxmox.png
-        href: https://192.168.1.10:8006/
-        description: Proxmox with things
+        href: https://acemagic-one.local.phlegmatreec.com/
+        description: Proxmox with things (https://192.168.1.10:8006/)
     - asusmini-one:
         icon: proxmox.png
         href: https://192.168.1.11:8006/
@@ -27,9 +27,14 @@
         description: Pi-hole DNS (with UNBOUND)
     - Traefik:
         icon: traefik.png
-        href: https:///traefik-dashboard.local.phlegmatreec.com/
+        href: https://traefik-dashboard.local.phlegmatreec.com/
         description: My local Traefik instance
     - File Browser:
         icon: filebrowser.png
-        href: http://192.168.1.30:8095/
-        description: File Browser for traffic VM
+        href: https://fb-traffic.local.phlegmatreec.com/
+        description: File Browser for traffic VM (http://192.168.1.39:8095)
+- tests:
+    - FoundryVTT:
+        icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/foundry-virtual-tabletop.png
+        href: https://fvtt.local.phlegmatreec.com/
+        description: Foundry on 192.168.1.122

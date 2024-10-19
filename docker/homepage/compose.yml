@@ -9,10 +9,17 @@ services:
     restart: always
     volumes:
       - /home/ptclab/docker/homepage/config:/app/config # Make sure your local config directory exists
+      - /home/ptclab/docker/homepage/icons:/app/public/icons
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations, see alternative methods
     environment:
       PUID: 1000
       PGID: 1000
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.homepage.rule=Host(`hp-traffic.local.phlegmatreec.com`)"
+      - "traefik.http.routers.homepage.entrypoints=https"
+      - "traefik.http.routers.homepage.tls=true"
+      - "traefik.http.services.homepage.loadbalancer.server.port=3000"
 networks:
   proxy:
     external: true

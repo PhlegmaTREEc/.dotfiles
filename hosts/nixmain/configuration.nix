@@ -129,6 +129,7 @@
     allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
       "steam"
       "steam-original"
+      "steam-unwrapped"
       "steam-run"
       "libXNVCtrl" #????
     ];

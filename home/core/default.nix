@@ -29,6 +29,7 @@
     unar
     wget
     wl-clipboard
+    xclip
     xdg-utils
     yazi
   ];

@@ -6,9 +6,9 @@ services:
       context: ./
       dockerfile: ./Dockerfile
     image: foundryvtt:12
-    restart: unless-stopped
+    restart: no
     volumes:
-      - /home/ptclab/docker/compose/foundry/foundryvtt:/home/foundry/fvttapp
-      - /home/ptclab/docker/compose/foundry/foundrydata:/home/foundry/fvttdata
+      - /home/ptclab/docker/foundry/fvvtapp/:/home/foundry/fvttapp
+      - /home/ptclab/docker/foundry/fvvtdata/:/home/foundry/fvttdata
     ports:
       - 30000:30000

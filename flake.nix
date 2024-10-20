@@ -78,6 +78,23 @@
           }
 	      ];
       };
+      nixvm-test = lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit pkgs;
+        };
+	      modules = [
+          ./hosts/nixvm/configuration.nix
+          ({ config, pkgs, ...}: {
+            networking.hostName = "nixvm-test";
+          })
+          home-manager.nixosModules.home-manager {
+            home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
+	      ];
+      };
     };
   };
 }

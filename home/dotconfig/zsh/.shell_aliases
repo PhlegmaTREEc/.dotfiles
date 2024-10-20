@@ -36,6 +36,8 @@ alias fetch="fastfetch"
 alias ld="lazydocker"
 alias cd="z"
 alias cdi="zi"
+alias amdtop='amdgpu_top --dark'
+alias amdtopgui='amdgpu_top --dark --gui'
 
 #Docker
 alias dc="docker compose"

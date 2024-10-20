@@ -3,8 +3,8 @@ self: super:
   myMulti = super.multiviewer-for-f1.overrideAttrs (old: rec {
     pname = "multiviewer-for-f1";
     src = super.fetchurl {
-      url = "https://releases.multiviewer.app/download/180492850/multiviewer-for-f1_1.35.2_amd64.deb";
-      sha256 = "sha256-V1+kMgfbgDS47YNIotmzrh2Hry5pvdQvrzWwuKJY1oM=";
+      url = "https://releases.multiviewer.app/download/192684463/multiviewer-for-f1_1.36.1_amd64.deb";
+      sha256 = "sha256-qbkig46BIr8Cs6GPZDBRalimjb+QK7PfkBJvQXIrYgw=";
     };
   });
 }

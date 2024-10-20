@@ -54,8 +54,9 @@ alias wgc='firefox --new-window https://ip.me'
 alias wgd='wg-quick down wg0'
 
 # LS & CD
-alias ls='lsd -ha --header --group-dirs=first --date "+%F %R"'
-alias lsl='lsd -lha --header --group-dirs=first --date "+%F %R"'
+alias ls='eza --icons=always -a --group-directories-first'
+alias lsl='eza --icons=always -lahg --group-directories-first'
+alias lst='eza --icons=always -aT -L=2 --group-directories-first'
 alias gdot='cd ~/.dotfiles/'
 alias gconf='cd ~/.config/'
 

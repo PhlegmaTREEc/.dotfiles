@@ -8,13 +8,13 @@
     duf
     du-dust
     dig
+    eza
     fastfetch
     fd
     gcc
     git
     jq
     lazygit
-    lsd
     neovim
     navi
     p7zip

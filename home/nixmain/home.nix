@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     kitty
+    amdgpu_top
     brave
     bazecor
     exiftool

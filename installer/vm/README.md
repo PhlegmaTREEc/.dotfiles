@@ -46,8 +46,20 @@ heavily based on [cjlarose github](https://github.com/cjlarose/nixos-dev-env/blo
 - change password `passwd`
 
 - clone the repo
+ 
+  - for temp use
 
-  - `git clone https://github.com/PhlegmaTREEc/.dotfiles.git && cd .dotfiles`
+    - `git clone https://github.com/PhlegmaTREEc/.dotfiles.git && cd .dotfiles`
+
+  - for long term use (with ssh)
+
+    - do ssh key [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+
+    - `git config --global user.name ""`
+
+    - `git config --global user.email ""`
+
+    - `git clone git@github.com:PhlegmaTREEc/.dotfiles.git`
 
 - run the update script
 

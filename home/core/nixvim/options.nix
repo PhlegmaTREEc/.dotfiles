@@ -7,7 +7,6 @@
     #};
     opts = {
       colorcolumn = "100"; # Columns to highlight
-      completeopt = ["menu" "menuone" "noselect"]; # For CMP plugin
       cursorline = true; # Highlight the screen line of the cursor
       expandtab = true; # Expand <Tab> to spaces in Insert mode (local to buffer)
       fileencoding = "utf-8"; # File-content encoding for the current buffer

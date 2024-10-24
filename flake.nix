@@ -13,7 +13,7 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -44,6 +44,9 @@
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.sharedModules = [
+              nixvim.homeManagerModules.nixvim
+            ];
           }
 	      ];
       };

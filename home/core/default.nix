@@ -34,6 +34,10 @@
     yazi
   ];
 
+  imports = [
+    ./nixvim/nixvim.nix
+  ];
+
   home.file = {
     ".config/lazygit" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/lazygit";
@@ -92,12 +96,6 @@
     enableZshIntegration = true;
   };
   
-  #programs.nixvim = {
-  #  enable = true;
-  #  colorschemes.dracula.enable = true;
-  #  plugins.lualine.enable = true;
-  #};
-
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";

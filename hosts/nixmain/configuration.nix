@@ -176,9 +176,6 @@
       enable = true;
       terminal = "kitty";
     };
-    thunderbird ={
-      enable = true;
-    };
   };
 
   services = {

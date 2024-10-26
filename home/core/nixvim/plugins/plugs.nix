@@ -1,6 +1,6 @@
 {
   imports = [
-    ./auto-pairs.nix
+    ./nvim-autopairs.nix
     ./barbar.nix
     ./completion.nix
     ./lualine.nix

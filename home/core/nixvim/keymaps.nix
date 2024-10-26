@@ -1,37 +1,49 @@
 { config, lib, ...}: {
   programs.nixvim = {
     globals = {
-      mapleader = "\\";
-      maplocalleader = "\\";
+      mapleader = " ";
+      maplocalleader = " ";
     };
-    
-    keymaps = let
-      normal = 
-        lib.mapAttrsToList
-        (key: action: {
-          mode = "n";
-          inherit action key;
-        })
-        {
-          # move current line up/down
-          # M = Alt key
-          "<M-k>" = ":move-2<CR>";
-          "<M-j>" = ":move+<CR>";
-        };
-      visual =
-        lib.mapAttrsToList
-        (key: action: {
-          mode = "v";
-          inherit action key;
-        })
-        {
-          # move selected line / block of text in visual mode
-          "K" = ":m '<-2<CR>gv=gv";
-          "J" = ":m '>+1<CR>gv=gv";
-        };
-    in
-      config.nixvim.helpers.keymaps.mkKeymaps
-      {options.silent = true;}
-      (normal ++ visual);
+
+    keymaps = [
+
+      # Moving lines
+      {
+        action = "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==";
+        key = "<M-k>";
+        mode  = [ "n" ];
+      }
+      {
+        action = "<cmd>execute 'move .+' . v:count1<cr>==";
+        key = "<M-j>";
+        mode  = [ "n" ];
+      }
+      {
+        action = ":m '<-2<CR>gv=gv";
+        key = "M-k";
+        mode  = [ "v" ];
+      }
+      {
+        action = ":m '>+1<CR>gv=gv";
+        key = "M-j";
+        mode  = [ "v" ];
+      }
+
+      # ESC from search
+      {
+        action = "<cmd>noh<cr><esc>";
+        key = "<esc>";
+        mode  = [ "n" ];
+      }
+      {
+        action = "<ESC>";
+        key = "kk";
+        mode  = [ "i" ];
+          options = {
+            silent = true;
+          };
+      }
+ 
+    ];
   };
 }

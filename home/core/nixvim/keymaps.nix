@@ -20,12 +20,12 @@
       }
       {
         action = ":m '<-2<CR>gv=gv";
-        key = "M-k";
+        key = "<M-k>";
         mode  = [ "v" ];
       }
       {
         action = ":m '>+1<CR>gv=gv";
-        key = "M-j";
+        key = "<M-j>";
         mode  = [ "v" ];
       }
 

@@ -97,6 +97,7 @@
     enable = true;
     package = pkgs.hyprland;
     systemd.enable = true;
+    systemd.variables = ["--all"];
     xwayland.enable = true;
     extraConfig = ''
       source = /home/ptc/.dotfiles/home/dotconfig/hypr/hyprland.conf

@@ -2,11 +2,12 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/configs/service-widgets
 
-- resources:
-    cpu: true
-    memory: true
-    disk: /
+#- resources:
+#    cpu: true
+#    memory: true
+#    disk: /
 
 - search:
-    provider: brave
+    provider: custom
+    url: https://www.qwant.com/?q=
     target: _blank

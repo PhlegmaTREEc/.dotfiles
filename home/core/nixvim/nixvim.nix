@@ -7,6 +7,9 @@
 
   programs.nixvim = {
     enable = true;
-    colorschemes.dracula-nvim.enable = true;
+    colorschemes.catppuccin = {
+      enable = true;
+      settings.flavour = "mocha";
+    };
   };
 }

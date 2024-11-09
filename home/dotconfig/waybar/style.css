@@ -5,25 +5,11 @@
     border-radius: 2;
 }
 
-@define-color BG #282a36;
-@define-color CL #44475a;
-@define-color FG #f8f8f2;
-@define-color CM #6272a4;
-@define-color CYA #8be9fd;
-@define-color GRE #50fa7b;
-@define-color ORA #ffb86c;
-@define-color PIN #ff79c6;
-@define-color PUR #bd93f9;
-@define-color RED #ff5555;
-@define-color YEL #f1fa8c;
-
-@define-color BGRGBA rgba(40, 42, 54, 0.7);
-@define-color CLRGBA rgba(68, 71, 90, 0.7);
+@import "mocha.css";
 
 window#waybar {
-    background-color: @BG;
-    /*border-bottom: 2px solid @BGRGBA;*/
-    color: @FG;
+    background-color: @base;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -56,26 +42,26 @@ button:hover {
 }
 
 #workspaces {
-    background-color: @BG;
+    background-color: @surface0;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: @FG;
+    color: @text;
 }
 
 #workspaces button:hover {
-    background: @BG;
+    background: @base;
 }
 
 #workspaces button.active {
-    color: @GRE;
-    box-shadow: inset 0 -3px @FG;
+    color: @green;
+    box-shadow: inset 0 -3px @text;
 }
 
 #workspaces button.urgent {
-    color: @RED;
+    color: @red;
 }
 
 #mode {
@@ -94,7 +80,7 @@ button:hover {
 #custom-notification
 #window {
     padding: 0px 5px;
-    color: @FG;
+    color: @text;
     /* margin: 0 1px; */
 }
 
@@ -109,23 +95,23 @@ button:hover {
 }
 
 #clock {
-    background-color: @PUR;
-  color: @BG;
+    background-color: @mauve;
+  color: @base;
 }
 
 #clock.moredate {
-    background-color: @PUR;
-  color: @BG;
+    background-color: @mauve;
+  color: @base;
 }
 
 #custom-myvolumein {
-    background-color: @PIN;
-  color: @BG;
+    background-color: @pink;
+  color: @base;
 }
 
 #custom-myvolumeout {
-    background-color: @GRE;
-  color: @BG;
+    background-color: @green;
+  color: @base;
 }
 
 @keyframes blink {
@@ -148,7 +134,7 @@ label:focus {
 }
 
 #tray {
-    background-color: @CL;
+    background-color: @surface0;
 }
 
 #tray > .passive {
@@ -194,7 +180,7 @@ label:focus {
 
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
-  background-color: @YEL;
-  color: @BG;
+  background-color: @yellow;
+  color: @base;
 
 }

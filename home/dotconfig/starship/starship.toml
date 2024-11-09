@@ -1,6 +1,9 @@
+# Catppuccin
+palette = "catppuccin_mocha"
+
 # Global format
 format = """
-[\uF313](fg:bold #bd93f9)\
+[\uF313](fg:bold mauve)\
 $username\
 $hostname\
 $directory\
@@ -16,34 +19,62 @@ add_newline = true
 disabled = false
 
 [username]
-style_user = "fg:bold #8be9fd"
-style_root = "fg:bold #8be9fd"
+style_user = "fg:bold sapphire"
+style_root = "fg:bold sapphire"
 show_always = false
 format = "[ $user]($style)"
 
 [hostname]
 ssh_only = true
-style = "fg:bold #f1fa8c"
+style = "fg:bold yellow"
 format = "[ $ssh_symbol $hostname ]($style)"
 
 [directory]
 truncation_symbol = "../"
 truncation_length = 4
-style = "fg:bold #ff79c6"
+style = "fg:bold lavender"
 read_only = "\uF83D"
-read_only_style = "fg:#ff5555"
+read_only_style = "fg:red"
 format = "[ $path]($style)[ $read_only ]($read_only_style)"
 
 [character]
-success_symbol = "[\uE285](fg:#50fa7b)"
-error_symbol = "[\uE009](fg:#ff5555)"
-vicmd_symbol = "[\uE285](fg:#ffb86c)"
+success_symbol = "[\uE285](fg:green)"
+error_symbol = "[\uE009](fg:red)"
+vicmd_symbol = "[\uE285](fg:peach)"
 format = "$symbol "
 
 [git_branch]
-style = "bg:#44475a fg:bold #f1fa8c"
-format = "[\uE0B0](fg:#282a36 bg:#44475a)[ $symbol$branch(:$remote_branch)]($style)"
+style = "bg:surface0 fg:bold yellow"
+format = "[\uE0B0](fg:base bg:surface0)[ $symbol$branch(:$remote_branch)]($style)"
 
 [git_status]
-style = "bg:#44475a fg:#ffb86c"
-format = "[ \u003C](bg:#44475a fg:#ffb86c)[$all_status$ahead_behind]($style)[\u003E ](bg:#44475a fg:#ffb86c)[\uE0B0 ](fg:#44475a)"
+style = "bg:surface0 fg:peach"
+format = "[ \u003C](bg:surface0 fg:peach)[$all_status$ahead_behind]($style)[\u003E ](bg:surface0 fg:peach)[\uE0B0 ](fg:surface0)"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"

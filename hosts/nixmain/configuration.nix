@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ../desktop-modules/greetd.nix
+      ../core/core-pkgs.nix
     ];
 
   home-manager.users.ptc = import ../../home/nixmain/home.nix;
@@ -52,7 +53,6 @@
       logitech-udev-rules
       mangohud
       ventoy-full
-      vim
       virt-manager
       wireguard-tools
       rclone

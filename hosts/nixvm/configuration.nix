@@ -1,7 +1,10 @@
 { config, pkgs, pkgs-unstable, lib, inputs, outputs, ... }:
 
 {
-  imports = [ /etc/nixos/hardware-configuration.nix ];
+  imports = [
+    /etc/nixos/hardware-configuration.nix
+    ../core/core-pkgs.nix
+  ];
 
   home-manager.users.ptclab = import ../../home/lab/home.nix;
 
@@ -42,11 +45,8 @@
     defaultUserShell = pkgs.zsh;
   };
 
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-    curl
-  ];
+  #environment.systemPackages = with pkgs; [
+  #];
   
   nix = {
     settings = {

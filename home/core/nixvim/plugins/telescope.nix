@@ -4,6 +4,8 @@
 
     keymaps = {
       "<leader>ff" = "find_files";
+      "<leader>fg" = "live_grep";
+      "<leader>bl" = "buffers";
     };
   };
 }

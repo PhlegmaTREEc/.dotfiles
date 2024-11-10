@@ -7,6 +7,10 @@
           __unkeyed-1 = "<leader>f";
           group = "Files";
         }
+        {
+          __unkeyed-1 = "<leader>b";
+          group = "Buffers";
+        }
       ];
     };
   };

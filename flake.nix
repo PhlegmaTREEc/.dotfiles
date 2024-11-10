@@ -36,10 +36,11 @@
     nixosConfigurations = {
       nixmain = lib.nixosSystem {
         inherit system;
+        specialArgs = { inherit inputs; };
 	      modules = [
           ./hosts/nixmain/configuration.nix
-          ({ config, pkgs, ...}: {
-          })
+            #({ config, pkgs, ...}: {
+            #})
           home-manager.nixosModules.home-manager {
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
             home-manager.useGlobalPkgs = true;
@@ -53,7 +54,7 @@
       nixlxc = lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs;
+          inherit inputs pkgs;
         };
 	      modules = [
           ./hosts/nixlxc/configuration.nix
@@ -67,7 +68,7 @@
       nixvm-traffic = lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs;
+          inherit inputs pkgs;
         };
 	      modules = [
           ./hosts/nixvm/configuration.nix
@@ -87,7 +88,7 @@
       nixvm-test = lib.nixosSystem {
         inherit system;
         specialArgs = {
-          inherit pkgs;
+          inherit inputs pkgs;
         };
 	      modules = [
           ./hosts/nixvm/configuration.nix

@@ -29,6 +29,30 @@
         mode  = [ "v" ];
       }
 
+      # Buffers
+      {
+        action = "<cmd>BufferClose<CR>";
+        key = "<leader>bx";
+      }
+      {
+        action = "<cmd>BufferPrevious<CR>";
+        key = "<leader>bb";
+      }
+
+      # Splits
+      {
+        action = "<cmd>vs<CR>";
+        key = "<leader>bv";
+      }
+      {
+        action = "<cmd>sp<CR>";
+        key = "<leader>bh";
+      }
+      {
+        action = "<cmd>Oil<CR>";
+        key = "<leader>fo";
+      }
+
       # ESC from search
       {
         action = "<cmd>noh<cr><esc>";

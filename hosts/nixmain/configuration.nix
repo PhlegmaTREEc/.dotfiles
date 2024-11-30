@@ -19,9 +19,9 @@
       timeout = 2;
     };
     kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_11.v4l2loopback ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_12.v4l2loopback ];
     # Use specific kernel branch
-    kernelPackages = pkgs.linuxPackages_6_11;
+    kernelPackages = pkgs.linuxPackages_6_12;
   };
   
   #i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -44,9 +44,9 @@
       MOZ_ENABLE_WAYLAND = "1";
       #SDL_VIDEODRIVER = "wayland"; #Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
       _JAVA_AWT_WM_NONREPARENTING = "1";
-      XCURSOR_SIZE = "16";
-      HYPRCURSOR_THEME = "HyprBibataModernClassicSVG";
-      HYPRCURSOR_SIZE = "16";
+      #XCURSOR_SIZE = "32";
+      #HYPRCURSOR_THEME = "HyprBibataModernClassicSVG";
+      #HYPRCURSOR_SIZE = "16";
 
     };
     systemPackages = with pkgs; [
@@ -66,7 +66,8 @@
   };
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "Ubuntu" ]; })
+    nerd-fonts.ubuntu
+    nerd-fonts.jetbrains-mono
   ];
 
   hardware = {
@@ -133,6 +134,11 @@
       "steam-run"
       "libXNVCtrl" #????
     ];
+    permittedInsecurePackages = [
+      "dotnet-runtime-6.0.36"
+      "dotnet-sdk-6.0.428"
+      "dotnet-sdk-wrapped-6.0.428"
+    ];
     packageOverrides = pkgs: {
       steam = pkgs.steam.override {
         extraPkgs = pkgs: with pkgs; [
@@ -175,6 +181,10 @@
     nautilus-open-any-terminal = {
       enable = true;
       terminal = "kitty";
+    };
+    nh = {
+      enable = true;
+      flake ="/home/ptc/.dotfiles";
     };
   };
 

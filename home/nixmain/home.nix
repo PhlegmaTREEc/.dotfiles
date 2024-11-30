@@ -79,7 +79,7 @@
     ventoy-full
     zoom-us
     # hyprland "environment"
-    hyprcursor
+    #hyprcursor
     hypridle
     hyprlock
     hyprlang
@@ -133,24 +133,7 @@
     profiles.ptc = {
       # https://github.com/MrOtherGuy/firefox-csshacks
       userChrome = ''
-      /* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/toggle_tabs_toolbar_with_alt.css made available under Mozilla Public License v. 2.0
-      See the above repository for updates as well as full license text. */
-      
-      /* Show tabs toolbar with Alt-key. Menubar must be disabled for this to work */
-      
-      #titlebar { -moz-appearance: none !important }
-      :root[tabsintitlebar][sizemode="maximized"]{ padding-top: 1px !important; }
-      #titlebar:not(:hover) > #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar { visibility: collapse }
-      
-      /* Behavior 1 - Alt-key toggles menubar as normal */
-      #titlebar:hover > #toolbar-menubar[autohide="true"]{ height: calc(var(--tab-min-height) + var(--space-above-tabbar) - var(--tabs-navbar-shadow-size)) !important; }
-      
-      /* Behavior 2 - Alt-key only shows tabs toolbar */
-      /* To show window controls, hit Alt again while cursor is over tabs toolbar */
-      /*
-      #toolbar-menubar[autohide]:not([inactive]),
-      #toolbar-menubar[autohide="true"]:not([inactive]) + #TabsToolbar > .titlebar-buttonbox-container{ visibility: collapse !important }
-      */
+        @import url(/home/ptc/.dotfiles/home/dotconfig/userchrome/autohide_tabstoolbar_v2.css)
       '';
     };
   };
@@ -170,9 +153,9 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Classic";
-    size = 16;
+    package = pkgs.phinger-cursors;
+    name = "phinger-cursors-dark";
+    size = 32;
   };
 
   gtk = {
@@ -191,8 +174,8 @@
       #  folderColor = "violet";
     };
     cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-dark";
     };
     gtk3.extraConfig = {
       Settings = ''

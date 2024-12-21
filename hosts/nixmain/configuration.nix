@@ -62,6 +62,7 @@
       guvcview
       v4l-utils
       hyprpolkitagent
+      distrobox
     ];
   };
 
@@ -252,7 +253,13 @@
   };
 
   # Enable virtualisation
-  virtualisation.libvirtd.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    podman = {
+    enable = true;
+    dockerCompat = true;
+    };
+  };
 
   xdg.portal = {
       enable = true;

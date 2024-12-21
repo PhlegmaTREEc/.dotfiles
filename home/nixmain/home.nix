@@ -133,7 +133,7 @@
     profiles.ptc = {
       # https://github.com/MrOtherGuy/firefox-csshacks
       userChrome = ''
-        @import url(/home/ptc/.dotfiles/home/dotconfig/userchrome/autohide_tabstoolbar_v2.css)
+        @import url(/home/ptc/.dotfiles/home/dotconfig/userchrome/hide_tabs_toolbar_v2.css)
       '';
     };
   };

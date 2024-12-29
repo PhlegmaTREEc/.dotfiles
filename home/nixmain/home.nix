@@ -62,7 +62,7 @@
     imv
     dracula-theme
     dracula-icon-theme
-    paper-clip
+    #paper-clip
     parabolic
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
@@ -83,6 +83,7 @@
     hypridle
     hyprlock
     hyprlang
+    hyprland-qtutils
     waybar
     fuzzel
     gammastep

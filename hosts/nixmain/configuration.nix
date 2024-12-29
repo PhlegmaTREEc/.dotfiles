@@ -63,6 +63,7 @@
       v4l-utils
       hyprpolkitagent
       distrobox
+      protonvpn-gui
     ];
   };
 
@@ -236,6 +237,16 @@
     extraConfig = ''
       DefaultTimeoutStopSec=20s
       '';
+    targets = {
+      "network-online" = {
+        wantedBy = [
+          "multi-user.target"
+        ];
+        after = [
+          "multi-user.target"
+        ];
+      };
+    };
   };
 
   # Set timezone

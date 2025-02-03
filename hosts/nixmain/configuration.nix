@@ -56,7 +56,6 @@
       virt-manager
       wireguard-tools
       rclone
-      protonmail-desktop
       proton-pass
       cameractrls-gtk3
       guvcview
@@ -211,8 +210,9 @@
       wireplumber.enable = true;
       # jack.enable = true;
     };
-    # Thumbaniling program
     resolved.enable = true;
+    resolved.dnssec = "allow-downgrade";
+    # Thumbaniling program
     tumbler.enable = true;
     udisks2 = {
       enable = true;

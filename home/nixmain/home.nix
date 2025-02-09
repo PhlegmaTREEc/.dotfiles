@@ -45,6 +45,7 @@
     sysbench
     unigine-valley
     # Gui
+    sweethome3d.application #room layout application
     alsa-tools
     blueman bluez bluez-alsa
     filezilla #floorp

@@ -133,10 +133,11 @@
   programs.firefox = {
     enable = true;
     profiles.ptc = {
+      isDefault = true;
       # https://github.com/MrOtherGuy/firefox-csshacks
-      userChrome = ''
-        @import url(/home/ptc/.dotfiles/home/dotconfig/userchrome/hide_tabs_toolbar_v2.css)
-      '';
+      #userChrome = ''
+      #  @import url(/home/ptc/.dotfiles/home/dotconfig/userchrome/hide_tabs_toolbar_v2.css)
+      #'';
     };
   };
 

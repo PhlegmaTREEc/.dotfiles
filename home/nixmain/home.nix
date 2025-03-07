@@ -31,7 +31,6 @@
     vulkan-tools
     wev #wayland event viewer - prints input events
     xdg-utils
-    xournalpp
     # Speedtest net
     speedtest-cli
     fast-cli
@@ -53,32 +52,25 @@
     gnome-sound-recorder
     nautilus
     file-roller
-    gnome-calculator
     gnome-disk-utility
-    loupe
     gimp
-    krita
     libsForQt5.qt5ct
     kdePackages.qt6ct
     qpwgraph
     imv
     dracula-theme
     dracula-icon-theme
-    #paper-clip
-    parabolic
     papirus-icon-theme papirus-folders
     pasystray pavucontrol
     mpv myMulti
-    openrgb
+    #openrgb
     #protonmail-desktop
     solaar
-    switcheroo
     webp-pixbuf-loader
-    upscayl
     #udiskie
     #devmon + service alternative to udisk?
     #teams-for-linux
-    ventoy-full
+    #ventoy-full
     zoom-us
     # hyprland "environment"
     #hyprcursor

@@ -1,26 +1,25 @@
-#! /bin/bash
+#! /bin/sh
 flatpak install \
-	org.gtk.Gtk3theme.adw-gtk3 \
-	org.gtk.Gtk3theme.adw-gtk3-dark \
-	com.basemark.BasemarkGPU \
-	com.calibre_ebook.calibre \
+  app.zen_browser.zen \
 	com.usebottles.bottles \
 	org.gnome.Calculator \
-	com.hunterwittenborn.Celeste \
 	com.discordapp.Discord \
 	com.github.wwmm.easyeffects \
-	org.ferdium.Ferdium \
 	com.github.tchx84.Flatseal \
+  com.obsproject.Studio\
+  dev.geopjr.Collision\
 	com.heroicgameslauncher.hgl \
 	org.kde.krita \
-	org.gimp.GIMP \
+	com.hunterwittenborn.Celeste \
 	org.libreoffice.LibreOffice \
-	com.github.GradienceTeam.Gradience \
 	io.github.diegoivan.pdf_metadata_editor \
+  net.lutris.Lutris\
+  org.kde.kdenlive\
 	com.vysp3r.ProtonPlus \
+  org.gnome.Loupe \
+  com.github.xournalpp.xournalpp\
 	com.github.ahrm.sioyek \
 	io.gitlab.adhami3310.Converter \
-	de.haeckerfelix.Shortwave \
 	org.soundconverter.SoundConverter \
 	org.gnome.SoundRecorder \
 	org.nickvision.tubeconverter \

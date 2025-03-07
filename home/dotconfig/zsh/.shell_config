@@ -21,6 +21,9 @@ function ff() {
 	rm -f -- "$tmp"
 }
 
+# zellij
+eval "$(zellij setup --generate-auto-start zsh)"
+
 # Default apps
 #export EDITOR='nvim'
 #export TERMINAL='kitty'

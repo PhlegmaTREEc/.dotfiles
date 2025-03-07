@@ -14,6 +14,7 @@
     ];
 
   home.packages = with pkgs; [
+    zellij
     kitty
     amdgpu_top
     brave

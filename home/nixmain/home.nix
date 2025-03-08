@@ -9,13 +9,15 @@
   imports =
     [
       ../core/default.nix
-      ../optional/tmux.nix
+      #../optional/tmux.nix
       ../optional/sound.nix
     ];
 
   home.packages = with pkgs; [
-    zellij
+    #zellij
     kitty
+    ghostty
+    tmux
     amdgpu_top
     brave
     bazecor
@@ -120,6 +122,9 @@
       }; 
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
+      }; 
+    ".config/tmux" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/tmux";
       }; 
     };
 

@@ -1,4 +1,4 @@
-{ config, pkgs, nixvim, ... }:
+{ config, pkgs, ... }:
 
 {
   home.packages = with pkgs; [
@@ -15,7 +15,7 @@
     git
     jq
     lazygit
-    #neovim
+    neovim
     navi
     p7zip
     ripgrep
@@ -34,9 +34,9 @@
     yazi
   ];
 
-  imports = [
-    ./nixvim/nixvim.nix
-  ];
+  #imports = [
+  #  ./nixvim/nixvim.nix
+  #];
 
   home.file = {
     ".config/lazygit" = {
@@ -45,9 +45,9 @@
     ".config/navi" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/navi";
       }; 
-    #".config/nvim" = {
-    #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/nvim";
-    #  }; 
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/nvim";
+      }; 
     ".config/starship" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/starship";
       }; 

@@ -16,7 +16,6 @@
     jq
     lazygit
     neovim
-    lua-language-server
     navi
     p7zip
     ripgrep

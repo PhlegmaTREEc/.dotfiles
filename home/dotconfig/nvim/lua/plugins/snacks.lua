@@ -1,34 +1,49 @@
 return {
-  "folke/snacks.nvim",
-  priority = 1000,
-  lazy = false,
-  ---@type snacks.Config
-  opts = {
-    lazygit = { enabled = true, },
-    picker = { enabled = true, },
-    explorer = { enabled = true, },
-    dashboard = {
-      enabled = true,
-      sections = {
-        { section = "header" },
-        { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
-        { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
-        { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
-        { section = "startup" },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      bigfile = { enabled = true },
+      dashboard = {
+        enabled = true,
+        sections = {
+          { section = "header" },
+          { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+          { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+          { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+          { section = "startup" },
+        },
       },
+      explorer = { enabled = true },
+      indent = { enabled = true },
+      lazygit = { enabled = true, },
+      picker = { enabled = true },
+      scroll = { enabled = true },
+      words = { enabled = true },
     },
+    keys = {
+      -- Top level binds
+      { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
+      { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
+      { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
+      -- [G]it
+      { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
+      -- [F]ind
+      { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+      { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
+      { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+      { "<leader>fe",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
+      { "<leader>st", function() Snacks.picker.todo_comments() end, desc = "Todo" },
+    }
   },
-  keys = {
-    -- Top level binds
-    { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
-    { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
-    { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
-    -- [G]it
-    { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
-    -- [F]ind
-    { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
-    { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
-    { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-    { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
+  {
+    {
+      "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {
+      }
+    }
   }
 }

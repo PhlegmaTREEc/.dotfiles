@@ -3,7 +3,6 @@ return {
   version = '*',
   config = function()
     require("mini.comment").setup {}
-    require("mini.indentscope").setup {}
     require("mini.move").setup {}
     require("mini.pairs").setup {}
   end,

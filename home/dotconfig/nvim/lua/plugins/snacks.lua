@@ -7,7 +7,6 @@ return {
     lazygit = { enabled = true, },
     picker = { enabled = true, },
     explorer = { enabled = true, },
-    indent = { enabled = true, },
     dashboard = {
       enabled = true,
       sections = {

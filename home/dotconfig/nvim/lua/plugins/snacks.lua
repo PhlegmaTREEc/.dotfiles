@@ -7,6 +7,7 @@ return {
     lazygit = { enabled = true, },
     picker = { enabled = true, },
     explorer = { enabled = true, },
+    indent = { enabled = true, },
     dashboard = {
       enabled = true,
       sections = {
@@ -19,10 +20,16 @@ return {
     },
   },
   keys = {
-    { "<leader>gg", function() Snacks.lazygit() end, desc = "Lazygit" },
-    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
-    { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
-    { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
-    { "<leader>n", function() Snacks.picker.notifications() end, desc = "Notification History" },
+    -- Top level binds
+    { "<leader><space>", function() Snacks.picker.smart() end,                                   desc = "Smart Find Files" },
+    { "<leader>n",       function() Snacks.picker.notifications() end,                           desc = "Notification History" },
+    { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
+    -- [G]it
+    { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
+    -- [F]ind
+    { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
+    { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
+    { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
+    { "<leader>ff",      function() Snacks.picker.files() end,                                   desc = "Find Files" },
   }
 }

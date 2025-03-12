@@ -19,6 +19,7 @@
     navi
     p7zip
     ripgrep
+    ast-grep
     rclone
     starship
     trash-cli

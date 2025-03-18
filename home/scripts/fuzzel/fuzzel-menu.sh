@@ -7,6 +7,7 @@ monon="󰍺 ON"
 monoff="󰶐 OFF"
 monen="󰍺 ENABLE"
 mondis="󰶐 DISABLE"
+gtkportal="Restart Portal"
 
 # Get answer from user via wofi
 selected_option=$(echo "$rsn
@@ -14,6 +15,7 @@ $rsd
 $monen
 $mondis
 $monon
+$gtkportal
 $monoff" | fuzzel -d -l 6 -w 20 -p "Menu"\ )
 
 # Do something based on selected option
@@ -21,6 +23,8 @@ if [ "$selected_option" == "$rsn" ]; then
 	hyprctl dispatch exec "gammastep -l 0:0 -o -b 0.8:0.8 -O 4500"
 elif [ "$selected_option" == "$rsd" ]; then
 	hyprctl dispatch exec "pkill gammastep"
+elif [ "$selected_option" == "$gtkportal" ]; then
+	hyprctl dispatch exec "systemctl --user restart xdg-desktop-portal-gtk.service"
 elif [ "$selected_option" == "$monon" ]; then
 	hyprctl dispatch dpms on HDMI-A-1
 	hyprctl dispatch dpms on DP-2

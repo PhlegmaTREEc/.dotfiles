@@ -55,7 +55,6 @@
     nautilus
     file-roller
     gnome-disk-utility
-    gimp
     libsForQt5.qt5ct
     kdePackages.qt6ct
     qpwgraph

@@ -7,13 +7,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #nixvim = {
+    #  url = "github:nix-community/nixvim";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
-  outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs:
+  #outputs = {self, nixpkgs, home-manager, nixvim, ...}@inputs:
+  outputs = {self, nixpkgs, home-manager, ...}@inputs:
   let
     lib = nixpkgs.lib;
     system = "x86_64-linux";
@@ -45,9 +46,9 @@
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-            ];
+              #home-manager.sharedModules = [
+              #  nixvim.homeManagerModules.nixvim
+              #];
           }
 	      ];
       };
@@ -79,9 +80,9 @@
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-            ];
+              #home-manager.sharedModules = [
+              #  nixvim.homeManagerModules.nixvim
+              #];
           }
 	      ];
       };
@@ -99,9 +100,9 @@
             home-manager.extraSpecialArgs = { inherit inputs pkgs; };
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.sharedModules = [
-              nixvim.homeManagerModules.nixvim
-            ];
+              #home-manager.sharedModules = [
+              #  nixvim.homeManagerModules.nixvim
+              #];
           }
 	      ];
       };

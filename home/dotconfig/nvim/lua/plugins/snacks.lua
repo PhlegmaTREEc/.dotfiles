@@ -30,8 +30,9 @@ return {
       { "<leader>e",       function() Snacks.explorer() end,                                       desc = "File Explorer" },
       -- [G]it
       { "<leader>gg",      function() Snacks.lazygit() end,                                        desc = "Lazygit" },
+      -- [B]uffers
+      { "<leader>bb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
       -- [F]ind
-      { "<leader>fb",      function() Snacks.picker.buffers() end,                                 desc = "Buffers" },
       { "<leader>fr",      function() Snacks.picker.recent() end,                                  desc = "Recent" },
       { "<leader>fc",      function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
       { "<leader>fe",      function() Snacks.picker.files() end,                                   desc = "Find Files" },

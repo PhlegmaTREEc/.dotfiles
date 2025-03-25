@@ -133,6 +133,8 @@
   programs.firefox = {
     enable = true;
     profiles.ptc = {
+      bookmarks.force = true;
+      bookmarks.settings = [];
       isDefault = true;
       # https://github.com/MrOtherGuy/firefox-csshacks
       #userChrome = ''

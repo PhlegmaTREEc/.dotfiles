@@ -19,9 +19,9 @@
       timeout = 2;
     };
     kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_12.v4l2loopback ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_14.v4l2loopback ];
     # Use specific kernel branch
-    kernelPackages = pkgs.linuxPackages_6_12;
+    kernelPackages = pkgs.linuxPackages_6_14;
   };
   
   #i18n.defaultLocale = "cs_CZ.UTF-8";

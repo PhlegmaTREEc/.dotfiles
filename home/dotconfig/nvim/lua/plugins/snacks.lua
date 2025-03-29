@@ -25,6 +25,8 @@ return {
       words = { enabled = true },
     },
     keys = {
+      -- TODO: LSP commands
+      --
       -- Top level binds
       {
         "<leader><space>",
@@ -121,13 +123,6 @@ return {
         end,
         desc = "Todo",
       },
-    },
-  },
-  {
-    {
-      "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      opts = {},
     },
   },
 }

@@ -7,7 +7,6 @@
     curl
     nixfmt-rfc-style
     nixd
-    marksman
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

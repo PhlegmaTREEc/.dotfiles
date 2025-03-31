@@ -14,3 +14,13 @@ vim.keymap.set("n", "<leader>bl", "<cmd>blast<CR>", { desc = "Last Buffer" })
 vim.keymap.set("n", "<leader>wh", "<cmd>split<CR>", { desc = "Horizinatal Split" })
 vim.keymap.set("n", "<leader>wv", "<cmd>vsplit<CR>", { desc = "Vertical Split" })
 vim.keymap.set("n", "<leader>wq", "<cmd>q<CR>", { desc = "Quit" })
+
+vim.keymap.set("n", "gl", function()
+  vim.diagnostic.open_float()
+end, { desc = "Open Diagnostics in Float" })
+
+vim.keymap.set("n", "<leader>cf", function()
+  require("conform").format({
+    lsp_format = "fallback",
+  })
+end, { desc = "Format current file" })

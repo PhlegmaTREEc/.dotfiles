@@ -20,28 +20,12 @@ return {
       indent = { enabled = true },
       input = { enabled = true },
       lazygit = { enabled = true },
-      picker = { enabled = true },
+      -- picker = { enabled = true },
       scroll = { enabled = true },
       words = { enabled = true },
     },
     keys = {
-      -- TODO: LSP commands
-      --
-      -- Top level binds
-      {
-        "<leader><space>",
-        function()
-          Snacks.picker.smart()
-        end,
-        desc = "Smart Find Files",
-      },
-      {
-        "<leader>n",
-        function()
-          Snacks.picker.notifications()
-        end,
-        desc = "Notification History",
-      },
+      --   -- Top level binds
       {
         "<leader>e",
         function()
@@ -49,80 +33,96 @@ return {
         end,
         desc = "File Explorer",
       },
-      -- [G]it
-      {
-        "<leader>gg",
-        function()
-          Snacks.lazygit()
-        end,
-        desc = "Lazygit",
-      },
-      -- [B]uffers
-      {
-        "<leader>bb",
-        function()
-          Snacks.picker.buffers()
-        end,
-        desc = "Buffers",
-      },
-      -- [F]ind
-      {
-        "<leader>fr",
-        function()
-          Snacks.picker.recent()
-        end,
-        desc = "Recent",
-      },
-      {
-        "<leader>fc",
-        function()
-          Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
-        end,
-        desc = "Find Config File",
-      },
-      {
-        "<leader>fe",
-        function()
-          Snacks.picker.files()
-        end,
-        desc = "Find Files",
-      },
-      {
-        "<leader>sg",
-        function()
-          Snacks.picker.grep()
-        end,
-        desc = "Grep Text in Current Project",
-      },
-      {
-        "<leader>sb",
-        function()
-          Snacks.picker.lines()
-        end,
-        desc = "Grep Current Buffers",
-      },
-      {
-        "<leader>sB",
-        function()
-          Snacks.picker.grep_buffers()
-        end,
-        desc = "Grep Open Buffers",
-      },
-      {
-        "<leader>sw",
-        function()
-          Snacks.picker.grep_word()
-        end,
-        desc = "Grep Visual Selection or Word",
-        mode = { "n", "x" },
-      },
-      {
-        "<leader>st",
-        function()
-          Snacks.picker.todo_comments()
-        end,
-        desc = "Todo",
-      },
+      --   -- TODO: LSP commands
+      --   --
+      --   {
+      --     "<leader><space>",
+      --     function()
+      --       Snacks.picker.smart()
+      --     end,
+      --     desc = "Smart Find Files",
+      --   },
+      --   {
+      --     "<leader>n",
+      --     function()
+      --       Snacks.picker.notifications()
+      --     end,
+      --     desc = "Notification History",
+      --   },
+      --   -- [G]it
+      --   {
+      --     "<leader>gg",
+      --     function()
+      --       Snacks.lazygit()
+      --     end,
+      --     desc = "Lazygit",
+      --   },
+      --   -- [B]uffers
+      --   {
+      --     "<leader>bb",
+      --     function()
+      --       Snacks.picker.buffers()
+      --     end,
+      --     desc = "Buffers",
+      --   },
+      --   -- [F]ind
+      --   {
+      --     "<leader>fr",
+      --     function()
+      --       Snacks.picker.recent()
+      --     end,
+      --     desc = "Recent",
+      --   },
+      --   {
+      --     "<leader>fc",
+      --     function()
+      --       Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+      --     end,
+      --     desc = "Find Config File",
+      --   },
+      --   {
+      --     "<leader>fe",
+      --     function()
+      --       Snacks.picker.files()
+      --     end,
+      --     desc = "Find Files",
+      --   },
+      --   {
+      --     "<leader>sg",
+      --     function()
+      --       Snacks.picker.grep()
+      --     end,
+      --     desc = "Grep Text in Current Project",
+      --   },
+      --   {
+      --     "<leader>sb",
+      --     function()
+      --       Snacks.picker.lines()
+      --     end,
+      --     desc = "Grep Current Buffers",
+      --   },
+      --   {
+      --     "<leader>sB",
+      --     function()
+      --       Snacks.picker.grep_buffers()
+      --     end,
+      --     desc = "Grep Open Buffers",
+      --   },
+      --   {
+      --     "<leader>sw",
+      --     function()
+      --       Snacks.picker.grep_word()
+      --     end,
+      --     desc = "Grep Visual Selection or Word",
+      --     mode = { "n", "x" },
+      --   },
+      --   {
+      --     "<leader>st",
+      --     function()
+      --       Snacks.picker.todo_comments()
+      --     end,
+      --     desc = "Todo",
+      --   },
     },
   },
 }

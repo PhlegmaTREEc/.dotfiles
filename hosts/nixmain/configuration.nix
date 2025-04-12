@@ -63,6 +63,7 @@
       hyprpolkitagent
       distrobox
       protonvpn-gui
+      appimage-run
     ];
   };
 
@@ -85,8 +86,8 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = [ pkgs.amdvlk ];
-      extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+      # extraPackages = [ pkgs.amdvlk ];
+      # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
     };
     opentabletdriver = {
       enable = true;
@@ -174,6 +175,7 @@
     };
     steam = {
       enable = true;
+      gamescopeSession.enable = true;
     };
     xfconf.enable = true;
     zsh = {

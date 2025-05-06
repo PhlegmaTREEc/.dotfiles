@@ -80,7 +80,7 @@
     zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
     history.path = "$HOME/.config/zsh/.zsh_history";
-    initExtra = ''
+    initContent = ''
     if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_config ]; then
         source ~/.dotfiles/home/dotconfig/zsh/.shell_config
     fi

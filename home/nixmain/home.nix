@@ -27,7 +27,7 @@
     hugo
     imagemagick
     libnotify
-    nodejs_18
+    nodejs_20
     poppler_utils
     steam
     vulkan-tools

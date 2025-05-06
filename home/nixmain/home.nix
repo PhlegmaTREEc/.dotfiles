@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     #zellij
+    wezterm
     kitty
     ghostty
     tmux
@@ -112,6 +113,9 @@
       }; 
     ".config/ghostty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/ghostty";
+      }; 
+    ".config/wezterm" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/wezterm";
       }; 
     ".config/sioyek" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/sioyek";

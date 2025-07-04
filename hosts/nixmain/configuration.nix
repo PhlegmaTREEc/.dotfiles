@@ -63,6 +63,7 @@
       distrobox
       protonvpn-gui
       appimage-run
+      lact
     ];
   };
 
@@ -72,6 +73,9 @@
   ];
 
   hardware = {
+    amdgpu.overdrive = {
+      enable = true;
+    };
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -160,12 +164,12 @@
   };
 
   programs = {
-    corectrl = {
-      enable = true;
-      #gpuOverclock.ppfeaturemask = "0xffffffff";
-      gpuOverclock.ppfeaturemask = "0xfffd7fff";
-      gpuOverclock.enable = true;
-    };
+    # corectrl = {
+    #   enable = true;
+    #   #gpuOverclock.ppfeaturemask = "0xffffffff";
+    #   gpuOverclock.ppfeaturemask = "0xfffd7fff";
+    #   gpuOverclock.enable = true;
+    # };
     dconf.enable = true;
     gamemode.enable = true;
     gnupg.agent = {
@@ -242,6 +246,8 @@
   };
 
   systemd = {
+    packages = with pkgs; [ lact ];
+    services.lactd.wantedBy = ["multi-user.target"];
     extraConfig = ''
       DefaultTimeoutStopSec=20s
       '';
@@ -265,7 +271,7 @@
     users.ptc = {
       isNormalUser = true;
       initialPassword = "password"; # change password after install!!!
-      extraGroups = [ "wheel" "audio" "video" "networkmanager" "corectrl" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "audio" "video" "networkmanager" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
     };
     defaultUserShell = pkgs.zsh;

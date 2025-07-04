@@ -72,7 +72,6 @@
     #udiskie
     #devmon + service alternative to udisk?
     #teams-for-linux
-    #ventoy-full
     zoom-us
     # hyprland "environment"
     #hyprcursor

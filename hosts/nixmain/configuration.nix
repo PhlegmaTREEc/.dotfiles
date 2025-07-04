@@ -52,7 +52,6 @@
     systemPackages = with pkgs; [
       logitech-udev-rules
       mangohud
-      ventoy-full
       virt-manager
       wireguard-tools
       rclone

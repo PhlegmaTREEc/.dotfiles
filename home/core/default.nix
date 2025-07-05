@@ -90,6 +90,9 @@
     fi
     '';
     syntaxHighlighting.enable = true;
+    sessionVariables = {
+      BAT_THEME = "Catppuccin Mocha";
+      };
   };
 
   programs.zoxide = {

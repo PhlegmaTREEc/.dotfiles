@@ -14,27 +14,72 @@ config.window_padding = {
 
 config.leader = { key = "n", mods = "CTRL" }
 config.keys = {
+	-- Splits
 	{
 		mods = "LEADER",
 		key = "v",
-		action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		mods = "LEADER",
 		key = "h",
-		action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
+	},
+	-- Pane Size
+	{
+		mods = "ALT",
+		key = "h",
+		action = act.AdjustPaneSize({ "Left", 5 }),
+	},
+	{
+		mods = "ALT",
+		key = "j",
+		action = act.AdjustPaneSize({ "Down", 5 }),
+	},
+	{
+		mods = "ALT",
+		key = "k",
+		action = act.AdjustPaneSize({ "Up", 5 }),
+	},
+	{
+		mods = "ALT",
+		key = "l",
+		action = act.AdjustPaneSize({ "Right", 5 }),
+	},
+	{
+		mods = "LEADER",
+		key = "m",
+		action = act.TogglePaneZoomState,
+	},
+	-- Pane Move
+	{
+		mods = "CTRL|SHIFT",
+		key = "h",
+		action = act.RotatePanes("Clockwise"),
+	},
+	{
+		mods = "CTRL|SHIFT",
+		key = "l",
+		action = act.RotatePanes("CounterClockwise"),
+	},
+	{
+		mods = "LEADER",
+		key = "Space",
+		action = act.PaneSelect({
+			mode = "SwapWithActive",
+		}),
+	},
+	-- Other
+	{
+		mods = "LEADER",
+		key = "x",
+		action = act.ActivateCopyMode,
 	},
 }
 
 smart_splits.apply_to_config(config, {
 	-- directional keys to use in order of: left, down, up, right
 	direction_keys = { "h", "j", "k", "l" },
-	-- if you want to use separate direction keys for move vs. resize, you
-	-- can also do this:
-	direction_keys = {
-		move = { "h", "j", "k", "l" },
-		-- resize = { "LeftArrow", "DownArrow", "UpArrow", "RightArrow" },
-	},
 	-- modifier keys to combine with direction_keys
 	modifiers = {
 		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left

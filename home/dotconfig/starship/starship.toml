@@ -1,9 +1,11 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
 # Catppuccin
 palette = "catppuccin_mocha"
 
 # Global format
 format = """
-[\uF313](fg:bold mauve)\
+[\uE21C ](bg:crust fg:bold mauve)[\uE0B0](fg:crust)\
 $username\
 $hostname\
 $directory\
@@ -20,22 +22,22 @@ disabled = false
 
 [username]
 style_user = "fg:bold sapphire"
-style_root = "fg:bold sapphire"
+style_root = "fg:bold red"
 show_always = false
 format = "[ $user]($style)"
 
 [hostname]
 ssh_only = true
-style = "fg:bold yellow"
-format = "[ $ssh_symbol $hostname ]($style)"
+style = "bg:surface0 fg:bold yellow"
+format = "@ $hostname"
 
 [directory]
 truncation_symbol = "../"
 truncation_length = 4
-style = "fg:bold lavender"
-read_only = "\uF83D"
-read_only_style = "fg:red"
-format = "[ $path]($style)[ $read_only ]($read_only_style)"
+style = "bg:crust fg:bold mauve"
+read_only = "\uF023"
+read_only_style = "bg:crust fg:red"
+format = "[\uE0B0](fg:base bg:crust)[ $path]($style)[ $read_only ]($read_only_style)[\uE0B0 ](fg:crust)"
 
 [character]
 success_symbol = "[\uE285](fg:green)"
@@ -44,12 +46,12 @@ vicmd_symbol = "[\uE285](fg:peach)"
 format = "$symbol "
 
 [git_branch]
-style = "bg:surface0 fg:bold yellow"
-format = "[\uE0B0](fg:base bg:surface0)[ $symbol$branch(:$remote_branch)]($style)"
+style = "bg:crust fg:bold yellow"
+format = "[\uE0B0](fg:base bg:crust)[ $symbol$branch(:$remote_branch)]($style)"
 
 [git_status]
-style = "bg:surface0 fg:peach"
-format = "[ \u003C](bg:surface0 fg:peach)[$all_status$ahead_behind]($style)[\u003E ](bg:surface0 fg:peach)[\uE0B0 ](fg:surface0)"
+style = "bg:crust fg:peach"
+format = "[ \u003C](bg:crust fg:peach)[$all_status$ahead_behind]($style)[\u003E ](bg:crust fg:peach)[\uE0B0 ](fg:crust)"
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"

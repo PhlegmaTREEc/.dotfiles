@@ -101,6 +101,9 @@
     };
 
   home.file = {
+    ".config/bat" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/bat";
+      }; 
     ".config/fuzzel" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/fuzzel";
       }; 

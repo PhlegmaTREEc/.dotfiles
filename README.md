@@ -44,6 +44,12 @@
 
 ## Homelab
 
+### SSH
+
+- [github tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+  -``ssh-add ~/.ssh/id_ed25519`` should help with caching
+- If you currently have password-based access to a server, you can copy your public key to it by issuing this command: ``ssh-copy-id remote_host``
+
 ### OPNSense
 
 - how to AdGuard

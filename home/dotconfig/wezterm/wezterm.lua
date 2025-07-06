@@ -17,34 +17,13 @@ config.keys = {
 	-- Splits
 	{
 		mods = "LEADER",
-		key = "v",
+		key = "s",
 		action = act.SplitVertical({ domain = "CurrentPaneDomain" }),
 	},
 	{
 		mods = "LEADER",
-		key = "h",
+		key = "v",
 		action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }),
-	},
-	-- Pane Size
-	{
-		mods = "ALT",
-		key = "h",
-		action = act.AdjustPaneSize({ "Left", 5 }),
-	},
-	{
-		mods = "ALT",
-		key = "j",
-		action = act.AdjustPaneSize({ "Down", 5 }),
-	},
-	{
-		mods = "ALT",
-		key = "k",
-		action = act.AdjustPaneSize({ "Up", 5 }),
-	},
-	{
-		mods = "ALT",
-		key = "l",
-		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 	{
 		mods = "LEADER",
@@ -52,16 +31,16 @@ config.keys = {
 		action = act.TogglePaneZoomState,
 	},
 	-- Pane Move
-	{
-		mods = "CTRL|SHIFT",
-		key = "h",
-		action = act.RotatePanes("Clockwise"),
-	},
-	{
-		mods = "CTRL|SHIFT",
-		key = "l",
-		action = act.RotatePanes("CounterClockwise"),
-	},
+	-- {
+	-- 	mods = "CTRL|SHIFT",
+	-- 	key = "h",
+	-- 	action = act.RotatePanes("Clockwise"),
+	-- },
+	-- {
+	-- 	mods = "CTRL|SHIFT",
+	-- 	key = "l",
+	-- 	action = act.RotatePanes("CounterClockwise"),
+	-- },
 	{
 		mods = "LEADER",
 		key = "Space",
@@ -83,7 +62,7 @@ smart_splits.apply_to_config(config, {
 	-- modifier keys to combine with direction_keys
 	modifiers = {
 		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
-		-- resize = "META", -- modifier to use for pane resize, e.g. META+h to resize to the left
+		resize = "CTRL|SHIFT", -- modifier to use for pane resize, e.g. META+h to resize to the left
 	},
 	-- log level to use: info, warn, error
 	log_level = "info",

@@ -25,6 +25,10 @@
         icon: pi-hole.png
         href: http://192.168.1.30:85/admin/
         description: Pi-hole DNS (with UNBOUND)
+    - ADGuard:
+        icon: adguard-home.png
+        href: http://192.168.1.30:86
+        description: ADGUard Home DNS
     - Traefik:
         icon: traefik.png
         href: https://traefik-dashboard.local.phlegmatreec.com/
@@ -32,9 +36,13 @@
     - File Browser:
         icon: filebrowser.png
         href: https://fb-traffic.local.phlegmatreec.com/
-        description: File Browser for traffic VM (http://192.168.1.39:8095)
+        description: File Browser for traffic VM (http://192.168.1.30:8095)
 - tests:
     - FoundryVTT:
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/foundry-virtual-tabletop.png
         href: https://fvtt.local.phlegmatreec.com/
-        description: Foundry on 192.168.1.122
+        description: Foundry on 192.168.1.124
+    - Nextcloud:
+        icon: nextcloud.png
+        href: https://nc-test.phlegmatreec.com/
+        description: Nextcloud test AIO (cloudflare tunnel - nixvm-test)

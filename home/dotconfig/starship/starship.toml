@@ -5,7 +5,7 @@ palette = "catppuccin_mocha"
 
 # Global format
 format = """
-[\uE21C ](bg:crust fg:bold mauve)[\uE0B0](fg:crust)\
+[ \uE21C  ](bg:crust fg:bold mauve)[\uE0B0](fg:crust)\
 $username\
 $hostname\
 $directory\

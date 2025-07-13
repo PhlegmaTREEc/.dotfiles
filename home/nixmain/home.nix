@@ -9,7 +9,6 @@
   imports =
     [
       ../core/default.nix
-      #../optional/tmux.nix
       ../optional/sound.nix
     ];
 
@@ -17,8 +16,6 @@
     #zellij
     wezterm
     kitty
-    ghostty
-    tmux
     amdgpu_top
     brave
     bazecor
@@ -46,12 +43,9 @@
     glmark2
     stress-ng
     sysbench
-    unigine-valley
     # Gui
-    sweethome3d.application #room layout application
     alsa-tools
     blueman bluez bluez-alsa
-    filezilla #floorp
     gnome-sound-recorder
     nautilus
     file-roller
@@ -66,13 +60,12 @@
     pasystray pavucontrol
     mpv myMulti
     #openrgb
-    #protonmail-desktop
     solaar
     webp-pixbuf-loader
     #udiskie
     #devmon + service alternative to udisk?
     #teams-for-linux
-    zoom-us
+    #zoom-us
     # hyprland "environment"
     #hyprcursor
     hypridle
@@ -142,10 +135,6 @@
       bookmarks.force = true;
       bookmarks.settings = [];
       isDefault = true;
-      # https://github.com/MrOtherGuy/firefox-csshacks
-      #userChrome = ''
-      #  @import url(/home/ptc/.dotfiles/home/dotconfig/userchrome/hide_tabs_toolbar_v2.css)
-      #'';
     };
   };
 

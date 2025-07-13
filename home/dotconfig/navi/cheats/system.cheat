@@ -44,8 +44,8 @@ sudo ventoy-web
 # Convert and lower quality (60) of image
 magick <source> -quality 60 <target>
 
-# Batch convert and quality of image (parameters = quality, path, format, ...; source = *.jpg)
-mogrify <parameters> <source>
+# Batch convert and quality of image - in default example all .jpg imageges converted to webp
+mogrify -format webp *.jpg
 
 # Recursive Batch convert and quality of image (parameters = quality, path, format, ...; source = *.jpg)
 fd <target> --exec mogrify <parameters> <source>

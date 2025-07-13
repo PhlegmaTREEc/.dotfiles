@@ -35,10 +35,6 @@
     yazi
   ];
 
-  #imports = [
-  #  ./nixvim/nixvim.nix
-  #];
-
   home.file = {
     ".config/lazygit" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/lazygit";

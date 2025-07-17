@@ -1,0 +1,6 @@
+{
+    "device": "alsa_input.usb-ARTURIA_ArturiaMsd-00.analog-stereo",
+    "device-description": "ArturiaMsd Analog Stereo",
+    "device-profile": "analog-input",
+    "preset-name": "minifuse"
+}

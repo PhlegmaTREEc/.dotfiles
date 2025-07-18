@@ -79,7 +79,7 @@
     hyprshot
     slurp
     swappy
-    swaynotificationcenter
+    dunst
   ];
 
   wayland.windowManager.hyprland = {
@@ -92,10 +92,13 @@
       source = /home/ptc/.dotfiles/home/dotconfig/hypr/hyprland.conf
     '';
     };
-
+  
   home.file = {
     ".config/bat" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/bat";
+      }; 
+    ".config/dunst" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/dunst";
       }; 
     ".config/fuzzel" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/fuzzel";
@@ -117,9 +120,6 @@
       }; 
     ".config/swappy" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swappy";
-      }; 
-    ".config/swaync" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swaync";
       }; 
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
@@ -184,7 +184,7 @@
     };
     gtk4.extraConfig = {
       Settings = ''
-        gtk-application-prefer-dark-theme=1
+        gtk-application-prefer-dark-theme=true
         '';
     };
   };

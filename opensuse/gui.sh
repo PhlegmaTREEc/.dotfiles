@@ -1,2 +1,2 @@
-#!/bin/bash
-sudo zypper in font-manager firefox
+#!/usr/bin/env bash
+sudo zypper in firefox font-manager

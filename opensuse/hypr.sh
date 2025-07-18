@@ -1,2 +1,2 @@
-#!/bin/bash
-sudo zypper in hyprland hyprland-qtutils xdg-desktop-portal-hyprland hyprshot hyprpolkitagent kitty SwayNotificationCenter qt6-wayland qt6ct waybar blueman pasystray fuzzel gammastep
+#!/usr/bin/env bash
+sudo zypper in bluez blueman dunst fuzzel gammastep hyprland hyprland-qtutils hyprshot hyprpolkitagent kitty qt6-wayland qt6ct pasystray waybar xdg-desktop-portal-hyprland

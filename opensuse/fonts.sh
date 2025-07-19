@@ -9,4 +9,5 @@ sudo mkdir -p /usr/local/share/fonts
 sudo mv *.{ttf,otf} /usr/local/share/fonts
 cd ~
 rm -r fonts
+fc-cache
 echo "fonts done"

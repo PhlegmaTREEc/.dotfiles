@@ -12,7 +12,7 @@ config.window_padding = {
 	bottom = 8,
 }
 
-config.leader = { key = "n", mods = "CTRL" }
+config.leader = { key = "i", mods = "CTRL" }
 config.keys = {
 	-- Splits
 	{

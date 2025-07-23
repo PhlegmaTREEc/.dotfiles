@@ -182,5 +182,5 @@ label:focus {
   font-family: "NotoSansMono Nerd Font";
   background-color: @yellow;
   color: @base;
-
+  min-width: 20px;
 }

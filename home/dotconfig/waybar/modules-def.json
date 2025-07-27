@@ -43,7 +43,7 @@
     "sort-by-number": true
   },
     "custom/notification": {
-    "exec": "~/.dotfiles/opensuse/stow/scripts/dunst.sh",
+    "exec": "~/.dotfiles/home/scripts/dunst.sh",
     "on-click": "dunstctl history-pop",
     "on-click-right": "dunstctl set-paused toggle",
     "restart-interval": 1,

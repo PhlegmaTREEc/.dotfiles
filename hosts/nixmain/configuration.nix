@@ -1,12 +1,17 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../desktop-modules/greetd.nix
-      ../core/core-pkgs.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../desktop-modules/greetd.nix
+    ../core/core-pkgs.nix
+  ];
 
   home-manager.users.ptc = import ../../home/nixmain/home.nix;
 
@@ -23,7 +28,7 @@
     # Use specific kernel branch
     kernelPackages = pkgs.linuxPackages_6_15;
   };
-  
+
   #i18n.defaultLocale = "cs_CZ.UTF-8";
   #i18n.extraLocaleSettings = {
   #  LC_CTYPE = "cs_CZ.UTF-8";
@@ -110,7 +115,7 @@
     #} ];
     firewall = {
       enable = true;
-      };
+    };
     hostName = "nixmain";
     networkmanager.enable = true;
   };
@@ -118,9 +123,12 @@
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      substituters = ["https://hyprland.cachix.org"];
-      trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
     gc = {
       automatic = true;
@@ -132,13 +140,15 @@
   nixpkgs.config = {
     allowNonFree = true;
     allowUnFree = true;
-    allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [
-      "steam"
-      "steam-original"
-      "steam-unwrapped"
-      "steam-run"
-      "libXNVCtrl" #????
-    ];
+    allowUnfreePredicate =
+      pkg:
+      builtins.elem (pkgs.lib.getName pkg) [
+        "steam"
+        "steam-original"
+        "steam-unwrapped"
+        "steam-run"
+        "libXNVCtrl" # ????
+      ];
     permittedInsecurePackages = [
       "dotnet-runtime-6.0.36"
       "dotnet-sdk-6.0.428"
@@ -146,19 +156,20 @@
     ];
     packageOverrides = pkgs: {
       steam = pkgs.steam.override {
-        extraPkgs = pkgs: with pkgs; [
-          xorg.libXcursor
-          xorg.libXi
-          xorg.libXinerama
-          xorg.libXScrnSaver
-          libpng
-          libpulseaudio
-          libvorbis
-          stdenv.cc.cc.lib
-          libkrb5
-          keyutils
-          ncurses
-        ];
+        extraPkgs =
+          pkgs: with pkgs; [
+            xorg.libXcursor
+            xorg.libXi
+            xorg.libXinerama
+            xorg.libXScrnSaver
+            libpng
+            libpulseaudio
+            libvorbis
+            stdenv.cc.cc.lib
+            libkrb5
+            keyutils
+            ncurses
+          ];
       };
     };
   };
@@ -190,14 +201,7 @@
     };
     nh = {
       enable = true;
-      flake ="/home/ptc/.dotfiles";
-    };
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-        lua-language-server
-        marksman
-      ];
+      flake = "/home/ptc/.dotfiles";
     };
   };
 
@@ -247,10 +251,10 @@
 
   systemd = {
     packages = with pkgs; [ lact ];
-    services.lactd.wantedBy = ["multi-user.target"];
+    services.lactd.wantedBy = [ "multi-user.target" ];
     extraConfig = ''
       DefaultTimeoutStopSec=20s
-      '';
+    '';
     targets = {
       "network-online" = {
         wantedBy = [
@@ -265,13 +269,21 @@
 
   # Set timezone
   time.timeZone = "Europe/Prague";
-  
+
   # Define users
   users = {
     users.ptc = {
       isNormalUser = true;
       initialPassword = "password"; # change password after install!!!
-      extraGroups = [ "wheel" "audio" "video" "networkmanager" "storage" "libvirtd" "dialout" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [
+        "wheel"
+        "audio"
+        "video"
+        "networkmanager"
+        "storage"
+        "libvirtd"
+        "dialout"
+      ]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
     };
     defaultUserShell = pkgs.zsh;
@@ -281,19 +293,19 @@
   virtualisation = {
     libvirtd.enable = true;
     podman = {
-    enable = true;
-    dockerCompat = true;
+      enable = true;
+      dockerCompat = true;
     };
   };
 
   xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
+    enable = true;
+    extraPortals = with pkgs; [
       xdg-desktop-portal-hyprland
       xdg-desktop-portal-gtk
-      ];
-      config.common.default = "*";
-    };
-  
+    ];
+    config.common.default = "*";
+  };
+
   system.stateVersion = "23.05";
 }

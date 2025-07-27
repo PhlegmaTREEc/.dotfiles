@@ -16,6 +16,11 @@
     jq
     lazygit
     neovim
+    marksman
+    lua-language-server
+    stylua
+    nixd
+    nixfmt
     navi
     p7zip
     ripgrep

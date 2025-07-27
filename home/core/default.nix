@@ -2,7 +2,13 @@
 
 {
   home.packages = with pkgs; [
-    bat bat-extras.prettybat bat-extras.batwatch bat-extras.batpipe bat-extras.batman bat-extras.batgrep bat-extras.batdiff
+    bat
+    bat-extras.prettybat
+    bat-extras.batwatch
+    bat-extras.batpipe
+    bat-extras.batman
+    bat-extras.batgrep
+    bat-extras.batdiff
     bottom
     cliphist
     duf
@@ -21,6 +27,7 @@
     stylua
     nixd
     nixfmt
+    bash-language-server
     navi
     p7zip
     ripgrep
@@ -43,20 +50,20 @@
   home.file = {
     ".config/lazygit" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/lazygit";
-      }; 
+    };
     ".config/navi" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/navi";
-      }; 
+    };
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/nvim";
-      }; 
+    };
     ".config/starship" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/starship";
-      }; 
+    };
     ".config/yazi" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/yazi";
-      }; 
     };
+  };
 
   programs.fzf = {
     enable = true;
@@ -68,7 +75,7 @@
       "--color=marker:#ff79c6,spinner:#ffb86c,header:#6272a4"
     ];
   };
-  
+
   programs.zsh = {
     enable = true;
     package = pkgs.zsh;
@@ -76,31 +83,31 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = ''
-    autoload -Uz compinit && compinit
-    zstyle ':completion:*' completer _complete _ignored
-    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+      autoload -Uz compinit && compinit
+      zstyle ':completion:*' completer _complete _ignored
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
     history.path = "$HOME/.config/zsh/.zsh_history";
     initContent = ''
-    if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_config ]; then
-        source ~/.dotfiles/home/dotconfig/zsh/.shell_config
-    fi
+          if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_config ]; then
+              source ~/.dotfiles/home/dotconfig/zsh/.shell_config
+          fi
 
-    if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_aliases ]; then
-	    source ~/.dotfiles/home/dotconfig/zsh/.shell_aliases
-    fi
+          if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_aliases ]; then
+      	    source ~/.dotfiles/home/dotconfig/zsh/.shell_aliases
+          fi
     '';
     syntaxHighlighting.enable = true;
     sessionVariables = {
       BAT_THEME = "Catppuccin Mocha";
-      };
+    };
   };
 
   programs.zoxide = {
     enable = true;
     enableZshIntegration = true;
   };
-  
+
   # Session variables
   home.sessionVariables = {
     EDITOR = "nvim";

@@ -11,7 +11,8 @@ return {
       { "j-hui/fidget.nvim", opts = {} },
     },
   },
-  vim.lsp.enable("marksman"),
+  vim.lsp.enable("bash-language-server"),
   vim.lsp.enable("lua_ls"),
+  vim.lsp.enable("marksman"),
   vim.lsp.enable("nixd"),
 }

@@ -24,9 +24,9 @@
       timeout = 2;
     };
     kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_15.v4l2loopback ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_16.v4l2loopback ];
     # Use specific kernel branch
-    kernelPackages = pkgs.linuxPackages_6_15;
+    kernelPackages = pkgs.linuxPackages_6_16;
   };
 
   #i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -252,9 +252,13 @@
   systemd = {
     packages = with pkgs; [ lact ];
     services.lactd.wantedBy = [ "multi-user.target" ];
-    extraConfig = ''
-      DefaultTimeoutStopSec=20s
-    '';
+    settings = {
+      Manager = {
+        DefaultIOAccounting = true;
+        DefaultIPAccounting = true;
+        DefaultStopSec = 30;
+      };
+    };
     targets = {
       "network-online" = {
         wantedBy = [

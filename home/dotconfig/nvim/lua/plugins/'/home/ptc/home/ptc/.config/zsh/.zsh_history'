@@ -1,0 +1,5 @@
+cd scripts
+v dunst.sh
+cd plugins
+v lsp.lua
+exit

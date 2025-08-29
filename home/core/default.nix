@@ -79,7 +79,7 @@
   programs.zsh = {
     enable = true;
     package = pkgs.zsh;
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
     autosuggestion.enable = true;
     enableCompletion = true;
     completionInit = ''
@@ -87,7 +87,7 @@
       zstyle ':completion:*' completer _complete _ignored
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
     '';
-    history.path = "$HOME/.config/zsh/.zsh_history";
+    history.path = "${config.xdg.configHome}/zsh/.zsh_history";
     initContent = ''
           if [ -f ~/.dotfiles/home/dotconfig/zsh/.shell_config ]; then
               source ~/.dotfiles/home/dotconfig/zsh/.shell_config

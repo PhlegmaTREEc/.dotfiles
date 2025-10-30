@@ -7,12 +7,12 @@
     bat-extras.batwatch
     bat-extras.batpipe
     bat-extras.batman
-    bat-extras.batgrep
+    # bat-extras.batgrep
     bat-extras.batdiff
     bottom
     cliphist
     duf
-    du-dust
+    dust
     dig
     eza
     fastfetch

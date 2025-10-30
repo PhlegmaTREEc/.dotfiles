@@ -1,4 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   home.username = "ptc";
@@ -6,11 +12,10 @@
 
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
-  imports =
-    [
-      ../core/default.nix
-      ../optional/sound.nix
-    ];
+  imports = [
+    ../core/default.nix
+    ../optional/sound.nix
+  ];
 
   home.packages = with pkgs; [
     #zellij
@@ -20,16 +25,17 @@
     brave
     bazecor
     exiftool
-    ffmpeg_6 ffmpegthumbnailer
+    ffmpeg_6
+    ffmpegthumbnailer
     glib
     hugo
     imagemagick
     libnotify
     nodejs_20
-    poppler_utils
+    poppler-utils
     steam
     vulkan-tools
-    wev #wayland event viewer - prints input events
+    wev # wayland event viewer - prints input events
     xdg-utils
     # Speedtest net
     speedtest-cli
@@ -45,7 +51,9 @@
     sysbench
     # Gui
     alsa-tools
-    blueman bluez bluez-alsa
+    blueman
+    bluez
+    bluez-alsa
     gnome-sound-recorder
     nautilus
     file-roller
@@ -56,9 +64,13 @@
     imv
     dracula-theme
     dracula-icon-theme
-    papirus-icon-theme papirus-folders
-    pasystray pavucontrol
-    mpv myMulti
+    papirus-icon-theme
+    papirus-folders
+    pasystray
+    pavucontrol
+    mpv
+    multiviewer-for-f1
+    # myMulti
     #openrgb
     solaar
     webp-pixbuf-loader
@@ -86,54 +98,54 @@
     enable = true;
     package = pkgs.hyprland;
     systemd.enable = true;
-    systemd.variables = ["--all"];
+    systemd.variables = [ "--all" ];
     xwayland.enable = true;
     extraConfig = ''
       source = /home/ptc/.dotfiles/home/dotconfig/hypr/hyprland.conf
     '';
-    };
-  
+  };
+
   home.file = {
     ".config/bat" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/bat";
-      }; 
+    };
     ".config/dunst" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/dunst";
-      }; 
+    };
     ".config/fuzzel" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/fuzzel";
-      }; 
+    };
     ".config/gammastep" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/gammastep";
-      }; 
+    };
     ".config/kitty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/kitty";
-      }; 
+    };
     ".config/ghostty" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/ghostty";
-      }; 
+    };
     ".config/wezterm" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/wezterm";
-      }; 
+    };
     ".config/sioyek" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/sioyek";
-      }; 
+    };
     ".config/swappy" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/swappy";
-      }; 
+    };
     ".config/waybar" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/waybar";
-      }; 
+    };
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/tmux";
-      }; 
     };
+  };
 
   programs.firefox = {
     enable = true;
     profiles.ptc = {
       bookmarks.force = true;
-      bookmarks.settings = [];
+      bookmarks.settings = [ ];
       isDefault = true;
     };
   };
@@ -180,12 +192,12 @@
     gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
-        '';
+      '';
     };
     gtk4.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=true
-        '';
+      '';
     };
   };
 

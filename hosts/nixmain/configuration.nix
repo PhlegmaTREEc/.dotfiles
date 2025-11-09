@@ -81,6 +81,9 @@
     amdgpu.overdrive = {
       enable = true;
     };
+    # amdgpu.opencl = {
+    #   enable = true;
+    # };
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -94,8 +97,10 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      # extraPackages = [ pkgs.amdvlk ];
-      # extraPackages32 = [ pkgs.driversi686Linux.amdvlk ];
+      extraPackages = [
+        pkgs.rocmPackages.clr.icd
+        pkgs.clinfo
+      ];
     };
     opentabletdriver = {
       enable = true;

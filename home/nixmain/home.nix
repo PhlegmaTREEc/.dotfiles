@@ -14,7 +14,7 @@
 
   imports = [
     ../core/default.nix
-    ../optional/sound.nix
+    # ../optional/sound.nix
   ];
 
   home.packages = with pkgs; [

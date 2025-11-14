@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  pkgsst,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -7,7 +12,7 @@
     bat-extras.batwatch
     bat-extras.batpipe
     bat-extras.batman
-    # bat-extras.batgrep
+    pkgsst.bat-extras.batgrep
     bat-extras.batdiff
     bottom
     cliphist

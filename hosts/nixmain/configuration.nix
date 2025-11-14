@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgsst,
   lib,
   inputs,
   ...
@@ -54,6 +55,7 @@
       #HYPRCURSOR_SIZE = "16";
 
     };
+    sessionVariables.COSMIC_DATA_CONTROL_ENABLED = 1;
     systemPackages = with pkgs; [
       logitech-udev-rules
       mangohud
@@ -62,13 +64,13 @@
       rclone
       proton-pass
       cameractrls-gtk3
-      guvcview
+      pkgsst.guvcview
       v4l-utils
       hyprpolkitagent
       distrobox
-      protonvpn-gui
       appimage-run
       lact
+      # protonvpn-gui
     ];
   };
 
@@ -211,6 +213,8 @@
   };
 
   services = {
+    # displayManager.cosmic-greeter.enable = true;
+    desktopManager.cosmic.enable = true;
     blueman.enable = true;
     flatpak.enable = true;
     fstrim = {
@@ -294,6 +298,9 @@
         "dialout"
       ]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
+      packages = [
+        pkgsst.protonvpn-gui
+      ];
     };
     defaultUserShell = pkgs.zsh;
   };

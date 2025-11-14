@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -13,6 +14,7 @@
     {
       self,
       nixpkgs,
+      nixpkgs-stable,
       home-manager,
       ...
     }@inputs:
@@ -31,17 +33,29 @@
           ];
         };
       };
+      pkgsst = import nixpkgs-stable {
+        inherit system;
+        # overlays = [
+        #   (import ./overlays/multi.nix)
+        # ];
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "freeimage-unstable-2021-11-01" # unknown reason
+          ];
+        };
+      };
     in
     {
       nixosConfigurations = {
         nixmain = lib.nixosSystem {
           inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs pkgsst; };
           modules = [
             ./hosts/nixmain/configuration.nix
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+              home-manager.extraSpecialArgs = { inherit inputs pkgs pkgsst; };
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
             }

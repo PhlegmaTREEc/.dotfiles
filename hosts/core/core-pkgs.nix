@@ -1,4 +1,8 @@
-{ pkgs, inputs, ... }: 
+{
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   environment.systemPackages = with pkgs; [
@@ -9,5 +13,8 @@
     nixd
   ];
 
-  nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+  nix.nixPath = [
+    "nixpkgs=${inputs.nixpkgs}"
+    "nixpkgs-stable=${inputs.nixpkgs-stable}"
+  ];
 }

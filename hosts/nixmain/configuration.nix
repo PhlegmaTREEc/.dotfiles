@@ -25,9 +25,9 @@
       timeout = 2;
     };
     kernelModules = [ "v4l2loopback" ];
-    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_17.v4l2loopback ];
+    extraModulePackages = [ pkgs.linuxKernel.packages.linux_6_18.v4l2loopback ];
     # Use specific kernel branch
-    kernelPackages = pkgs.linuxPackages_6_17;
+    kernelPackages = pkgs.linuxPackages_6_18;
   };
 
   #i18n.defaultLocale = "cs_CZ.UTF-8";
@@ -62,7 +62,6 @@
       virt-manager
       wireguard-tools
       rclone
-      proton-pass
       cameractrls-gtk3
       pkgsst.guvcview
       v4l-utils
@@ -70,7 +69,6 @@
       distrobox
       appimage-run
       lact
-      # protonvpn-gui
     ];
   };
 
@@ -125,6 +123,7 @@
     };
     hostName = "nixmain";
     networkmanager.enable = true;
+    resolvconf.enable = false;
   };
 
   nix = {
@@ -249,8 +248,8 @@
       ];
     };
     upower.enable = true;
-    protonmail-bridge.enable = true;
     gnome.gnome-keyring.enable = true;
+    mullvad-vpn.enable = true;
   };
 
   security = {
@@ -298,9 +297,6 @@
         "dialout"
       ]; # Enable ‘sudo’ for the user.
       useDefaultShell = true;
-      packages = [
-        pkgsst.protonvpn-gui
-      ];
     };
     defaultUserShell = pkgs.zsh;
   };

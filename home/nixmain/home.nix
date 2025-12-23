@@ -39,7 +39,6 @@
     xdg-utils
     # Speedtest net
     speedtest-cli
-    fast-cli
     # Benchmark
     memtester
     mprime
@@ -138,15 +137,6 @@
     };
     ".config/tmux" = {
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.dotfiles/home/dotconfig/tmux";
-    };
-  };
-
-  programs.firefox = {
-    enable = true;
-    profiles.ptc = {
-      bookmarks.force = true;
-      bookmarks.settings = [ ];
-      isDefault = true;
     };
   };
 

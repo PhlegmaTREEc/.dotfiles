@@ -7,10 +7,10 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/ptc/.zshrc'
+zstyle :compinstall filename '/home/ptc/.config/zsh/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 # End of lines added by compinstall
 
 # FZF
@@ -41,6 +41,7 @@ eval "$(zoxide init zsh)"
 eval "$(navi widget zsh)"
 
 # Starship
+export STARSHIP_CONFIG=~/.config/starhip/starship.toml
 eval "$(starship init zsh)"
 
 # Sourcing

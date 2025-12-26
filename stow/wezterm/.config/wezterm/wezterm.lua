@@ -3,7 +3,7 @@ local act = wezterm.action
 local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 local config = wezterm.config_builder()
 
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Dracula"
 config.enable_tab_bar = false
 config.window_padding = {
 	left = 2,

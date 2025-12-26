@@ -1,0 +1,21 @@
+{
+  "name": "Dracula Theme",
+  "primary": "#BD93F9",
+  "primaryText": "#282a36",
+  "primaryContainer": "",
+  "secondary": "",
+  "surface": "#282A36",
+  "surfaceText": "#F8F8F2",
+  "surfaceVariant": "#6272A4",
+  "surfaceVariantText": "",
+  "surfaceTint": "",
+  "background": "",
+  "backgroundText": "",
+  "outline": "",
+  "surfaceContainer": "#21222C",
+  "surfaceContainerHigh": "#343746",
+  "surfaceContainerHighest": "#282A36",
+  "error": "#FF5555",
+  "warning": "#FFB86C",
+  "info": "#6272A4"
+}

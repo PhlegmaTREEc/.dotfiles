@@ -92,20 +92,8 @@ pdfunite <source list of files to unite> <target>
 
 % package, packman, aur, flatpak
 
-# Fix keys
-alias fixkey="/usr/local/bin/arcolinux-fix-pacman-databases-and-keys"
-
-# Fix pacman conf
-alias fix-pacman-conf="/usr/local/bin/arcolinux-fix-pacman-conf"
-
-# Fix pacmman key server
-alias fix-pacman-keyserver="/usr/local/bin/arcolinux-fix-pacman-gpg-conf"
-
-# Fix grub
-alias fix-grub="/usr/local/bin/arcolinux-fix-grub"
-
 # Install package by name
-sudo pacman -S <pkg_name>
+sudo pacman -Syu <pkg_name>
 
 # Install package by name from specific repo
 sudo pacman -S <repo_name>/<pkg_name>
@@ -113,11 +101,11 @@ sudo pacman -S <repo_name>/<pkg_name>
 # Search for package by name
 sudo pacman -Ss <pkg_name>
 
+# Clear cached packages
+sudo pacman -Sc
+
 # Upgrade packages
 sudo pacman -Syu
-
-# Remove package and dependencies by name
-sudo pacman -Rs <pkg_name>
 
 # Remove package and dependencies and config files by name
 sudo pacman -Rns <pkg_name>
@@ -127,9 +115,6 @@ sudo pacman -Rnsdd <pkg_name>
 
 # Remove orphan dependencies
 sudo pacman -Qdtq | sudo pacman -Rns -
-
-#Cleanup orphaned packages ARCO:cleanup
-sudo pacman -Rns $(pacman -Qtdq)
 
 # Remove orphan dependencies extra method
 sudo pacman -Qqd | pacman -Rsu --print -
@@ -143,11 +128,14 @@ pacman -Qi <pkg_name>
 # Display remote package information
 pacman -Si <pkg_name>
 
-# List packages wwith update available
+# List packages with update available
 pacman -Qu
 
 # List installed packages
 pacman -Q
+
+# Search installed packages
+pacman -Qs
 
 # List explicitily installed packages
 pacman -Qe
@@ -167,24 +155,13 @@ sudo pacman -Qqet
 # list of AUR packages
 sudo pacman -Qqem
 
-% arco
-
-# What ISO am I using? ARCO: iso
-cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'
-
-# System info ARCO: probe
-sudo -E hw-probe -all -upload
+# Upgrade AUR packages
+paru -Sua
 
 #hardware info --short
 hwinfo --short
 
-# Update list of GRUB entries ini the menu ARCO:grub-update
-sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-# ARCO: grub issue 08/2022
-sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi
-
-# ARCO:add new fonts
+# cache refresh afte radding fonts
 sudo fc-cache -fv
 
 % nodejs, foundryvtt

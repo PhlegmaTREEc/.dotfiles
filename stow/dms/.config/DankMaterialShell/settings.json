@@ -112,7 +112,7 @@
   "useAutoLocation": false,
   "weatherEnabled": true,
   "networkPreference": "auto",
-  "vpnLastConnected": "",
+  "vpnLastConnected": "4c10bfa2-2bf0-4d1a-88fb-07de96d05137",
   "iconTheme": "System Default",
   "launcherLogoMode": "os",
   "launcherLogoCustomPath": "",
@@ -259,15 +259,14 @@
       ],
       "centerWidgets": [
         {
-          "id": "music",
-          "enabled": true
-        },
-        {
           "id": "clock",
           "enabled": true,
           "clockCompactMode": false
         },
-        "weather"
+        {
+          "id": "weather",
+          "enabled": true
+        }
       ],
       "rightWidgets": [
         {

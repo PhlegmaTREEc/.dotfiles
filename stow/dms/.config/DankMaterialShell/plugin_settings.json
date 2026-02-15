@@ -1,0 +1,20 @@
+{
+  "dankActions": {
+    "enabled": true,
+    "variants": [
+      {
+        "icon": "monitor",
+        "displayText": "",
+        "displayCommand": "",
+        "clickCommand": "niri msg output DP-3 off && niri msg output HDMI-A-1 off",
+        "middleClickCommand": "",
+        "rightClickCommand": "niri msg output DP-3 on && niri msg output HDMI-A-1 on",
+        "updateInterval": 0,
+        "showIcon": true,
+        "showText": true,
+        "id": "variant_1767088369087",
+        "name": "Toggle monitors"
+      }
+    ]
+  }
+}

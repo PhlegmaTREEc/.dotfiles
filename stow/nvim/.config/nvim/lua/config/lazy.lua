@@ -29,9 +29,11 @@ require("lazy").setup({
 		{ import = "plugins" },
 	},
 	-- colorscheme while istalling plugings
-	install = { colorscheme = { "catppuccin" } },
+	install = { colorscheme = { "dracula" } },
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 })
 
 require("config.keybinds")
+
+vim.g.lazyvim_check_order = false

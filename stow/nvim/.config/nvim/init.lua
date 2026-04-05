@@ -1,1 +1,3 @@
-require("config.lazy")
+require("plugins")
+require("lsp")
+require("options")

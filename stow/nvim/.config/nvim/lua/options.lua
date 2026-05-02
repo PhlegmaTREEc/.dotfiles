@@ -29,6 +29,9 @@ vim.keymap.set("n", "ú", "]", { remap = true })
 vim.opt.termguicolors = true
 vim.cmd.colorscheme("dracula")
 
+-- vim ui2
+require('vim._core.ui2').enable()
+
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.shiftwidth = 2 -- Amount to indent with << and >>
 vim.opt.tabstop = 2 -- How many spaces are shown per Tab
@@ -70,6 +73,13 @@ vim.opt.clipboard:append("unnamedplus") -- use system clipboard
 
 -- Save undo history
 vim.opt.undofile = true
+local undodir = vim.fn.expand("~/.config/nvim-undodir")
+if
+	vim.fn.isdirectory(undodir) == 0 -- create undodir if nonexistent
+then
+	vim.fn.mkdir(undodir, "p")
+end
+vim.opt.undodir = undodir -- set the undo directory
 
 vim.opt.backup = false -- do not create a backup file
 vim.opt.writebackup = false -- do not write to a backup file

@@ -8,4 +8,7 @@ vim.pack.add({
   }
 })
 require("gitsigns")
-require('nvim-treesitter').install { 'bash', 'javascript', 'css', 'htm', 'markdown_inline', 'lua' }
+require('nvim-treesitter').install { 'bash', 'javascript', 'css', 'html', 'markdown_inline', 'lua' }
+-- Load the built-in undotree plugin
+-- add some keybinds?
+vim.cmd("packadd nvim.undotree")

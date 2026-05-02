@@ -209,7 +209,7 @@ binds {
     Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
     Mod+R hotkey-overlay-title="DMS Spotlight" { spawn-sh "dms ipc spotlight toggle"; }
     Mod+W hotkey-overlay-title="DMS Powermenu" { spawn-sh "dms ipc powermenu toggle"; }
-    Mod+E hotkey-overlay-title="Open PCManFM-QT" { spawn "pcmanfm-qt"; }
+    Mod+E hotkey-overlay-title="Open Cosmic Files" { spawn "cosmic-files"; }
     Mod+B hotkey-overlay-title="Open Zen browser" { spawn "app.zen_browser.zen"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0"; }
@@ -314,9 +314,9 @@ binds {
 
     Mod+T { toggle-column-tabbed-display; }
 
-    Mod+X { screenshot; }
-    Mod+Ctrl+X { screenshot-screen; }
-    Mod+Shift+X { screenshot-window; }
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Alt+Print { screenshot-window; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
@@ -334,5 +334,3 @@ binds {
 }
 
 include "dms/outputs.kdl"
-
-include "dms/cursor.kdl"

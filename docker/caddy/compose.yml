@@ -9,27 +9,20 @@ services:
       - "80:80"
       - "443:443"
       - "443:443/udp"
+    env_file:
+      - .env
     environment:
-      CF_API_TOKEN: /run/secrets/cf_api_token # note using _FILE for docker secrets
-      # CF_DNS_API_TOKEN: ${CF_DNS_API_TOKEN} # if using .env
-    secrets:
-      - cf_api_token
+      - CLOUDFLARE_EMAIL=${CF_EMAIL}
+      - CLOUDFLARE_API_TOKEN=${CF_API_TOKEN}
     volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./conf:/etc/caddy
       - ./site:/srv
-      - caddy_data:/data
-      - caddy_config:/config
+      - ./caddy_data:/data
+      - ./caddy_config:/config
     networks:
-      - proxy
+      - hubnet
 
-secrets:
-      cf_api_token:
-        file: ./cf_api_token.txt
-
+# Remember to create external network
 networks:
-  proxy:
+  hubnet:
     external: true
-
-volumes:
-  caddy_data:
-  caddy_config:

@@ -1,14 +1,30 @@
 services:
-  foundryvtt:
-    hostname: https://foundrytable.local/
-    container_name: foundryvtt
+  foundry:
+    container_name: foundry
     build:
       context: ./
       dockerfile: ./Dockerfile
-    image: foundryvtt:12
-    restart: no
+      args: #Pass .env variables to Dockerfile
+        FOUNDRY_HOME: ${FOUNDRY_HOME}
+        FOUNDRY_DATA: ${FOUNDRY_DATA}
+    command: node ${FOUNDRY_HOME}/main.js --dataPath=${FOUNDRY_DATA}
+    restart: unless-stopped
     volumes:
-      - /home/ptclab/docker/foundry/fvvtapp/:/home/foundry/fvttapp
-      - /home/ptclab/docker/foundry/fvvtdata/:/home/foundry/fvttdata
+      - foundryvtt-app:${FOUNDRY_HOME}
+      - foundryvtt-data:${FOUNDRY_DATA}
     ports:
       - 30000:30000
+
+volumes:
+  foundryvtt-app:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./app
+  foundryvtt-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./data

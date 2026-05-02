@@ -1,6 +1,5 @@
 ## How to do this
 
-- [link](https://mauriceneuer.medium.com/foundryvtt-and-docker-2918a9db43ad)
 - `cd` to chosen directory
   - `mkdir app data`
   - put .env compose.yml Dockerfile there

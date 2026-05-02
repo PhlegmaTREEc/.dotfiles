@@ -1,0 +1,10 @@
+services:
+  rackpeek:
+    image: aptacode/rackpeek:latest
+    container_name: rackpeek
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./config:/app/config
+    user: "1000:1000"
+    restart: unless-stopped

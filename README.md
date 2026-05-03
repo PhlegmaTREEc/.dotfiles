@@ -1,5 +1,27 @@
 # My dotfiles
 
+- This repo contains dotfiles for my desktop and homelab.
+- Desktop is currently on CachyOS+Niri+DMS - hope to switch to CosmicDE long-term, but in short-term switching from Niri to Mango/Hyprland
+
+## Fedora Server
+
+- VMs in Proxmox running on Fedora server
+
+### Resizing disk
+
+- use `sudo parted` to rezise the disk
+  - `resizepart X` where X is the correct partition number
+  - `100%` should use all free space
+  - `print` to check
+- use `sudo lvs` to check the LV
+  - `lvextend -l %100%FREE /dev/mapper/XXX` where XXX is the correct LV
+  - `sudo xfs_growfs /dev/mapper/XXX` to grow the FS
+- not sure when to reboot... so better between steps to do it
+
+### Upgrading to new version
+
+- [link](https://docs.fedoraproject.org/en-US/quick-docs/upgrading-fedora-offline/)
+
 ## Random notes
 
 ### SSH

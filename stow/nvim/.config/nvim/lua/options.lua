@@ -37,7 +37,6 @@ vim.opt.shiftwidth = 2 -- Amount to indent with << and >>
 vim.opt.tabstop = 2 -- How many spaces are shown per Tab
 vim.opt.softtabstop = 2 -- How many spaces are applied when pressing Tab
 
-vim.opt.expandtab = true -- use spaces instead of tabs
 vim.opt.smartindent = true
 vim.opt.autoindent = true -- Keep identation from previous line
 
@@ -58,8 +57,10 @@ vim.opt.completeopt = "menuone,noinsert,noselect" -- completion options
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
 
--- Don't show the mode, since it's already in the status line
-vim.opt.showmode = false
+vim.opt.showmode = false -- Don't show the mode, since it's already in the status line
+vim.opt.pumheight = 10 -- popup menu height
+vim.opt.pumblend = 10 -- popup menu transparency
+vim.opt.winblend = 0 -- floating window transparency
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -97,11 +98,9 @@ vim.opt.showmatch = true -- highlights matching brackets
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
 
--- Decrease update time
-vim.opt.updatetime = 250
-
--- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 300
+vim.opt.updatetime = 250 -- Decrease update time
+vim.opt.timeoutlen = 300 -- Decrease mapped sequence wait time
+vim.opt.ttimeoutlen = 50 -- key code timeout
 
 -- Configure how new splits should be opened
 vim.opt.splitright = true
@@ -124,7 +123,17 @@ vim.opt.scrolloff = 10
 vim.opt.sidescrolloff = 10
 
 -- Disable commandline until it is needed. This gives us a cleaner look and an extra line ;)
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 1
+
+vim.opt.errorbells = false -- no error sounds
+
+-- Folding: requires treesitter available at runtime; safe fallback if not
+vim.opt.foldmethod = "expr" -- use expression for folding
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- use treesitter for folding
+vim.opt.foldlevel = 99 -- start with all folds open
+
+vim.opt.wildmenu = true -- tab completion
+vim.opt.wildmode = "longest:full,full" -- complete longest common match, full completion list, cycle through with Tab
 
 -- Highlight text for some time after yanking
 vim.api.nvim_create_autocmd("TextYankPost", {

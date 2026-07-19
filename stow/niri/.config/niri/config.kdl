@@ -206,7 +206,7 @@ window-rule {
 binds {
     // Mod+Shift+N { show-hotkey-overlay; }
 
-    Mod+Return hotkey-overlay-title="Open a Terminal: wezterm" { spawn "wezterm"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Mod+R hotkey-overlay-title="DMS Spotlight" { spawn-sh "dms ipc spotlight toggle"; }
     Mod+W hotkey-overlay-title="DMS Powermenu" { spawn-sh "dms ipc powermenu toggle"; }
     Mod+E hotkey-overlay-title="Open PCManFM-QT" { spawn "pcmanfm-qt"; }

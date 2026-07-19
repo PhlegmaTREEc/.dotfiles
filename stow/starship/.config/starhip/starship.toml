@@ -5,7 +5,7 @@ palette = "dracula"
 
 # Global format
 format = """
-[ \uE21C  ](bg:bg fg:bold purple)[\uE0B0](fg:bg)\
+[ \uE21C  ](bg:darkbg fg:bold purple)[\uE0B0 ](fg:darkbg)\
 $username\
 $hostname\
 $directory\
@@ -23,23 +23,23 @@ add_newline = true
 disabled = false
 
 [username]
-style_user = "fg:bold cyan"
+style_user = "bg:darkbg fg:bold cyan"
 style_root = "fg:bold red"
-show_always = false
-format = "[ $user]($style)"
+show_always = true
+format = "[\uE0B0](fg:bg bg:darkbg)[ $user ]($style)"
 
 [hostname]
 ssh_only = true
 style = "bg:darkbg fg:bold yellow"
-format = "[@$hostname]($style)"
+format = "[@ $hostname ]($style)"
 
 [directory]
 truncation_symbol = "../"
 truncation_length = 4
-style = "bg:bg fg:bold purple"
-read_only = "\uF023"
-read_only_style = "bg:bg fg:red"
-format = "[\uE0B0](fg:darkbg bg:bg)[ $path]($style)[ $read_only ]($read_only_style)[\uE0B0 ](fg:bg)"
+style = "bg:darkbg fg:bold purple"
+read_only = " \uF023 "
+read_only_style = "bg:darkbg fg:red"
+format = "[\uE0B0 ](fg:darkbg bg:bg)[[\uE0B0](fg:bg bg:darkbg) $path]($style)[$read_only ]($read_only_style)[\uE0B0 ](fg:darkbg)"
 
 [character]
 success_symbol = "[\uE285](fg:green)"
@@ -48,12 +48,12 @@ vicmd_symbol = "[\uE285](fg:pink)"
 format = "$symbol "
 
 [git_branch]
-style = "bg:bg fg:bold yellow"
-format = "[\uE0B0](fg:darkbg bg:bg)[ $symbol$branch(:$remote_branch)]($style)"
+style = "bg:darkbg fg:bold yellow"
+format = "[\uE0B0](fg:bg bg:darkbg)[ $symbol$branch(:$remote_branch)]($style)"
 
 [git_status]
-style = "bg:bg fg:pink"
-format = "[ \u003C](bg:bg fg:pink)[$all_status$ahead_behind]($style)[\u003E ](bg:bg fg:pink)[\uE0B0 ](fg:bg)"
+style = "bg:darkbg fg:pink"
+format = "[ \u003C](bg:darkbg fg:pink)[$all_status$ahead_behind]($style)[\u003E ](bg:darkbg fg:pink)[\uE0B0 ](fg:darkbg)"
 
 [cmd_duration]
 min_time = 500

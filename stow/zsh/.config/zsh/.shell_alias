@@ -1,13 +1,13 @@
 # Configuration
-alias cshell='v ~/.dotfiles/home/dotconfig/zsh/.shell_config'
-alias calias='v ~/.dotfiles/home/dotconfig/zsh/.shell_aliases'
-alias czsh='v ~/.dotfiles/home/dotconfig/zsh/.zshrc'
-alias szsh='source ~/.config/zsh/.zshrc'
-alias chypr='v ~/.dotfiles/home/dotconfig/hypr/hyprland.conf'
-alias cway='v ~/.dotfiles/home/dotconfig/waybar/config'
-alias cways='v ~/.dotfiles/home/dotconfig/waybar/style.css'
-alias chm='v ~/.dotfiles/home/nixmain/home.nix'
-alias cnos='v ~/.dotfiles/hosts/nixmain/configuration.nix'
+# alias cshell='v ~/.dotfiles/home/dotconfig/zsh/.shell_config'
+# alias calias='v ~/.dotfiles/home/dotconfig/zsh/.shell_aliases'
+# alias czsh='v ~/.dotfiles/home/dotconfig/zsh/.zshrc'
+# alias szsh='source ~/.config/zsh/.zshrc'
+# alias chypr='v ~/.dotfiles/home/dotconfig/hypr/hyprland.conf'
+# alias cway='v ~/.dotfiles/home/dotconfig/waybar/config'
+# alias cways='v ~/.dotfiles/home/dotconfig/waybar/style.css'
+# alias chm='v ~/.dotfiles/home/nixmain/home.nix'
+# alias cnos='v ~/.dotfiles/hosts/nixmain/configuration.nix'
 
 # Flatpak
 alias fpup='flatpak update'
@@ -17,9 +17,15 @@ alias fpun='flatpak uninstall --delete-data'
 alias fpunun='flatpak uninstall --unused'
 alias fpli='flatpak list'
 
+# Arch
+alias pacup='sudo pacman -Syyu'
+alias pacun='sudo pacman -Rns '
+alias aurup='paru -Syu'
+
 # Basic actions
 alias cl='clear'
 alias ex='exit'
+alias sshon='ssh -T git@codeberg.org'
 
 # Apps
 alias v='nvim'
@@ -49,8 +55,8 @@ alias dps="docker ps"
 alias ls='eza --icons=always -a --group-directories-first'
 alias lsl='eza --icons=always -lahg --group-directories-first'
 alias lst='eza --icons=always -aT -L=2 --group-directories-first'
-alias gdot='cd ~/.dotfiles/'
-alias gconf='cd ~/.config/'
+alias cdcfg='cd ~/.config/'
+alias cddot='cd ~/.ptconf/'
 
 # GIT
 alias gs='git status'
